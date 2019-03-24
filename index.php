@@ -4,6 +4,9 @@
 
 <main>
     <?php
+        phpinfo(INFO_MODULES);
+    ?>
+    <?php
         if (isset($_SESSION['userId']))
         {
             echo '<p>You are logged in!</p>';
