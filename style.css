@@ -1,32 +1,82 @@
+:root {
+    --primary         : #1b5e20;
+    --primary-light   : #4c8c4a;
+    --primary-dark    : #003300;
+    --primary-text    : #ffffff;
+    --secondary       : #b0bec5;
+    --secondary-light : #e2f1f8;
+    --secondary-dark  : #808e95;
+    --secondary-text  : #000000;
+    --off-white       : #f9f9f9;
+    --nav-text-size   : 18px;
+}
+
 html {
-    height : 100%;
+    font-family      : 'Roboto', sans-serif;
+    background-color : var(--secondary-light);
+    height           : 100%;
 }
 
-nav {
-    background-color : lightgray;
-    padding          : 1%;
+main {
+    margin-top : 3%;
 }
 
-div, nav, footer, input, button {
+div, input, button:not(.logout-button), ul.nav-bar, footer {
+    box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div, input, button:not(.logout-button) {
     border-radius : 8px;
-    border        : darkgray 1px solid;
+    border        : none;
 }
 
 footer {
-    background-color : lightgray;
+    background-color : var(--secondary);
+    color            : var(--secondary-text);
     position         : absolute;
-    padding          : 1%;
-    bottom           : 1%;
-    width            : 97%;
+    padding-top      : 0.5%;
+    padding-bottom   : 0.5%;
+    width            : 100%;
     text-align       : center;
+    bottom           : 0;
+    left             : 0;
 }
 
-a {
+ul.nav-bar {
+    background-color : var(--primary-dark);
+    font-size        : var(--nav-text-size);
+    list-style-type  : none;
+    margin           : 0;
+    padding          : 0;
+    overflow         : hidden;
+    position         : fixed;
+    top              : 0;
+    left             : 0;
+    width            : 100%;
+}
+
+li.nav-bar {
+    float : left;
+}
+
+li.nav-bar a.nav-bar {
+    color           : var(--primary-text);
+    display         : block;
+    text-align      : center;
+    padding         : 14px 16px;
     text-decoration : none;
 }
 
-.login {
-    background-color : lightgray;
+li.nav-bar a.nav-bar:hover:not(.active) {
+    background-color : var(--primary);
+}
+
+.active {
+    background-color : var(--primary-light);
+}
+
+.login-card {
+    background-color : var(--off-white);
     position         : absolute;
     text-align       : center;
     padding          : 5%;
@@ -41,13 +91,23 @@ a {
 }
 
 .login-button {
-    background-color : black;
-    color            : white;
+    background-color : var(--primary);
+    color            : var(--primary-text);
     height           : 32px;
     width            : 95%;
     margin-top       : 4px;
 }
 
-.logout-form {
-    float : right;
+.logout-button {
+    background-color : transparent;
+    font-size        : var(--nav-text-size);
+    color            : var(--primary-text);
+    outline          : none;
+    border           : none;
+    cursor           : pointer;
+    overflow         : hidden;
+    float            : right;
+    display          : block;
+    text-align       : center;
+    padding          : 14px 16px;
 }
