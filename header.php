@@ -12,7 +12,7 @@
 <header>
     <nav>
         <a href="index.php">Home</a>
-        <div class="logout">
+        <div class="logout-form">
             <?php
                 if (isset($_SESSION['userId']))
                 {
