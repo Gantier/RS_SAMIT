@@ -27,7 +27,6 @@
                 $result = mysqli_stmt_get_result($statement);
                 if ($row = mysqli_fetch_assoc($result))
                 {
-                    //$pwdCheck = password_verify($password, $row['accountPassword']);
                     if ($password != $row['accountPassword'])
                     {
                         header("Location: ../index.php?error=wrongLogin");
@@ -37,8 +36,9 @@
                     {
                         session_start();
                         $_SESSION['userId'] = $row['accountEmail'];
+                        $_SESSION['userType'] = $row['accountType'];
 
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../home_" . $_SESSION['userType'] . ".php");
                         exit();
                     }
                     else
