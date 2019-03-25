@@ -4,13 +4,13 @@
 
 <main>
     <?php
-        if (isset($_SESSION['userId']))
+        if (!isset($_SESSION['userId']))
         {
-            echo '<p>You are logged in!</p><br>' . print_r($_SESSION);//prints session variables
-        }
-        else
-        {
-            echo '<p>You are logged out!</p>';
+            echo '<div class="login"><form action="includes/login.inc.php" method="post">
+                    <input class="form-text-field" type="text" name="email" placeholder="email@samit.edu"><br>
+                    <input class="form-text-field" type="password" name="pwd" placeholder="password"><br>
+                    <button type="submit" name="login-submit">Login</button>
+                </form></div>';
         }
     ?>
 </main>

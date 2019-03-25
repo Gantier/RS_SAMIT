@@ -1,0 +1,36 @@
+html {
+    height : 100%;
+}
+
+nav {
+    background-color : lightgray;
+    padding          : 1%;
+}
+
+footer {
+    background-color : lightgray;
+    position         : absolute;
+    padding          : 1%;
+    bottom           : 1%;
+    width            : 97%;
+    text-align       : center;
+}
+
+.login {
+    background-color : lightgray;
+    position         : absolute;
+    text-align       : center;
+    padding          : 5%;
+    top              : 40%;
+    left             : 50%;
+    transform        : translate(-50%, -50%);
+}
+
+.form-text-field {
+    padding : 8px;
+    margin  : 4px;
+}
+
+.logout {
+    float : right;
+}
