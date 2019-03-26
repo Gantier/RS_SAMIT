@@ -1,3 +1,3 @@
 <footer>
-    this is the footer...
+    © SAMware Inc. 2019
 </footer>

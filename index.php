@@ -2,7 +2,7 @@
     require "header.php";
 ?>
 
-<main>
+<body>
     <?php
         if (!isset($_SESSION['userId']))
         {
@@ -13,7 +13,7 @@
                 </form></div>';
         }
     ?>
-</main>
+</body>
 
 <?php
     require "footer.php";
