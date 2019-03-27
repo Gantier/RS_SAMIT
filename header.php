@@ -18,7 +18,7 @@ session_start();
     <ul>
         <li><a class="active" href="index.php">Home</a></li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Course Catalog</a>
+            <a href="javascript:void(0)" class="drop-button">Course Catalog</a>
             <div class="dropdown-content">
                 <a href="cc_under.php">Undergraduate</a>
                 <a href="cc_graduate.php">Graduate</a>
