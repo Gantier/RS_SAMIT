@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+    $current_page = preg_replace("[/RS_SAMIT/]", "", "$_SERVER[REQUEST_URI]");
 ?>
 
 <!DOCTYPE html>
@@ -14,28 +15,30 @@ session_start();
 
 </header>
 <nav>
-
-    <ul>
-        <li><a class="active" href="index.php">Home</a></li>
-        <li class="dropdown">
+    <ul class="nav-bar">
+        <li class="<?php if ($current_page == "index.php")
+        {
+            echo "active";
+        } ?>"><a href="index.php">Home</a></li>
+        <li class="dropdown <?php if ($current_page == "cc_undergraduate.php" || $current_page == "cc_graduate.php")
+        {
+            echo "active";
+        } ?>">
             <a href="javascript:void(0)" class="drop-button">Course Catalog</a>
             <div class="dropdown-content">
-                <a href="cc_under.php">Undergraduate</a>
-                <a href="cc_graduate.php">Graduate</a>
+                <a class="dropdown-anchor" href="cc_undergraduate.php">Undergraduate</a>
+                <a class="dropdown-anchor" href="cc_graduate.php">Graduate</a>
             </div>
         </li>
-
         <?php
-        if (isset($_SESSION['userId']))
-        {
-            echo '<form action="includes/logout.inc.php" method="post">
+            if (isset($_SESSION['userId']))
+            {
+                echo '<form action="includes/logout.inc.php" method="post">
                     <button class="logout-button" type="submit" name="logout-submit">Logout</button>
                 </form>';
-        }
+            }
         ?>
-
     </ul>
-
 </nav>
 
 
