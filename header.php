@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -14,20 +14,28 @@
 
 </header>
 <nav>
-    <ul class="nav-bar">
-        <li class="nav-bar"><a class="nav-bar active" href="index.php">Home</a></li>
-        <li class="nav-bar"><a class="nav-bar">Course Catalog</a></li>
-        <li class="nav-bar"><a class="nav-bar">Master Schedule</a></li>
-        <li class="nav-bar"><a class="nav-bar">About</a></li>
+
+    <ul>
+        <li><a class="active" href="index.php">Home</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Course Catalog</a>
+            <div class="dropdown-content">
+                <a href="cc_under.php">Undergraduate</a>
+                <a href="cc_graduate.php">Graduate</a>
+            </div>
+        </li>
+
         <?php
-            if (isset($_SESSION['userId']))
-            {
-                echo '<form action="includes/logout.inc.php" method="post">
+        if (isset($_SESSION['userId']))
+        {
+            echo '<form action="includes/logout.inc.php" method="post">
                     <button class="logout-button" type="submit" name="logout-submit">Logout</button>
                 </form>';
-            }
+        }
         ?>
+
     </ul>
+
 </nav>
 
 
