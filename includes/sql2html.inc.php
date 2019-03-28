@@ -1,9 +1,9 @@
 <?php
 
-    function table($result, $class)
+    function table($result, $class, $caption)
     {
         $result->fetch_array(MYSQLI_ASSOC);
-        echo '<table class="' . $class . '">';
+        echo '<table class="' . $class . '"><caption>' . $caption . '</caption>';
         tableHead($result);
         tableBody($result);
         echo '</table>';
@@ -40,4 +40,4 @@
         echo '</tbody>';
     }
 
-    table($result, $class);
+    table($result, $class, $caption);

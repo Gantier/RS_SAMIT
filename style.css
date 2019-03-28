@@ -3,15 +3,20 @@
     --primary-light             : #4c8c4a;
     --primary-dark              : #003300;
     --primary-text              : #ffffff;
-    --secondary                 : #b0bec5;
-    --secondary-light           : #e2f1f8;
-    --secondary-dark            : #808e95;
-    --secondary-text            : #637084;
-    --secondary-table-td-border : #edf1f7;
-    --secondary-table-th-border : #a4abb5;
+    --secondary                 : #b8c0c4;
+    --secondary-light           : #eff4f7;
+    --secondary-dark            : #858e93;
+    --secondary-dark-shadow     : #7e888c;
+    --secondary-text-dark       : #6d7177;
+    --secondary-text-light      : #e8ebef;
+    --secondary-table-td-border : #eff1f4;
+    --secondary-table-th-border : #aaaeb5;
     --off-white                 : #f9f9f9;
+    --top-content-start         : 72px;
+    --bottom-content-start      : 34px;
     --nav-bar-height            : 44px;
     --nav-bar-font-size         : 16px;
+    --table-font-size           : 14px;
     --footer-font-size          : 12px;
     --standard-margin           : 16px;
     --standard-border-radius    : 6px;
@@ -43,12 +48,6 @@ footer, header, hgroup, menu, nav, section {
     display : block;
 }
 
-body {
-    line-height    : 1;
-    padding-top    : 72px;
-    padding-bottom : 34px;
-}
-
 ol, ul {
     list-style : none;
 }
@@ -66,14 +65,48 @@ q:before, q:after {
     content : none;
 }
 
+/*GENERAL*/
+
 html {
     font-family      : 'Roboto', sans-serif;
     background-color : var(--secondary-light);
+    height           : 100%;
+}
+
+body {
+    line-height    : 1;
+    padding-top    : var(--top-content-start);
+    padding-bottom : var(--bottom-content-start);
+    min-height     : 88%;
+}
+
+body.index {
+    background-image  : url("images/campusCrop.jpg");
+    background-repeat : no-repeat;
+    background-size   : cover;
+}
+
+div:not(.card-title), input, table, caption, button:not(.logout-button), ul.nav-bar, footer, .dropdown-content {
+    box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div:not(.card-title), input, button:not(.logout-button), .dropdown-content, ul.nav-bar li, .drop-button {
+    border-radius : var(--standard-border-radius);
+    border        : none;
+}
+
+caption, .card-title {
+    background-image : linear-gradient(var(--secondary-dark) 50%, var(--secondary-dark-shadow));
+    color            : white;
+    border-radius    : var(--standard-border-radius) var(--standard-border-radius) 0 0;
+    font-size        : var(--nav-bar-font-size);
+    text-align       : center;
+    padding          : 12px 8px;
 }
 
 footer {
     background-color : var(--secondary);
-    color            : var(--secondary-text);
+    color            : var(--secondary-text-dark);
     font-size        : var(--footer-font-size);
     position         : fixed;
     padding-top      : 0.5%;
@@ -84,6 +117,8 @@ footer {
     left             : 0;
 }
 
+/*NAV-BAR*/
+
 nav {
     position : fixed;
     top      : 0;
@@ -92,130 +127,6 @@ nav {
     padding  : 0;
     width    : 100%;
     height   : var(--nav-bar-height);
-}
-
-div, input, table, button:not(.logout-button), ul.nav-bar, footer, .dropdown-content {
-    box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-div, input, button:not(.logout-button), .dropdown-content, ul.nav-bar li, .drop-button {
-    border-radius : var(--standard-border-radius);
-    border        : none;
-}
-
-table {
-    background-color : var(--off-white);
-    border-radius    : var(--standard-border-radius);
-    border-collapse  : separate;
-    border-spacing   : 0;
-}
-
-table th, table td {
-    text-align : left;
-    padding    : 8px;
-}
-
-table th {
-    background-color : var(--secondary-dark);
-    border           : 1px solid var(--secondary-table-th-border);
-    color            : white;
-}
-
-table td {
-    border : 1px solid var(--secondary-table-td-border);
-}
-
-tr:nth-child(even) {background-color : white}
-
-table thead:first-child th {
-    border-top : 0;
-}
-
-table thead th:first-child {
-    border-left : 0;
-}
-
-table thead:last-child th {
-    border-bottom : 0;
-}
-
-table thead th:last-child {
-    border-right : 0;
-}
-
-table tr:first-child td {
-    border-top : 0;
-}
-
-table tr td:first-child {
-    border-left : 0;
-}
-
-table tr:last-child td {
-    border-bottom : 0;
-}
-
-table tr td:last-child {
-    border-right : 0;
-}
-
-table th:first-child {
-    border-radius : var(--standard-border-radius) 0 0 0;
-}
-
-table th:last-child {
-    border-radius : 0 var(--standard-border-radius) 0 0;
-}
-
-table tr:last-child td:first-child {
-    border-radius : 0 0 0 var(--standard-border-radius);
-}
-
-table tr:last-child td:last-child {
-    border-radius : 0 0 var(--standard-border-radius) 0;
-}
-
-table.cc {
-    margin-left   : var(--standard-margin);
-    margin-bottom : var(--standard-margin);
-    width         : 50%;
-}
-
-.login-card {
-    background-color : var(--off-white);
-    position         : absolute;
-    text-align       : center;
-    padding          : 5%;
-    top              : 50%;
-    left             : 50%;
-    transform        : translate(-50%, -50%);
-}
-
-.form-text-field {
-    padding : 8px;
-    margin  : 4px;
-}
-
-.login-button {
-    background-color : var(--primary);
-    color            : var(--primary-text);
-    height           : 32px;
-    width            : 95%;
-    margin-top       : 4px;
-}
-
-.logout-button {
-    background-color : transparent;
-    font-size        : var(--nav-bar-font-size);
-    color            : var(--primary-text);
-    outline          : none;
-    border           : none;
-    cursor           : pointer;
-    overflow         : hidden;
-    float            : right;
-    display          : block;
-    text-align       : center;
-    padding          : 14px 16px;
 }
 
 ul.nav-bar {
@@ -285,3 +196,155 @@ ul.nav-bar li.dropdown {
 .dropdown:hover .dropdown-content {
     display : block;
 }
+
+.logout-button {
+    background-color : transparent;
+    font-size        : var(--nav-bar-font-size);
+    color            : var(--primary-text);
+    outline          : none;
+    border           : none;
+    cursor           : pointer;
+    overflow         : hidden;
+    float            : right;
+    display          : block;
+    text-align       : center;
+    padding          : 14px 16px;
+}
+
+/*TABLES*/
+
+table {
+    background-color : var(--off-white);
+    font-size        : var(--table-font-size);
+    border-radius    : var(--standard-border-radius);
+    border-collapse  : separate;
+    border-spacing   : 0;
+}
+
+table th, table td {
+    text-align : left;
+    padding    : 8px;
+}
+
+table th {
+    background-color : var(--secondary-dark);
+    border           : 1px solid var(--secondary-table-th-border);
+    color            : var(--secondary-text-light);
+    border-top       : 0;
+}
+
+table td {
+    border : 1px solid var(--secondary-table-td-border);
+    color  : var(--secondary-text-dark);
+}
+
+tr:nth-child(even) {background-color : white}
+
+table thead:first-child th {
+    border-top : 0;
+}
+
+table thead th:first-child {
+    border-left : 0;
+}
+
+table thead:last-child th {
+    border-bottom : 0;
+}
+
+table thead th:last-child {
+    border-right : 0;
+}
+
+table tr:first-child td {
+    border-top : 0;
+}
+
+table tr td:first-child {
+    border-left : 0;
+}
+
+table tr:last-child td {
+    border-bottom : 0;
+}
+
+table tr td:last-child {
+    border-right : 0;
+}
+
+table th:first-child {
+    border-radius : var(--standard-border-radius) 0 0 0;
+}
+
+table th:last-child {
+    border-radius : 0 var(--standard-border-radius) 0 0;
+}
+
+table tr:last-child td:first-child {
+    border-radius : 0 0 0 var(--standard-border-radius);
+}
+
+table tr:last-child td:last-child {
+    border-radius : 0 0 var(--standard-border-radius) 0;
+}
+
+/*SPECIAL TABLES*/
+
+table.cc {
+    margin-left   : var(--standard-margin);
+    margin-bottom : var(--standard-margin);
+    width         : 60%;
+}
+
+table.cc caption {
+    width       : 25%;
+    margin-left : 42px;
+}
+
+/*FORMS*/
+
+.form-text-field {
+    padding : 8px;
+    margin  : 4px;
+}
+
+/*SPECIAL CARDS*/
+
+.update-cc-card {
+    background-color : var(--off-white);
+    height           : 35%;
+    width            : 37.5%;
+    top              : var(--top-content-start);
+    left             : 60%;
+    margin-left      : 1.65%;
+    position         : fixed;
+}
+
+.login-card {
+    background-color : var(--off-white);
+    position         : absolute;
+    text-align       : center;
+    width            : 20%;
+    height           : 30%;
+    top              : 50%;
+    left             : 50%;
+    transform        : translate(-50%, -50%);
+}
+
+.login-title {
+    margin-bottom : 45px;
+}
+
+.login-button {
+    background-color : var(--primary);
+    color            : var(--primary-text);
+    height           : 32px;
+    width            : 185px;
+    margin-top       : 4px;
+}
+
+.login-button:hover {
+    background-color : var(--primary-light);
+}
+
+

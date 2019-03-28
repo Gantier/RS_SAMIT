@@ -21,6 +21,7 @@
         if ($row = mysqli_fetch_assoc($result))
         {
             $class = "cc";
+            $caption = "Graduate Courses";
             require "includes/sql2html.inc.php";
         }
         else
@@ -29,5 +30,7 @@
             exit();
         }
     }
+
+    require "includes/update_cc_form.inc.php";
 
     require "footer.php";
