@@ -6,7 +6,7 @@
     $sql = "SELECT c.courseName, c.courseNumber, c.courseSubject, c.courseSubject, c.courseCredits, c.courseAttribute 
             FROM registration_system.course_undergraduate g, registration_system.course c 
             WHERE g.courseUndergraduateName LIKE c.courseName
-            ORDER BY c.courseSubject";
+            ORDER BY c.courseSubject, c.courseNumber";
     $statement = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($statement, $sql))

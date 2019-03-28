@@ -10,7 +10,7 @@
                     <input class="form-text-field" type="text" name="email" placeholder="email@samit.edu"><br>
                     <input class="form-text-field" type="password" name="pwd" placeholder="password"><br>
                     <button class="login-button" type="submit" name="login-submit">Login</button>
-                </form></div>';
+                    </form></div>';
         }
     ?>
 </body>
