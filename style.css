@@ -88,7 +88,7 @@ body.index {
 }
 
 div.card, table, caption, ul.nav-bar, footer, .dropdown-content {
-    box-shadow       : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow       : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     background-color : var(--off-white);
 }
 
@@ -179,7 +179,7 @@ ul.nav-bar {
     height           : var(--nav-bar-height);
 }
 
-.nav-bar-active {
+li.nav-bar-active {
     background-color : var(--primary-light);
 }
 
@@ -203,16 +203,12 @@ ul.nav-bar li a, .drop-button {
     text-decoration : none;
 }
 
-ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) .drop-button {
+ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) button.drop-button {
     background-color : var(--primary);
     cursor           : default;
 }
 
-ul.nav-bar li.dropdown {
-    display : inline-block;
-}
-
-.dropdown-content {
+div.dropdown-content {
     display          : none;
     position         : absolute;
     background-color : white;
@@ -220,7 +216,7 @@ ul.nav-bar li.dropdown {
     z-index          : 1;
 }
 
-.dropdown-content a.dropdown-anchor {
+div.dropdown-content a.dropdown-anchor {
     color           : black;
     padding         : 12px 16px;
     text-decoration : none;
@@ -228,16 +224,16 @@ ul.nav-bar li.dropdown {
     text-align      : left;
 }
 
-.dropdown-content a.dropdown-anchor:hover {
+div.dropdown-content a.dropdown-anchor:hover {
     background-color : var(--off-white);
     border-radius    : var(--standard-border-radius);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover div.dropdown-content {
     display : block;
 }
 
-.logout-button {
+button.logout-button {
     background-color : transparent;
     font-size        : var(--nav-bar-font-size);
     color            : var(--primary-text);
