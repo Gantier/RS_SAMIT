@@ -6,10 +6,11 @@
     <?php
         if (!isset($_SESSION['userId']))
         {
-            echo '<div class="login-card"><div class="card-title login-title">SAMIT Account Login</div><form action="includes/login.inc.php" method="post">
+            echo '<div class="card login-card"><div class="card-title login-title">SAMIT Account Login</div>
+                    <form action="includes/login.inc.php" method="post">
                     <input class="form-text-field" type="text" name="email" placeholder="email@samit.edu"><br>
                     <input class="form-text-field" type="password" name="pwd" placeholder="password"><br>
-                    <button class="login-button" type="submit" name="login-submit">Login</button>
+                    <button class="big-button primary" type="submit" name="login-submit">Login</button>
                     </form></div>';
         }
     ?>
