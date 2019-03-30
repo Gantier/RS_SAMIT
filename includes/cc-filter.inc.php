@@ -1,4 +1,4 @@
-<div class="card update-cc-card">
+<div class="card cc-filter-card">
     <div class="card-title">
         Filter Courses
     </div>
@@ -30,7 +30,7 @@
                 <option value="Social Science Designation">Social Science Designation</option>
                 <option value="Creativity and the Arts">Creativity and the Arts</option>
             </select><br>
-            <button class="big-button secondary cc-filter" type="submit" name="cc-filter-submit">Refresh</button>
+            <button class="big-button secondary cc-filter" type="submit" name="cc-filter-submit">Filter</button>
         </form>
     </div>
 </div>

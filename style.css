@@ -20,6 +20,7 @@
     --table-font-size           : 14px;
     --footer-font-size          : 12px;
     --standard-margin           : 16px;
+    --margin-reaches-bottom     : 52px;
     --standard-border-radius    : 6px;
 }
 
@@ -75,10 +76,9 @@ html {
 }
 
 body {
-    line-height    : 1;
-    padding-top    : var(--top-content-start);
-    padding-bottom : var(--bottom-content-start);
-    min-height     : 88%;
+    line-height : 1;
+    padding     : var(--top-content-start) var(--standard-margin) var(--bottom-content-start);
+    min-height  : 88%;
 }
 
 body.index {
@@ -88,7 +88,8 @@ body.index {
 }
 
 div.card, table, caption, ul.nav-bar, footer, .dropdown-content {
-    box-shadow : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow       : 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color : var(--off-white);
 }
 
 div.card, .dropdown-content, ul.nav-bar li, .drop-button {
@@ -99,6 +100,10 @@ div.card, .dropdown-content, ul.nav-bar li, .drop-button {
 div.card-body {
     padding    : var(--standard-margin);
     text-align : center;
+}
+
+div.container {
+    display : inline-block;
 }
 
 button:not(.logout-button) {
@@ -144,8 +149,8 @@ footer {
     color            : var(--secondary-text-dark);
     font-size        : var(--footer-font-size);
     position         : fixed;
-    padding-top      : 0.5%;
-    padding-bottom   : 0.5%;
+    padding-top      : var(--footer-font-size);
+    padding-bottom   : var(--footer-font-size);
     width            : 100%;
     text-align       : center;
     bottom           : 0;
@@ -325,15 +330,13 @@ table tr:last-child td:last-child {
 
 /*SPECIAL TABLES*/
 
-table.cc {
-    margin-left   : var(--standard-margin);
-    margin-bottom : var(--standard-margin);
-    width         : 60%;
-}
-
 table.cc caption {
     width       : 25%;
     margin-left : 42px;
+}
+
+table.cc {
+    width : 100%;
 }
 
 /*FORMS*/
@@ -348,14 +351,17 @@ table.cc caption {
 
 /*SPECIAL CARDS*/
 
-div.update-cc-card {
-    background-color : var(--off-white);
-    height           : 286px;
-    width            : 37.5%;
-    top              : var(--top-content-start);
-    left             : 60%;
-    margin-left      : 1.65%;
-    position         : fixed;
+div.cc {
+    margin-bottom : var(--margin-reaches-bottom);
+    float         : left;
+    width         : 60%;
+}
+
+div.cc-filter-card {
+    position    : fixed;
+    width       : 37.5%;
+    left        : 60%;
+    margin-left : var(--standard-margin);
 }
 
 div.login-card {

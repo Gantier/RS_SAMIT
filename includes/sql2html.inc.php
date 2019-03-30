@@ -3,10 +3,10 @@
     function table($result, $class, $caption)
     {
         $result->fetch_array(MYSQLI_ASSOC);
-        echo '<table class="' . $class . '"><caption>' . $caption . '</caption>';
+        echo '<div class="container ' . $class . '"><table class="' . $class . '"><caption>' . $caption . '</caption>';
         tableHead($result);
         tableBody($result);
-        echo '</table>';
+        echo '</table></div>';
     }
 
     function tableHead($result)
