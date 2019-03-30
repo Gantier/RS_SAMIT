@@ -10,7 +10,7 @@
                     <form action="includes/login.inc.php" method="post">
                     <input class="form-text-field" type="text" name="email" placeholder="email@samit.edu"><br>
                     <input class="form-text-field" type="password" name="pwd" placeholder="password"><br>
-                    <button class="big-button primary" type="submit" name="login-submit">Login</button>
+                    <button class="big-button material primary" type="submit" name="login-submit">Login</button>
                     </form></div>';
         }
     ?>

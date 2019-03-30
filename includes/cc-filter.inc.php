@@ -4,7 +4,6 @@
     </div>
     <div class="card-body">
         <form action="<?php $current_page ?>" method="post">
-            <!--<label>Search</label><br>-->
             <input class="form-text-field search-cc" type="text" name="keyword" placeholder="Search keyword..."><br>
             <label>Course level range:</label><br>
             <input class="form-text-field small min" type="number" name="range-min" placeholder="Minimum">
@@ -30,7 +29,7 @@
                 <option value="Social Science Designation">Social Science Designation</option>
                 <option value="Creativity and the Arts">Creativity and the Arts</option>
             </select><br>
-            <button class="big-button secondary cc-filter" type="submit" name="cc-filter-submit">Filter</button>
+            <button class="big-button outlined secondary" type="submit" name="cc-filter-submit">Filter</button>
         </form>
     </div>
 </div>

@@ -1,11 +1,12 @@
 :root {
     --primary                   : #1b5e20;
     --primary-light             : #4c8c4a;
-    --primary-highlight         : #6abf69;
+    --primary-highlight         : #e8f5e9;
     --primary-dark              : #003300;
     --primary-text              : #ffffff;
     --secondary                 : #b8c0c4;
     --secondary-light           : #eff4f7;
+    --secondary-highlight       : #eceff1;
     --secondary-dark            : #858e93;
     --secondary-dark-shadow     : #7e888c;
     --secondary-text-dark       : #6d7177;
@@ -68,6 +69,7 @@ q:before, q:after {
 }
 
 /*GENERAL*/
+/*0.3s cubic-bezier(.25, .8, .25, 1)*/
 
 html {
     font-family      : 'Roboto', sans-serif;
@@ -88,7 +90,7 @@ body.index {
 }
 
 div.card, table, caption, ul.nav-bar, footer, .dropdown-content {
-    box-shadow       : 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow       : 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background-color : var(--off-white);
 }
 
@@ -126,7 +128,8 @@ select {
 }
 
 input:hover, input:focus, select:hover, select:focus {
-    border : solid 2px var(--primary-light);
+    border     : solid 2px var(--primary-light);
+    transition : border 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 label {
@@ -205,13 +208,14 @@ ul.nav-bar li a, .drop-button {
 
 ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) button.drop-button {
     background-color : var(--primary);
+    transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
     cursor           : default;
 }
 
 div.dropdown-content {
     display          : none;
     position         : absolute;
-    background-color : white;
+    background-color : var(--off-white);
     min-width        : 160px;
     z-index          : 1;
 }
@@ -225,7 +229,8 @@ div.dropdown-content a.dropdown-anchor {
 }
 
 div.dropdown-content a.dropdown-anchor:hover {
-    background-color : var(--off-white);
+    background-color : lightgrey;
+    transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
     border-radius    : var(--standard-border-radius);
 }
 
@@ -378,30 +383,67 @@ div.login-card {
 /*SPECIAL BUTTONS*/
 
 .big-button {
-    height     : 32px;
-    width      : 200px;
-    color      : white;
-    margin-top : 4px;
+    border-radius : var(--standard-border-radius);
+    height        : 32px;
+    width         : 200px;
+    margin-top    : 8px;
 }
 
-.big-button.primary {
+.big-button:hover {
+    transition : all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.big-button.outlined {
+    color : white;
+}
+
+.big-button.outlined.primary {
     background-color : var(--primary-light);
     border-color     : var(--primary);
 }
 
-.big-button.primary:hover {
+.big-button.outlined.primary:hover {
     border-color : var(--primary-highlight);
 }
 
-.big-button.secondary {
+.big-button.outlined.secondary {
     background-color : var(--secondary-light);
     border-color     : var(--secondary);
     color            : var(--secondary-text-dark);
 }
 
-.big-button.secondary:hover {
+.big-button.outlined.secondary:hover {
     border-color : var(--secondary-dark);
 }
+
+.big-button.outlined:hover {
+    transition : border-color 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.big-button.material {
+    color            : black;
+    background-color : white;
+    box-shadow       : 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-color     : white;
+    margin-bottom    : 12px;
+}
+
+.big-button.material:hover {
+    box-shadow : 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.big-button.material.secondary:hover {
+    background-color : var(--secondary-highlight);
+    border           : 2px solid var(--secondary);
+}
+
+.big-button.material.primary:hover {
+    background-color : var(--primary-highlight);
+    border           : 2px solid var(--primary-light);
+}
+
+
+
 
 
 
