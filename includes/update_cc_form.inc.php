@@ -8,7 +8,7 @@
         <input class = "form-text-field" type = "number" name = "range-min" placeholder ="Minimum">
         <input class = "form-text-field" type = "number" name = "range-max" placeholder ="Maximum"><br>
         <select class = "form-text-field" name = "subject-dropdown">
-            <option value="HiddenOption"  selected hidden>Please Choose Subject...</option>
+            <option value="HiddenOption"  selected hidden>Select Course Subject</option>
             <option value="Business">Business</option>
             <option value="Chemistry and Physics">Chemistry and Physics</option>
             <option value="Computer Sciences">Computer Sciences</option>
@@ -18,7 +18,7 @@
             <option value="Visual Arts">Visual Arts</option>
         </select> <br>
         <select class = "form-text-field" name = "attribute-dropdown">
-            <option value="HiddenOption"  selected hidden>Please Choose Subject...</option>
+            <option value="HiddenOption"  selected hidden>Select Course Attribute</option>
             <option value="Liberal Arts">Liberal Arts</option>
             <option value="Natural Sciences">Natural Sciences</option>
             <option value="Computer Science">Computer Science</option>
