@@ -9,7 +9,8 @@
     <meta charset="utf-8">
     <title>SAMIT.edu</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="javascripts/functions.js"></script>
 </head>
 <header>
 
@@ -18,7 +19,7 @@
     <ul class="nav-bar">
         <li class="
         <?php
-            if ($current_page == "index.php")
+            if (preg_match("[index]", $current_page))
             {
                 echo "nav-bar-active";
             }
@@ -26,7 +27,7 @@
         </li>
         <li class="dropdown
         <?php
-            if ($current_page == "cc_undergraduate.php" || $current_page == "cc_graduate.php")
+            if (preg_match("[cc_undergraduate]", $current_page) || preg_match("[cc_graduate]", $current_page))
             {
                 echo "nav-bar-active";
             }
@@ -46,6 +47,5 @@
         ?>
     </ul>
 </nav>
-<body>
 
 

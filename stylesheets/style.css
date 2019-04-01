@@ -13,6 +13,8 @@
     --secondary-text-light      : #e8ebef;
     --secondary-table-td-border : #eff1f4;
     --secondary-table-th-border : #aaaeb5;
+    --caution-light             : #fff9c4;
+    --caution-dark              : #b2ae80;
     --off-white                 : #f9f9f9;
     --top-content-start         : 72px;
     --bottom-content-start      : 34px;
@@ -78,13 +80,13 @@ html {
 }
 
 body {
-    line-height : 1;
+    line-height : 1.15;
     padding     : var(--top-content-start) var(--standard-margin) var(--bottom-content-start);
     min-height  : 88%;
 }
 
 body.index {
-    background-image  : url("images/campusCrop.jpg");
+    background-image  : url("../images/campusCrop.jpg");
     background-repeat : no-repeat;
     background-size   : cover;
 }
@@ -99,16 +101,18 @@ div.card, .dropdown-content, ul.nav-bar li, .drop-button {
     border        : none;
 }
 
+div.card {
+    display : block;
+}
+
 div.card-body {
+    color      : var(--secondary-text-dark);
     padding    : var(--standard-margin);
+    font-size  : var(--table-font-size);
     text-align : center;
 }
 
-div.container {
-    display : inline-block;
-}
-
-button:not(.logout-button) {
+button {
     border-radius : var(--standard-border-radius);
     border        : 2px solid;
 }
@@ -133,9 +137,12 @@ input:hover, input:focus, select:hover, select:focus {
 }
 
 label {
+    display : inline-block;
+}
+
+label {
     font-size : var(--table-font-size);
     color     : var(--secondary-text-dark);
-    display   : inline-block;
 }
 
 caption, .card-title {
@@ -177,19 +184,13 @@ ul.nav-bar {
     list-style-type  : none;
     margin           : 0;
     overflow         : hidden;
-    padding-left     : 4px;
+    padding          : 6px 13px;
     background-color : var(--primary-dark);
     height           : var(--nav-bar-height);
 }
 
 li.nav-bar-active {
     background-color : var(--primary-light);
-}
-
-ul.nav-bar {
-    padding-top    : 6px;
-    padding-bottom : 6px;
-    padding-left   : 13px;
 }
 
 ul.nav-bar li {
@@ -206,10 +207,9 @@ ul.nav-bar li a, .drop-button {
     text-decoration : none;
 }
 
-ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) button.drop-button {
+ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) button.drop-button, .logout-button:hover {
     background-color : var(--primary);
     transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
-    cursor           : default;
 }
 
 div.dropdown-content {
@@ -240,8 +240,9 @@ div.dropdown-content a.dropdown-anchor:hover {
 
 button.logout-button {
     background-color : transparent;
-    font-size        : var(--nav-bar-font-size);
     color            : var(--primary-text);
+    font-size        : var(--nav-bar-font-size);
+    height           : var(--nav-bar-height);
     outline          : none;
     border           : none;
     cursor           : pointer;
@@ -260,6 +261,7 @@ table {
     border-radius    : var(--standard-border-radius);
     border-collapse  : separate;
     border-spacing   : 0;
+    width            : 100%;
 }
 
 table th, table td {
@@ -331,13 +333,31 @@ table tr:last-child td:last-child {
 
 /*SPECIAL TABLES*/
 
-table.cc caption {
+table caption {
     width       : 25%;
     margin-left : 42px;
 }
 
-table.cc {
-    width : 100%;
+table tr.cc-table-container:hover {
+    background-color : var(--secondary-table-td-border);
+    color            : black;
+    cursor           : pointer;
+}
+
+table#cc-table-container tr td:last-child {
+    display : none;
+}
+
+table#cc-table-container thead tr th:last-child {
+    display : none;
+}
+
+table tr:last-child td:nth-child(5) {
+    border-radius : 0 0 var(--standard-border-radius) 0;
+}
+
+table th:nth-child(5) {
+    border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
 /*FORMS*/
@@ -352,17 +372,27 @@ table.cc {
 
 /*SPECIAL CARDS*/
 
-div.cc {
-    margin-bottom : var(--margin-reaches-bottom);
-    float         : left;
-    width         : 60%;
+.helper, .card-body.helper {
+    background-color : var(--caution-light);
+    color            : var(--caution-dark);
+    font-size        : var(--footer-font-size);
 }
 
-div.cc-filter-card {
-    position    : fixed;
-    width       : 37.5%;
-    left        : 60%;
-    margin-left : var(--standard-margin);
+#cc-filter-card, #cc-description-card {
+    margin-bottom : var(--standard-margin);
+}
+
+#cc-description-card {
+    height : 300px;
+}
+
+#cc-description-body {
+    height     : 210px;
+    overflow-y : scroll;
+}
+
+#cc-description-text {
+    text-align : justify;
 }
 
 div.login-card {
@@ -378,6 +408,26 @@ div.login-card {
 
 .login-title {
     margin-bottom : 60px;
+}
+
+/*SPECIAL CONTAINERS*/
+
+#cc-container {
+    width  : 70%;
+    margin : auto;
+}
+
+div#cc-table-container {
+    float         : left;
+    margin-bottom : var(--margin-reaches-bottom);
+    margin-left   : 366px;
+    width         : 70%;
+}
+
+#cc-console-container {
+    position : fixed;
+    width    : 350px;
+    /*z-index  : -1;*/
 }
 
 /*SPECIAL BUTTONS*/

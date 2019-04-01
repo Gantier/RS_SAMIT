@@ -1,11 +1,11 @@
 <?php
 
-    function table($result, $class, $caption)
+    function table($result, $id, $caption, $rowClick)
     {
         $result->fetch_array(MYSQLI_ASSOC);
-        echo '<div class="container ' . $class . '"><table class="' . $class . '"><caption>' . $caption . '</caption>';
+        echo '<div id="' . $id . '"><table  id="' . $id . '"><caption>' . $caption . '</caption>';
         tableHead($result);
-        tableBody($result);
+        tableBody($result, $id, $rowClick);
         echo '</table></div>';
     }
 
@@ -17,7 +17,7 @@
             echo '<tr>';
             foreach ($x as $k => $y)
             {
-                echo '<th>' . preg_replace("[course]", "", $k) . '</th>'; //THIS IS LAZY FIX LATER
+                echo '<th>' . preg_replace("[^[a-z]+]", "", $k) . '</th>';
             }
             echo '</tr>';
             break;
@@ -25,12 +25,18 @@
         echo '</thead>';
     }
 
-    function tableBody($result)
+    function tableBody($result, $id, $rowClick)
     {
         echo '<tbody>';
         foreach ($result as $x)
         {
-            echo '<tr>';
+            $printRow = '<tr class="' . $id . '" ';
+            if ($rowClick)
+            {
+                $printRow .= $rowClick;
+            }
+            $printRow .= ">";
+            echo $printRow;
             foreach ($x as $y)
             {
                 echo '<td>' . $y . '</td>';
@@ -40,4 +46,4 @@
         echo '</tbody>';
     }
 
-    table($result, $class, $caption);
+    table($result, $id, $caption, $rowClick);
