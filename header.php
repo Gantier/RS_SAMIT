@@ -42,8 +42,18 @@
                         }
                         echo '"><a href="javascript:void(0)" class="drop-button">Course Catalog</a>';
                         echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor" href="cc_undergraduate.php">Undergraduate</a>';
-                        echo '<a class="dropdown-anchor" href="cc_graduate.php">Graduate</a></div></li>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[cc_undergraduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="cc_undergraduate.php">Undergraduate</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[cc_graduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="cc_graduate.php">Graduate</a></div></li>';
 
                         //MASTER SCHEDULE
                         echo '<li class="';
@@ -97,8 +107,18 @@
                         }
                         echo '"><a href="javascript:void(0)" class="drop-button">Course Catalog</a>';
                         echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor" href="cc_undergraduate.php">Undergraduate</a>';
-                        echo '<a class="dropdown-anchor" href="cc_graduate.php">Graduate</a></div></li>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[cc_undergraduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="cc_undergraduate.php">Undergraduate</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[cc_graduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="cc_graduate.php">Graduate</a></div></li>';
 
                         //MASTER SCHEDULE
                         echo '<li class="';
@@ -168,8 +188,18 @@
                         }
                         echo '"><a href="javascript:void(0)" class="drop-button">Registration</a>';
                         echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor" href="admin_registration_student.php">Students</a>';
-                        echo '<a class="dropdown-anchor" href="admin_registration_faculty.php">Faculty</a></div></li>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[admin_registration_student]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="admin_registration_student.php">Students</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[admin_registration_faculty]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="admin_registration_faculty.php">Faculty</a></div></li>';
 
                         //ACADEMICS
                         echo '<li class="';
@@ -224,9 +254,24 @@
                         }
                         echo '"><a href="javascript:void(0)" class="drop-button">Programs</a>';
                         echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor" href="researcher_programs_major.php">Major</a>';
-                        echo '<a class="dropdown-anchor" href="researcher_programs_minor.php">Minor</a>';
-                        echo '<a class="dropdown-anchor" href="researcher_programs_graduate.php">Graduate</a></div></li>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[researcher_programs_major]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="researcher_programs_major.php">Major</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[researcher_programs_minor]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="researcher_programs_minor.php">Minor</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[researcher_programs_graduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="researcher_programs_graduate.php">Graduate</a></div></li>';
 
                         //COURSES
                         echo '<li class="dropdown';
@@ -237,8 +282,18 @@
                         }
                         echo '"><a href="javascript:void(0)" class="drop-button">Courses</a>';
                         echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor" href="researcher_courses_undergraduate.php">Undergraduate</a>';
-                        echo '<a class="dropdown-anchor" href="researcher_courses_graduate.php">Graduate</a></div></li>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[researcher_courses_undergraduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="researcher_courses_undergraduate.php">Undergraduate</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[researcher_courses_graduate]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="researcher_courses_graduate.php">Graduate</a></div></li>';
 
                         //LOGOUT
                         echo '<form action="includes/logout.inc.php" method="post">
@@ -252,6 +307,7 @@
         }
         else
         {
+            //HOME
             echo '<ul class="nav-bar">';
             echo '<li class="';
             if (preg_match("[index]", $current_page))
@@ -259,6 +315,8 @@
                 echo "nav-bar-active";
             }
             echo '"><a href="index.php">Home</a></li> ';
+
+            //COURSE CATALOG
             echo '<li class="dropdown';
             if (preg_match("[cc_undergraduate]", $current_page) || preg_match("[cc_graduate]", $current_page))
             {
@@ -266,8 +324,20 @@
             }
             echo '"><a href="javascript:void(0)" class="drop-button">Course Catalog</a>';
             echo '<div class="dropdown-content">';
-            echo '<a class="dropdown-anchor" href="cc_undergraduate.php">Undergraduate</a>';
-            echo '<a class="dropdown-anchor" href="cc_graduate.php">Graduate</a></div></li>';
+            echo '<a class="dropdown-anchor';
+            if (preg_match("[cc_undergraduate]", $current_page))
+            {
+                echo ' nav-bar-active';
+            }
+            echo '" href="cc_undergraduate.php">Undergraduate</a>';
+            echo '<a class="dropdown-anchor';
+            if (preg_match("[cc_graduate]", $current_page))
+            {
+                echo ' nav-bar-active';
+            }
+            echo '" href="cc_graduate.php">Graduate</a></div></li>';
+
+            //LOGOUT
             if (isset($_SESSION['userId']))
             {
                 echo '<form action="includes/logout.inc.php" method="post">

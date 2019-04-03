@@ -2,6 +2,7 @@
     --primary                   : #1b5e20;
     --primary-light             : #4c8c4a;
     --primary-highlight         : #e8f5e9;
+    --primary-highlight-dark    : #cee5d0;
     --primary-dark              : #003300;
     --primary-text              : #ffffff;
     --secondary                 : #b8c0c4;
@@ -192,6 +193,10 @@ li.nav-bar-active {
     background-color : var(--primary-light);
 }
 
+a.nav-bar-active {
+    background-color : var(--primary-highlight-dark);
+}
+
 ul.nav-bar li {
     margin-left  : 3px;
     margin-right : 3px;
@@ -206,15 +211,21 @@ ul.nav-bar li a, .drop-button {
     text-decoration : none;
 }
 
-ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) button.drop-button, .logout-button:hover {
+ul.nav-bar li:hover:not(.nav-bar-active), .dropdown:hover:not(.nav-bar-active) .drop-button, .logout-button:hover {
     background-color : var(--primary);
     transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.drop-button:hover {
+    cursor : default;
 }
 
 div.dropdown-content {
     display          : none;
     position         : absolute;
     background-color : var(--off-white);
+    padding-top      : var(--standard-margin);
+    padding-bottom   : var(--standard-margin);
     min-width        : 160px;
     z-index          : 999;
 }
@@ -227,10 +238,9 @@ div.dropdown-content a.dropdown-anchor {
     text-align      : left;
 }
 
-div.dropdown-content a.dropdown-anchor:hover {
-    background-color : lightgrey;
+div.dropdown-content a.dropdown-anchor:hover:not(.nav-bar-active) {
+    background-color : var(--primary-highlight);
     transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
-    border-radius    : var(--standard-border-radius);
 }
 
 .dropdown:hover div.dropdown-content {
