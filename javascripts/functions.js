@@ -1,5 +1,4 @@
-function ccUpdateCourseDescription(courseIdSelected)
-{
+function ccUpdateCourseDescription(courseIdSelected) {
     document.getElementById("cc-description-text").innerHTML =
         "Course Name:<br>" +
         courseIdSelected.cells[1].innerText + " - " +
