@@ -16,9 +16,9 @@
     --caution-light             : #fff9c4;
     --caution-dark              : #b2ae80;
     --off-white                 : #f9f9f9;
-    --top-content-start         : 72px;
+    --top-content-start         : 74px;
     --bottom-content-start      : 34px;
-    --nav-bar-height            : 44px;
+    --nav-bar-height            : 46px;
     --nav-bar-font-size         : 16px;
     --table-font-size           : 14px;
     --footer-font-size          : 12px;
@@ -71,7 +71,6 @@ q:before, q:after {
 }
 
 /*GENERAL*/
-/*0.3s cubic-bezier(.25, .8, .25, 1)*/
 
 html {
     font-family      : 'Roboto', sans-serif;
@@ -217,7 +216,7 @@ div.dropdown-content {
     position         : absolute;
     background-color : var(--off-white);
     min-width        : 160px;
-    z-index          : 1;
+    z-index          : 999;
 }
 
 div.dropdown-content a.dropdown-anchor {
@@ -427,7 +426,7 @@ div#cc-table-container {
 #cc-console-container {
     position : fixed;
     width    : 350px;
-    /*z-index  : -1;*/
+    z-index  : -1;
 }
 
 /*SPECIAL BUTTONS*/
