@@ -1,6 +1,7 @@
 <?php
     session_start();
     $current_page = preg_replace("[/RS_SAMIT/]", "", "$_SERVER[REQUEST_URI]");
+    require "includes/functions.inc.php"
 ?>
 
 <!DOCTYPE html>

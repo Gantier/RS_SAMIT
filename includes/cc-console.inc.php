@@ -4,13 +4,14 @@
             Search Courses
         </div>
         <div class="card-body">
-            <form action="<?php echo $current_page ?>" method="post">
+            <form>
                 <input class="form-text-field" type="text" name="keyword" id="keyword" oninput="ccInstantSearch()"
-                       placeholder="Instant keyword search..."><br><br>
+                       placeholder="Instant search all..."><br><br>
                 <hr>
                 <label>Filter Courses</label><br>
-                <select name="subject-dropdown">
-                    <option value="HiddenOption" selected hidden>Select subject...</option>
+                <label for="subject-dropdown"></label>
+                <select id="subject-dropdown">
+                    <option value="null" selected hidden>Select subject...</option>
                     <option value="Business">Business</option>
                     <option value="Chemistry and Physics">Chemistry and Physics</option>
                     <option value="Computer Sciences">Computer Sciences</option>
@@ -19,8 +20,9 @@
                     <option value="Psychology">Psychology</option>
                     <option value="Visual Arts">Visual Arts</option>
                 </select><br>
-                <select name="attribute-dropdown">
-                    <option value="HiddenOption" selected hidden>Select attribute...</option>
+                <label for="attribute-dropdown"></label>
+                <select id="attribute-dropdown">
+                    <option value="null" selected hidden>Select attribute...</option>
                     <option value="Liberal Arts">Liberal Arts</option>
                     <option value="Natural Sciences">Natural Sciences</option>
                     <option value="Computer Science">Computer Science</option>
@@ -31,12 +33,10 @@
                     <option value="Creativity and the Arts">Creativity and the Arts</option>
                 </select>
                 <label>Course number range:</label><br>
-                <input class="form-text-field small" type="number" name="range-min" id="range-min"
-                       placeholder=" Minimum">
-                <input class="form-text-field small" type="number" name="range-max" id="range-max"
-                       placeholder=" Maximum"><br>
-                <button class="big-button outlined secondary" type="submit" name="cc-filter-submit">Submit Filter
-                </button>
+                <input class="form-text-field small" type="number" id="range-min" placeholder=" Minimum">
+                <input class="form-text-field small" type="number" id="range-max" placeholder=" Maximum"><br>
+                <button class="small-button outlined secondary" type="reset" onclick="ccReset()">Reset</button>
+                <button class="small-button outlined secondary" type="button" onclick="ccFilter()">Filter</button>
             </form>
         </div>
     </div>
@@ -52,7 +52,7 @@
     </div>
     <div class="card card-body helper">
         <p class="helper" id="cc-helper-text">
-            <?php echo $filterResults ?>
+            Showing all courses...
         </p>
     </div>
 </div>

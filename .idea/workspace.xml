@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab5ad6f8-a0db-49a6-9e97-4fc6dd2be6c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/includes/0LD_CODE.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cc_graduate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cc_graduate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cc_undergraduate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cc_undergraduate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/cc-console.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/cc-console.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sql2html.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/sql2html.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/sql2html.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascripts/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascripts/functions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/style.css" afterDir="false" />
     </list>
@@ -51,28 +53,46 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
+            <entry file="file://$PROJECT_DIR$/includes/0LD_CODE.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="918">
-                  <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+                <state relative-caret-position="663">
+                  <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/cc_graduate.php">
+            <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+                <state relative-caret-position="442">
+                  <caret line="26" column="78" lean-forward="true" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/cc_graduate.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cc_undergraduate.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+                <state relative-caret-position="68">
+                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/includes/functions.inc.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -80,8 +100,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/header.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+                <state relative-caret-position="51">
+                  <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
@@ -95,33 +115,24 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/includes/sql2html.inc.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3876">
-                  <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+                <state relative-caret-position="419">
+                  <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -153,6 +164,7 @@
       <find>cc-table-container</find>
       <find>min</find>
       <find>max</find>
+      <find>card-title</find>
     </findStrings>
     <replaceStrings>
       <replace>var(--standard-margin)</replace>
@@ -165,9 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/62a0d0cf-974e-4965-8e52-a0bb0d800ba6/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cc83b614-c709-4228-9c52-a7f4f27146ac/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/92b47f2e-6722-40e1-8191-4a9fc6ffc2cd/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ebd23687-0d0a-4d06-a506-0abd69689bc1/console.sql" />
         <option value="$PROJECT_DIR$/admin/home.php" />
         <option value="$PROJECT_DIR$/faculty/home.php" />
@@ -209,13 +218,16 @@
         <option value="$PROJECT_DIR$/researcher_courses_undergraduate.php" />
         <option value="$PROJECT_DIR$/researcher_courses_graduate.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/header.php" />
-        <option value="$PROJECT_DIR$/includes/sql2html.inc.php" />
-        <option value="$PROJECT_DIR$/includes/cc-console.inc.php" />
+        <option value="$PROJECT_DIR$/includes/cc-console.inc2.php" />
         <option value="$PROJECT_DIR$/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/javascripts/functions.js" />
+        <option value="$PROJECT_DIR$/includes/0LD_CODE.php" />
+        <option value="$PROJECT_DIR$/includes/cc-console.inc.php" />
+        <option value="$PROJECT_DIR$/includes/sql2html.inc.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/includes/functions.inc.php" />
         <option value="$PROJECT_DIR$/cc_undergraduate.php" />
         <option value="$PROJECT_DIR$/cc_graduate.php" />
+        <option value="$PROJECT_DIR$/javascripts/functions.js" />
       </list>
     </option>
   </component>
@@ -279,15 +291,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\styles" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\images" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\student" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -339,7 +352,8 @@
       <workItem from="1554165905741" duration="87000" />
       <workItem from="1554256350285" duration="684000" />
       <workItem from="1554262690543" duration="7180000" />
-      <workItem from="1554341354845" duration="11456000" />
+      <workItem from="1554341354845" duration="11746000" />
+      <workItem from="1554386018895" duration="7642000" />
     </task>
     <task id="LOCAL-00001" summary="basic login functionality added">
       <created>1553445750999</created>
@@ -460,17 +474,24 @@
       <option name="project" value="LOCAL" />
       <updated>1554269264611</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Tested some new javascript in the course catalog">
+      <created>1554352864359</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554352864359</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138133000" />
+    <option name="totallyTimeSpent" value="146065000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.145469" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14666137" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -514,24 +535,11 @@
     <MESSAGE value="Made course catalog much cooler and updated the course table in DB with course descriptions. Also made logout button prettier. Stuff is generally more centered too." />
     <MESSAGE value="Completed header. Minor CSS fixes. Fixed bug when user is directed to index.php while logged in." />
     <MESSAGE value="CSS updates to header" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS updates to header" />
+    <MESSAGE value="Tested some new javascript in the course catalog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tested some new javascript in the course catalog" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/requirement">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/faculty">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home_admin.php" />
     <entry file="file://$PROJECT_DIR$/includes/cc.inc.php" />
     <entry file="file://$PROJECT_DIR$/images/campus.jpg">
@@ -780,10 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
+    <entry file="file://$PROJECT_DIR$/includes/cc-console.inc2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="119">
+          <caret line="7" column="38" selection-end-line="58" />
         </state>
       </provider>
     </entry>
@@ -794,45 +802,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/sql2html.inc.php">
+    <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="51">
+          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/includes/functions.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3876">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cc_graduate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cc_undergraduate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="78" lean-forward="true" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/0LD_CODE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cc_graduate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
         </state>
       </provider>
     </entry>

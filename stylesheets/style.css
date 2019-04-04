@@ -270,7 +270,7 @@ button.logout-button {
 /*TABLES*/
 
 table {
-    background-color : var(--off-white);
+    background-color : white;
     font-size        : var(--table-font-size);
     border-radius    : var(--standard-border-radius);
     border-collapse  : separate;
@@ -295,7 +295,7 @@ table td {
     color  : var(--secondary-text-dark);
 }
 
-tr:nth-child(even) {background-color : white}
+/*tr:nth-child(even) {background-color : var(--off-white)}*/
 
 table thead:first-child th {
     border-top : 0;
@@ -354,7 +354,6 @@ table caption {
 
 table tr.cc-table:hover {
     background-color : var(--secondary-table-td-border);
-    color            : black;
     cursor           : pointer;
 }
 
@@ -452,38 +451,45 @@ div.login-card {
     margin-top    : 8px;
 }
 
-.big-button:hover {
+.small-button {
+    border-radius : var(--standard-border-radius);
+    height        : 32px;
+    width         : 98px;
+    margin-top    : 8px;
+}
+
+.big-button:hover, .small-button:hover {
     transition : all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.big-button.outlined {
+.outlined {
     color : white;
 }
 
-.big-button.outlined.primary {
+.outlined.primary {
     background-color : var(--primary-light);
     border-color     : var(--primary);
 }
 
-.big-button.outlined.primary:hover {
+.outlined.primary:hover {
     border-color : var(--primary-highlight);
 }
 
-.big-button.outlined.secondary {
+.outlined.secondary {
     background-color : var(--secondary-light);
     border-color     : var(--secondary);
     color            : var(--secondary-text-dark);
 }
 
-.big-button.outlined.secondary:hover {
+.outlined.secondary:hover {
     border-color : var(--secondary-dark);
 }
 
-.big-button.outlined:hover {
+.outlined:hover {
     transition : border-color 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.big-button.material {
+.material {
     color            : black;
     background-color : white;
     box-shadow       : 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -491,16 +497,16 @@ div.login-card {
     margin-bottom    : 12px;
 }
 
-.big-button.material:hover {
+.material:hover {
     box-shadow : 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.big-button.material.secondary:hover {
+.material.secondary:hover {
     background-color : var(--secondary-highlight);
     border           : 2px solid var(--secondary);
 }
 
-.big-button.material.primary:hover {
+.material.primary:hover {
     background-color : var(--primary-highlight);
     border           : 2px solid var(--primary-light);
 }
