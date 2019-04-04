@@ -1,11 +1,12 @@
 <?php
 
-    function table($result, $id, $caption, $rowClick)
+    function table($result, $containerId, $tableId, $caption, $rowClick)
     {
         $result->fetch_array(MYSQLI_ASSOC);
-        echo '<div id="' . $id . '"><table  id="' . $id . '"><caption>' . $caption . '</caption>';
+
+        echo '<div id="' . $containerId . '"><table  id="' . $tableId . '"><caption>' . $caption . '</caption>';
         tableHead($result);
-        tableBody($result, $id, $rowClick);
+        tableBody($result, $tableId, $rowClick);
         echo '</table></div>';
     }
 
@@ -25,12 +26,12 @@
         echo '</thead>';
     }
 
-    function tableBody($result, $id, $rowClick)
+    function tableBody($result, $tableId, $rowClick)
     {
         echo '<tbody>';
         foreach ($result as $x)
         {
-            $printRow = '<tr class="' . $id . '" ';
+            $printRow = '<tr class="' . $tableId . '" ';
             if ($rowClick)
             {
                 $printRow .= $rowClick;
@@ -46,4 +47,4 @@
         echo '</tbody>';
     }
 
-    table($result, $id, $caption, $rowClick);
+    table($result, $containerId, $tableId, $caption, $rowClick);

@@ -1,14 +1,14 @@
 <div id="cc-console-container">
     <div class="card" id="cc-filter-card">
         <div class="card-title">
-            Filter Courses
+            Search Courses
         </div>
         <div class="card-body">
             <form action="<?php echo $current_page ?>" method="post">
-                <input class="form-text-field search-cc" type="text" name="keyword" placeholder="Search keyword..."><br>
-                <label>Course number range:</label><br>
-                <input class="form-text-field small min" type="number" name="range-min" placeholder="Minimum">
-                <input class="form-text-field small max" type="number" name="range-max" placeholder="Maximum"><br>
+                <input class="form-text-field" type="text" name="keyword" id="keyword" oninput="ccInstantSearch()"
+                       placeholder="Instant keyword search..."><br><br>
+                <hr>
+                <label>Filter Courses</label><br>
                 <select name="subject-dropdown">
                     <option value="HiddenOption" selected hidden>Select subject...</option>
                     <option value="Business">Business</option>
@@ -29,8 +29,14 @@
                     <option value="Mathematics">Mathematics</option>
                     <option value="Social Science Designation">Social Science Designation</option>
                     <option value="Creativity and the Arts">Creativity and the Arts</option>
-                </select><br>
-                <button class="big-button outlined secondary" type="submit" name="cc-filter-submit">Filter</button>
+                </select>
+                <label>Course number range:</label><br>
+                <input class="form-text-field small" type="number" name="range-min" id="range-min"
+                       placeholder=" Minimum">
+                <input class="form-text-field small" type="number" name="range-max" id="range-max"
+                       placeholder=" Maximum"><br>
+                <button class="big-button outlined secondary" type="submit" name="cc-filter-submit">Submit Filter
+                </button>
             </form>
         </div>
     </div>

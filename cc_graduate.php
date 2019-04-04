@@ -5,7 +5,7 @@
 
     echo '<main id="cc-container">';
 
-    $filterResults = "Showing filtered courses ";
+    $filterResults = "Showing all graduate courses ";
     if (isset($_POST['cc-filter-submit']))
     {
         //Step 0: Guaranteed part of sql
@@ -22,7 +22,7 @@
                   AND d.departmentName LIKE c.courseSubject)";
 
         //Step 1: Check KEYWORD search
-        $keyword = $_POST['keyword'];
+        /*$keyword = $_POST['keyword'];
         if (!(empty($keyword)))
         {
             $sql .= " AND
@@ -30,7 +30,7 @@
                 c.courseSubject LIKE '%" . $keyword . "%' OR
                 c.courseAttribute LIKE '%" . $keyword . "%') ";
             $filterResults .= "containing '" . $keyword . "' ";
-        }
+        }*/
 
         //Step 2: Check RANGES
         $min = $_POST['range-min'];
@@ -71,7 +71,7 @@
         if ($attribute != "HiddenOption")
         {
             $sql .= " AND c.courseAttribute LIKE '" . $attribute . "' ";
-            $filterResults .= "and the attribute '" . $attribute . "'...";
+            $filterResults .= "with the attribute '" . $attribute . "'...";
         }
 
         //Step Final: Guaranteed closing part of sql
@@ -106,7 +106,8 @@
         $result = mysqli_stmt_get_result($statement);
         if ($row = mysqli_fetch_assoc($result))
         {
-            $id = "cc-table-container";
+            $containerId = "cc-table-container";
+            $tableId = "cc-table";
             $caption = "Graduate Courses";
             $rowClick = "onclick=\"ccUpdateCourseDescription(this)\"";
             require "includes/sql2html.inc.php";

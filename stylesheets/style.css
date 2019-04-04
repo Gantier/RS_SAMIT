@@ -141,8 +141,13 @@ label {
 }
 
 label {
-    font-size : var(--table-font-size);
+    font-size : var(--footer-font-size);
     color     : var(--secondary-text-dark);
+}
+
+hr {
+    border        : 1px solid var(--secondary);
+    border-radius : var(--standard-border-radius);
 }
 
 caption, .card-title {
@@ -177,6 +182,7 @@ nav {
     padding  : 0;
     width    : 100%;
     height   : var(--nav-bar-height);
+    z-index  : 999;
 }
 
 ul.nav-bar {
@@ -227,7 +233,6 @@ div.dropdown-content {
     padding-top      : var(--standard-margin);
     padding-bottom   : var(--standard-margin);
     min-width        : 160px;
-    z-index          : 999;
 }
 
 div.dropdown-content a.dropdown-anchor {
@@ -347,17 +352,17 @@ table caption {
     margin-left : 42px;
 }
 
-table tr.cc-table-container:hover {
+table tr.cc-table:hover {
     background-color : var(--secondary-table-td-border);
     color            : black;
     cursor           : pointer;
 }
 
-table#cc-table-container tr td:last-child {
+table#cc-table tr td:last-child {
     display : none;
 }
 
-table#cc-table-container thead tr th:last-child {
+table#cc-table thead tr th:last-child {
     display : none;
 }
 
@@ -426,7 +431,7 @@ div.login-card {
     margin : auto;
 }
 
-div#cc-table-container {
+#cc-table-container {
     float         : left;
     margin-bottom : var(--margin-reaches-bottom);
     margin-left   : 366px;
@@ -436,7 +441,6 @@ div#cc-table-container {
 #cc-console-container {
     position : fixed;
     width    : 350px;
-    z-index  : -1;
 }
 
 /*SPECIAL BUTTONS*/
