@@ -1,10 +1,17 @@
 <?php
 
-    function table($result, $containerId, $tableId, $caption, $rowClick)
+    /**
+     * @param $sqlResult
+     * @param $containerId
+     * @param $tableId
+     * @param $caption
+     * @param $rowClick
+     */
+    function drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick)
     {
         echo '<div id="' . $containerId . '"><table  id="' . $tableId . '"><caption>' . $caption . '</caption>';
-        tableHead($result);
-        tableBody($result, $tableId, $rowClick);
+        tableHead($sqlResult);
+        tableBody($sqlResult, $tableId, $rowClick);
         echo '</table></div>';
     }
 
@@ -43,4 +50,52 @@
             echo '</tr>';
         }
         echo '</tbody>';
+    }
+
+    /**
+     * @param mysqli $conn
+     * @param $courseType
+     */
+    function getCourseCatalog(mysqli $conn, $courseType): void
+    {
+        $sql = "SELECT c.courseName,
+                  CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber) AS courseNumber,
+                  c.courseSubject,
+                  c.courseCredits,
+                  c.courseAttribute,
+                  c.courseDescription
+            FROM registration_system.department d,
+                registration_system.course_" . strtolower($courseType) . " g,
+                registration_system.course c
+            WHERE g.course" . $courseType . "Name LIKE c.courseName
+              AND d.departmentName LIKE c.courseSubject
+            ORDER BY c.courseSubject, c.courseNumber";
+
+        $statement = mysqli_stmt_init($conn);
+
+        if (!mysqli_stmt_prepare($statement, $sql))
+        {
+            header("Location: ../cc_" . strtolower($courseType) . ".php?error=sqlError");
+            exit();
+        }
+        else
+        {
+            mysqli_stmt_execute($statement);
+            $sqlResult = mysqli_stmt_get_result($statement);
+            if ($row = mysqli_fetch_assoc($sqlResult))
+            {
+                //define table attributes
+                $containerId = "cc-table-container";
+                $tableId = "cc-table";
+                $caption = $courseType . " Courses";
+                $rowClick = "onclick=\"ccUpdateCourseDescription(this)\"";
+                //generate html table
+                drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick);
+            }
+            else
+            {
+                header("Location: cc_" . strtolower($courseType) . ".php");
+                exit();
+            }
+        }
     }
