@@ -1,0 +1,60 @@
+/*SPECIAL TABLES*/
+
+table#sr-table tr.sr-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
+
+/*table#sr-table tr td:last-child {
+    display : none;
+}
+
+table#sr-table thead tr th:last-child {
+    display : none;
+}*/
+
+table#sr-table tr:last-child td:nth-last-child(1) {
+    border-radius : 0 0 var(--standard-border-radius) 0;
+}
+
+table#sr-table th:nth-last-child(1) {
+    border-radius : 0 var(--standard-border-radius) 0 0;
+}
+
+/*SPECIAL CARDS*/
+
+#sr-filter-card, #sr-description-card {
+    margin-bottom : var(--standard-margin);
+}
+
+#sr-description-card {
+    height : 300px;
+}
+
+#sr-description-body {
+    height     : 210px;
+    overflow-y : scroll;
+}
+
+#sr-description-text {
+    text-align : justify;
+}
+
+/*SPECIAL CONTAINERS*/
+
+#sr-container {
+    width  : 70%;
+    margin : auto;
+}
+
+#sr-table-container {
+    float         : left;
+    margin-bottom : var(--margin-reaches-bottom);
+    margin-left   : 366px;
+    width         : 70%;
+}
+
+#sr-console-container {
+    position : fixed;
+    width    : 350px;
+}

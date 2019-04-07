@@ -5,7 +5,7 @@
 
     require "includes/dbh.inc.php";
 
-    getCourseCatalog($conn, "Graduate");
+    viewCourseCatalog($conn, "Graduate");
 
     require "includes/cc-console.inc.php";
 

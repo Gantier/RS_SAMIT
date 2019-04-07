@@ -1,7 +1,9 @@
 <?php
     session_start();
-    $current_page = preg_replace("[/RS_SAMIT/]", "", "$_SERVER[REQUEST_URI]");
-    require "includes/functions.inc.php"
+    require "includes/constants.inc.php";
+    require "includes/globals.inc.php";
+    require "includes/functions.inc.php";
+    require "includes/functions_alex.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,9 @@
     <title>SAMIT.edu</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style_alex.css">
     <script src="javascripts/functions.js"></script>
+    <script src="javascripts/functions_alex.js"></script>
 </head>
 <header>
 

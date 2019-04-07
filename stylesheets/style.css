@@ -352,7 +352,7 @@ table caption {
     margin-left : 42px;
 }
 
-table tr.cc-table:hover {
+table#cc-table tr.cc-table:hover {
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
@@ -365,11 +365,11 @@ table#cc-table thead tr th:last-child {
     display : none;
 }
 
-table tr:last-child td:nth-child(5) {
+table#cc-table tr:last-child td:nth-last-child(2) {
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table th:nth-child(5) {
+table#cc-table th:nth-last-child(2) {
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 

@@ -56,14 +56,19 @@
      * @param mysqli $conn
      * @param $courseType
      */
-    function getCourseCatalog(mysqli $conn, $courseType): void
+    function viewCourseCatalog(mysqli $conn, $courseType): void
     {
+        $descriptionColumn = 4;
         $sql = "SELECT c.courseName,
                   CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber) AS courseNumber,
                   c.courseSubject,
-                  c.courseCredits,
-                  c.courseAttribute,
-                  c.courseDescription
+                  c.courseCredits, ";
+        if (strtolower($courseType) === strtolower(Constants::UNDERGRADUATE))
+        {
+            $sql .= "c.courseAttribute, ";
+            $descriptionColumn = 5;
+        }
+        $sql .= "c.courseDescription
             FROM registration_system.department d,
                 registration_system.course_" . strtolower($courseType) . " g,
                 registration_system.course c
@@ -88,7 +93,7 @@
                 $containerId = "cc-table-container";
                 $tableId = "cc-table";
                 $caption = $courseType . " Courses";
-                $rowClick = "onclick=\"ccUpdateCourseDescription(this)\"";
+                $rowClick = "onclick=\"updateCourseDescription(this, 'cc-description-text', " . $descriptionColumn . ")\"";
                 //generate html table
                 drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick);
             }

@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab5ad6f8-a0db-49a6-9e97-4fc6dd2be6c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/includes/0LD_CODE.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/chrome_2019-04-07_16-55-07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/chrome_2019-04-07_16-55-19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/chrome_2019-04-07_16-55-37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/constants.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/functions_alex.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/globals.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/student.inc/data.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/student.inc/sr-console.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/student.inc/view_account.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/student.inc/view_advisers.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/student.inc/view_schedule.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javascripts/functions_alex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stylesheets/style_alex.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cc_graduate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cc_graduate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cc_undergraduate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cc_undergraduate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/cc-console.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/cc-console.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sql2html.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/functions.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/login.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/login.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/welcome.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/welcome.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javascripts/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascripts/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_home.php" beforeDir="false" afterPath="$PROJECT_DIR$/student_home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/student_registration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,45 +61,42 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="registration_system: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="registration_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="building: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="registration_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="course: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="registration_system: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="room: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="RS_SAMIT" />
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.59404206">
+    <splitter split-orientation="horizontal" split-proportion="0.58093125">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/includes/0LD_CODE.php">
+            <entry file="file://$PROJECT_DIR$/includes/constants.inc.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="26" column="78" lean-forward="true" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/cc_graduate.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/cc_undergraduate.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                <state relative-caret-position="391">
+                  <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -91,26 +104,53 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/includes/functions.inc.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+                <state relative-caret-position="425">
+                  <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/header.php">
+            <entry file="file://$PROJECT_DIR$/includes/functions_alex.inc.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+                <state relative-caret-position="510">
+                  <caret line="54" column="90" lean-forward="true" selection-start-line="54" selection-start-column="90" selection-end-line="54" selection-end-column="90" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+                <state relative-caret-position="187">
+                  <caret line="11" column="105" lean-forward="true" selection-start-line="11" selection-start-column="105" selection-end-line="11" selection-end-column="105" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/includes/student.inc/sr-console.inc.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-207">
+                  <caret line="9" column="124" lean-forward="true" selection-start-line="9" selection-start-column="124" selection-end-line="9" selection-end-column="124" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/student_registration.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" column="35" lean-forward="true" selection-start-line="4" selection-end-line="5" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/includes/student.inc/view_account.inc.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="93" lean-forward="true" selection-start-line="6" selection-start-column="93" selection-end-line="6" selection-end-column="93" />
                 </state>
               </provider>
             </entry>
@@ -120,19 +160,64 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
+            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="95" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cc_graduate.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="119">
-                  <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+                  <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/javascripts/functions_alex.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/enrollment">
+              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                <state>
+                  <filtering enabled="true" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+                <state relative-caret-position="306">
+                  <caret line="354" selection-start-line="354" selection-end-line="373" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/stylesheets/style_alex.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
                 </state>
               </provider>
             </entry>
@@ -165,9 +250,13 @@
       <find>min</find>
       <find>max</find>
       <find>card-title</find>
+      <find>&quot;</find>
+      <find>?</find>
+      <find>cc</find>
     </findStrings>
     <replaceStrings>
       <replace>var(--standard-margin)</replace>
+      <replace>sr</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -177,29 +266,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ebd23687-0d0a-4d06-a506-0abd69689bc1/console.sql" />
-        <option value="$PROJECT_DIR$/admin/home.php" />
-        <option value="$PROJECT_DIR$/faculty/home.php" />
-        <option value="$PROJECT_DIR$/student/home.php" />
-        <option value="$PROJECT_DIR$/includes/backToIndex.inc.php" />
-        <option value="$PROJECT_DIR$/researcher/home.php" />
-        <option value="$PROJECT_DIR$/includes/logout.inc.php" />
-        <option value="$PROJECT_DIR$/researcher/header_student.php" />
-        <option value="$PROJECT_DIR$/includes/login.inc.php" />
-        <option value="$PROJECT_DIR$/home_student.php" />
-        <option value="$PROJECT_DIR$/home_researcher.php" />
-        <option value="$PROJECT_DIR$/home_admin.php" />
-        <option value="$PROJECT_DIR$/home_faculty.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9dc19a69-db86-46b8-882d-9ec87a476df2/console.sql" />
-        <option value="$PROJECT_DIR$/includes/welcome.inc.php" />
-        <option value="$PROJECT_DIR$/cc_under.php" />
-        <option value="$PROJECT_DIR$/includes/update_cc_form.inc.php" />
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/includes/cc-filter.inc.php" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/scripts/functions.js" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql" />
         <option value="$PROJECT_DIR$/master_schedule.php" />
         <option value="$PROJECT_DIR$/admin_accounts.php" />
         <option value="$PROJECT_DIR$/admin_courses.php" />
@@ -207,7 +278,6 @@
         <option value="$PROJECT_DIR$/admin_sections.php" />
         <option value="$PROJECT_DIR$/faculty_academics.php" />
         <option value="$PROJECT_DIR$/student_academics.php" />
-        <option value="$PROJECT_DIR$/student_registration.php" />
         <option value="$PROJECT_DIR$/admin_registration_faculty.php" />
         <option value="$PROJECT_DIR$/admin_academics.php" />
         <option value="$PROJECT_DIR$/researcher_students.php" />
@@ -219,15 +289,34 @@
         <option value="$PROJECT_DIR$/researcher_courses_graduate.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/cc-console.inc2.php" />
-        <option value="$PROJECT_DIR$/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/includes/0LD_CODE.php" />
-        <option value="$PROJECT_DIR$/includes/cc-console.inc.php" />
         <option value="$PROJECT_DIR$/includes/sql2html.inc.php" />
-        <option value="$PROJECT_DIR$/header.php" />
-        <option value="$PROJECT_DIR$/includes/functions.inc.php" />
-        <option value="$PROJECT_DIR$/cc_undergraduate.php" />
+        <option value="$PROJECT_DIR$/stylesheets/alexStyle.css" />
+        <option value="$PROJECT_DIR$/includes/student/schedule.inc.php" />
+        <option value="$PROJECT_DIR$/includes/student/view_schedule.inc.php" />
+        <option value="$PROJECT_DIR$/includes/student/data.inc.php" />
         <option value="$PROJECT_DIR$/cc_graduate.php" />
+        <option value="$PROJECT_DIR$/cc_undergraduate.php" />
+        <option value="$PROJECT_DIR$/includes/globals.inc.php" />
+        <option value="$PROJECT_DIR$/includes/sr-console.inc.php" />
+        <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/includes/student.inc/data.inc.php" />
+        <option value="$PROJECT_DIR$/includes/welcome.inc.php" />
+        <option value="$PROJECT_DIR$/student_home.php" />
+        <option value="$PROJECT_DIR$/includes/functions.inc.php" />
+        <option value="$PROJECT_DIR$/includes/student.inc/view_schedule.inc.php" />
+        <option value="$PROJECT_DIR$/includes/login.inc.php" />
+        <option value="$PROJECT_DIR$/includes/student.inc/view_account.inc.php" />
+        <option value="$PROJECT_DIR$/includes/cc-console.inc.php" />
+        <option value="$PROJECT_DIR$/includes/constants.inc.php" />
+        <option value="$PROJECT_DIR$/includes/functions_alex.inc.php" />
+        <option value="$PROJECT_DIR$/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/stylesheets/style_alex.css" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql" />
+        <option value="$PROJECT_DIR$/includes/student.inc/sr-console.inc.php" />
+        <option value="$PROJECT_DIR$/student_registration.php" />
         <option value="$PROJECT_DIR$/javascripts/functions.js" />
+        <option value="$PROJECT_DIR$/javascripts/functions_alex.js" />
       </list>
     </option>
   </component>
@@ -246,7 +335,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,6 +355,12 @@
             <path>
               <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="RS_SAMIT" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="student.inc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RS_SAMIT" type="462c0819:PsiDirectoryNode" />
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -274,10 +368,15 @@
               <item name="RS_SAMIT" type="462c0819:PsiDirectoryNode" />
               <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -288,15 +387,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\images" />
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes\student.inc" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\styles" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\images" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\student" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
@@ -353,7 +453,12 @@
       <workItem from="1554256350285" duration="684000" />
       <workItem from="1554262690543" duration="7180000" />
       <workItem from="1554341354845" duration="11746000" />
-      <workItem from="1554386018895" duration="7642000" />
+      <workItem from="1554386018895" duration="9547000" />
+      <workItem from="1554506406154" duration="5871000" />
+      <workItem from="1554568133139" duration="12316000" />
+      <workItem from="1554582751729" duration="1910000" />
+      <workItem from="1554647897636" duration="650000" />
+      <workItem from="1554653005515" duration="19687000" />
     </task>
     <task id="LOCAL-00001" summary="basic login functionality added">
       <created>1553445750999</created>
@@ -481,21 +586,35 @@
       <option name="project" value="LOCAL" />
       <updated>1554352864359</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Course Catalog 2.0 and other refinements">
+      <created>1554394269139</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554394269140</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Course Catalog 2.0 and other refinements">
+      <created>1554395369279</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554395369279</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146065000" />
+    <option name="totallyTimeSpent" value="188404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14666137" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988345" visible="true" weight="0.10890302" />
+      <window_info id="Structure" order="1" sideWeight="0.5011655" side_tool="true" weight="0.10890302" />
+      <window_info id="Favorites" order="2" sideWeight="0.5011655" side_tool="true" weight="0.10890302" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49880764" weight="0.32936507" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49801272" weight="0.32936507" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -506,8 +625,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936507" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5011924" side_tool="true" visible="true" weight="0.17936508" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49841017" visible="true" weight="0.28968254" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.17329094" side_tool="true" visible="true" weight="0.41111112" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="13" sideWeight="0.8267091" visible="true" weight="0.41111112" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -536,137 +655,11 @@
     <MESSAGE value="Completed header. Minor CSS fixes. Fixed bug when user is directed to index.php while logged in." />
     <MESSAGE value="CSS updates to header" />
     <MESSAGE value="Tested some new javascript in the course catalog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested some new javascript in the course catalog" />
+    <MESSAGE value="Course Catalog 2.0 and other refinements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Course Catalog 2.0 and other refinements" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/home_admin.php" />
-    <entry file="file://$PROJECT_DIR$/includes/cc.inc.php" />
-    <entry file="file://$PROJECT_DIR$/images/campus.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/dbh.inc.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/course_graduate">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/course_undergraduate">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/program">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/program_graduate">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/section">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/registration">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/curriculum">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/enrollment">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/course">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console_2.sql" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/welcome.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="n#style#0;n#h3#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_accounts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_sections.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faculty_academics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/faculty_home.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/master_schedule.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -681,16 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_home.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student_registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -774,6 +757,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/includes/cc-console.inc2.php" />
+    <entry file="file://$PROJECT_DIR$/includes/0LD_CODE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/student">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/student.inc/data.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="699">
+          <caret line="1776" column="9" selection-start-line="1776" selection-start-column="9" selection-end-line="1776" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/dbh.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/welcome.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/logout.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -781,80 +814,176 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/login.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/cc-console.inc2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/functions.inc.php">
+    <entry file="file://$PROJECT_DIR$/includes/globals.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" column="78" selection-start-line="1" selection-start-column="78" selection-end-line="1" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/department">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/student.inc/view_schedule.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/student.inc/view_advisers.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/account">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cc_undergraduate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="119">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/section">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/login.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="82" column="73" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/student.inc/view_account.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="93" lean-forward="true" selection-start-line="6" selection-start-column="93" selection-end-line="6" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/chrome_2019-04-07_16-55-19.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/chrome_2019-04-07_16-55-37.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/constants.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/cc-console.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="78" lean-forward="true" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+        <state relative-caret-position="170">
+          <caret line="10" column="114" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="114" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/0LD_CODE.php">
+    <entry file="file://$PROJECT_DIR$/images/chrome_2019-04-07_16-55-07.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="354" selection-start-line="354" selection-end-line="373" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cc_graduate.php">
+    <entry file="file://$PROJECT_DIR$/stylesheets/style_alex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/student.inc/sr-console.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="9" column="124" lean-forward="true" selection-start-line="9" selection-start-column="124" selection-end-line="9" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        <state relative-caret-position="336">
+          <caret line="72" column="1" lean-forward="true" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
+    <entry file="file://$PROJECT_DIR$/cc_graduate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/functions.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/functions_alex.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="54" column="90" lean-forward="true" selection-start-line="54" selection-start-column="90" selection-end-line="54" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student_registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="4" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/functions_alex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/enrollment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="105" lean-forward="true" selection-start-line="11" selection-start-column="105" selection-end-line="11" selection-end-column="105" />
         </state>
       </provider>
     </entry>
