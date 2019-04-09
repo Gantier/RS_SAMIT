@@ -8,13 +8,13 @@
                             FROM registration_system.faculty f,
                                  registration_system.adviser a
                             WHERE f.facultyAccount = a.facultyAccount
-                              AND a.studentAccount LIKE '" . $_SESSION['userId'] . "';";
+                              AND a.studentAccount = '" . $_SESSION['userId'] . "';";
     $resultStudentAdvisers = mysqli_fetch_all($conn->query($sqlStudentAdvisers), MYSQLI_ASSOC);
 
     //student enrollments
     $sqlStudentEnrollments = "SELECT programName AS enrollmentProgram
                               FROM registration_system.enrollment
-                              WHERE studentAccount LIKE '" . $_SESSION['userId'] . "';";
+                              WHERE studentAccount = '" . $_SESSION['userId'] . "';";
     $resultStudentEnrollments = mysqli_fetch_all($conn->query($sqlStudentEnrollments), MYSQLI_ASSOC);
 
     //student total credits
@@ -22,7 +22,7 @@
                           FROM registration_system.registration r,
                                registration_system.course c,
                                registration_system.section s
-                          WHERE r.studentAccount LIKE '" . $_SESSION['userId'] . "'
+                          WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
                             AND c.courseName = s.sectionCourse
                             AND s.sectionCRN = r.sectionCRN;";
     $resultStudentCredits = $conn->query($sqlStudentCredits);
