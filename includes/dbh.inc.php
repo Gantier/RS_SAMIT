@@ -2,7 +2,7 @@
 
 $servername ="localhost";
 $dBUsername = "root";
-$dBPassword = "root";
+$dBPassword = "Shawaiz2018";
 $dBName = "registration_system";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
