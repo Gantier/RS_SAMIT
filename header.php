@@ -4,6 +4,7 @@
     require "includes/globals.inc.php";
     require "includes/functions.inc.php";
     require "includes/functions_alex.inc.php";
+require "includes/functions_matt.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="stylesheet" href="stylesheets/style_alex.css">
+    <link rel="stylesheet" href="stylesheets/style_matt.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <script src="javascripts/functions.js"></script>
     <script src="javascripts/functions_alex.js"></script>
+    <script src="javascripts/functions_matt.js"></script>
 </head>
 <header>
 
