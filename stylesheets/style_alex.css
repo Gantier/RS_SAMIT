@@ -1,3 +1,9 @@
+div.card.home-view {
+    min-width     : 200px;
+    max-width     : 400px;
+    margin-bottom : var(--standard-margin);
+}
+
 /*SPECIAL TABLES*/
 
 table#sr-table tr.sr-table:hover {
@@ -5,38 +11,56 @@ table#sr-table tr.sr-table:hover {
     cursor           : pointer;
 }
 
-/*table#sr-table tr td:last-child {
+table#sr-table tr td:nth-last-child(1) {
     display : none;
 }
 
-table#sr-table thead tr th:last-child {
+table#sr-table thead tr th:nth-last-child(1) {
     display : none;
-}*/
+}
 
-table#sr-table tr:last-child td:nth-last-child(1) {
+table#sr-table tr td:nth-last-child(2) {
+    display : none;
+}
+
+table#sr-table thead tr th:nth-last-child(2) {
+    display : none;
+}
+
+table#sr-table tr td:nth-last-child(3) {
+    display : none;
+}
+
+table#sr-table thead tr th:nth-last-child(3) {
+    display : none;
+}
+
+table#sr-table tr:last-child td:nth-last-child(4) {
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table#sr-table th:nth-last-child(1) {
+table#sr-table th:nth-last-child(4) {
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
 /*SPECIAL CARDS*/
 
-#sr-filter-card, #sr-description-card {
+#sr-filter-card, #sr-details-card, #sr-worksheet-card {
     margin-bottom : var(--standard-margin);
 }
 
-#sr-description-card {
-    height : 300px;
+#sr-details-card {
+    height     : 250px;
+    text-align : center;
 }
 
-#sr-description-body {
-    height     : 210px;
-    overflow-y : scroll;
+#sr-details-body {
+    height        : 110px;
+    overflow-y    : scroll;
+    margin-bottom : 10px;
 }
 
-#sr-description-text {
+#sr-details-text {
     text-align : justify;
 }
 
@@ -58,3 +82,39 @@ table#sr-table th:nth-last-child(1) {
     position : fixed;
     width    : 350px;
 }
+
+.sr-worksheet-entry {
+    background-color : white;
+    border           : solid 2px var(--secondary);
+    border-radius    : var(--standard-border-radius);
+    padding          : 4px;
+    margin-right     : 5px;
+    font-size        : 20px;
+    float            : left;
+}
+
+input.sr-entry-text {
+    text-align   : center;
+    width        : 33px;
+    padding      : 8px 4px;
+    float        : left;
+    margin-right : 4px;
+}
+
+.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text {
+    float : left;
+}
+
+.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon {
+    transform : translateY(2px);
+}
+
+/*SPECIAL BUTTONS*/
+#sr-add-to-worksheet-button {
+    display : none;
+}
+
+.tiny-button {
+    height : 35px;
+}
+

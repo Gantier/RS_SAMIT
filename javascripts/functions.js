@@ -65,10 +65,10 @@ function tableReset($tableId, $helperTextId, $defaultHelperText)
 function updateCourseDescription(courseIdSelected, helperTextId, descriptionColumn)
 {
     document.getElementById(helperTextId).innerHTML =
-        "Course Name:<br>" +
+        "<h4>Course Title:</h4>" +
         courseIdSelected.cells[1].innerText + " - " +
         courseIdSelected.cells[0].innerText +
-        "<br><br>Course Description:<br>" +
+        "<br><br><h4>Course Description:</h4>" +
         courseIdSelected.cells[descriptionColumn].innerText;
 }
 

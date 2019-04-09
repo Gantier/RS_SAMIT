@@ -1,7 +1,8 @@
-<?php
-    /**
-     * Created by PhpStorm.
-     * User: alago
-     * Date: 4/5/2019
-     * Time: 7:50 PM
-     */
+<div class="card home-view">
+    <div class="card-title">
+        Academic Advising
+    </div>
+    <div class="card-body align-left">
+
+    </div>
+</div>

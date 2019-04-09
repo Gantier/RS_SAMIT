@@ -12,7 +12,10 @@
                                        CONCAT(CONCAT(s.sectionSchedule, ', '),
                                               (CONCAT(CONCAT(s.sectionStartTime, ' - '), s.sectionEndTime))) AS sectionSchedule,
                                        CONCAT(CONCAT(f.facultyFirstName, ' '), f.facultyLastName)            AS sectionInstructor,
-                                       CONCAT(CONCAT(b.buildingTag, ' '), r.roomNumber)                      AS sectionLocation
+                                       CONCAT(CONCAT(b.buildingTag, ' '), r.roomNumber)                      AS sectionLocation,
+                                       c.courseSubject,
+                                       c.courseAttribute,
+                                       c.courseDescription
                                 FROM registration_system.section s,
                                      registration_system.course_" . $_SESSION['studentLevel'] . " cg,
                                      registration_system.building b,
@@ -31,7 +34,7 @@
 
     viewTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
         "sr-table", "Sections - " . $_SESSION['nextSemester'],
-        "updateStudentRegistrationDescription(this, 'sr-description-text', 0)");
+        "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9)");
 
     require "includes/student.inc/sr-console.inc.php";
 

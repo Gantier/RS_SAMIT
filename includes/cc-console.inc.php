@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <form>
-                <input class="form-text-field" type="text" name="keyword" id="cc-keyword"
+                <input class="form-text-field" type="text" id="cc-keyword"
                        oninput="tableInstantSearch('cc-table', 'cc-keyword', 'cc-helper-text',
                        <?php echo Constants::ACTIVE_SEARCH_COURSE_HELPER . ", " . Constants::DEFAULT_COURSE_HELPER ?>,
                        <?php if (preg_match("[undergraduate]", $current_page)): ?>4<?php else: ?>3<?php endif ?>)"
@@ -50,15 +50,15 @@
             Course Description
         </div>
         <div class="card-body" id="cc-description-body">
-            <p id="cc-description-text">
+            <div id="cc-description-text">
                 Select a course from the table on the right to view its detailed description...
-            </p>
+            </div>
         </div>
     </div>
     <div class="card card-body helper">
-        <p class="helper" id="cc-helper-text">
+        <div class="helper" id="cc-helper-text">
             Showing all courses...
-        </p>
+        </div>
     </div>
 </div>
 

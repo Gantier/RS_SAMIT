@@ -20,9 +20,9 @@
     --top-content-start         : 74px;
     --bottom-content-start      : 34px;
     --nav-bar-height            : 46px;
-    --nav-bar-font-size         : 16px;
-    --table-font-size           : 14px;
-    --footer-font-size          : 12px;
+    --large-font-size           : 16px;
+    --medium-font-size          : 14px;
+    --small-font-size           : 12px;
     --standard-margin           : 16px;
     --margin-reaches-bottom     : 52px;
     --standard-border-radius    : 6px;
@@ -108,8 +108,12 @@ div.card {
 div.card-body {
     color      : var(--secondary-text-dark);
     padding    : var(--standard-margin);
-    font-size  : var(--table-font-size);
+    font-size  : var(--medium-font-size);
     text-align : center;
+}
+
+div.card-body.align-left {
+    text-align : left;
 }
 
 button {
@@ -141,7 +145,7 @@ label {
 }
 
 label {
-    font-size : var(--footer-font-size);
+    font-size : var(--small-font-size);
     color     : var(--secondary-text-dark);
 }
 
@@ -154,7 +158,7 @@ caption, .card-title {
     background-image : linear-gradient(var(--secondary-dark) 50%, var(--secondary-dark-shadow));
     color            : white;
     border-radius    : var(--standard-border-radius) var(--standard-border-radius) 0 0;
-    font-size        : var(--nav-bar-font-size);
+    font-size        : var(--large-font-size);
     text-align       : center;
     padding          : 12px 8px;
 }
@@ -162,14 +166,18 @@ caption, .card-title {
 footer {
     background-color : var(--secondary);
     color            : var(--secondary-text-dark);
-    font-size        : var(--footer-font-size);
+    font-size        : var(--small-font-size);
     position         : fixed;
-    padding-top      : var(--footer-font-size);
-    padding-bottom   : var(--footer-font-size);
+    padding-top      : var(--small-font-size);
+    padding-bottom   : var(--small-font-size);
     width            : 100%;
     text-align       : center;
     bottom           : 0;
     left             : 0;
+}
+
+h4 {
+    font-weight : bold;
 }
 
 /*NAV-BAR*/
@@ -186,7 +194,7 @@ nav {
 }
 
 ul.nav-bar {
-    font-size        : var(--nav-bar-font-size);
+    font-size        : var(--large-font-size);
     list-style-type  : none;
     margin           : 0;
     overflow         : hidden;
@@ -255,7 +263,7 @@ div.dropdown-content a.dropdown-anchor:hover:not(.nav-bar-active) {
 button.logout-button {
     background-color : transparent;
     color            : var(--primary-text);
-    font-size        : var(--nav-bar-font-size);
+    font-size        : var(--large-font-size);
     height           : var(--nav-bar-height);
     outline          : none;
     border           : none;
@@ -271,7 +279,7 @@ button.logout-button {
 
 table {
     background-color : white;
-    font-size        : var(--table-font-size);
+    font-size        : var(--medium-font-size);
     border-radius    : var(--standard-border-radius);
     border-collapse  : separate;
     border-spacing   : 0;
@@ -388,7 +396,7 @@ table#cc-table th:nth-last-child(2) {
 .helper, .card-body.helper {
     background-color : var(--caution-light);
     color            : var(--caution-dark);
-    font-size        : var(--footer-font-size);
+    font-size        : var(--small-font-size);
 }
 
 #cc-filter-card, #cc-description-card {

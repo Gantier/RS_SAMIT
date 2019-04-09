@@ -59,8 +59,8 @@
     function viewCourseCatalog(mysqli $conn, $courseType): void
     {
         $descriptionColumn = 4;
-        $sql = "SELECT c.courseName,
-                  CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber) AS courseNumber,
+        $sql = "SELECT c.courseName                                     AS courseTitle,
+                  CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber)  AS courseNumber,
                   c.courseSubject,
                   c.courseCredits, ";
         if (strtolower($courseType) === strtolower(Constants::UNDERGRADUATE))
