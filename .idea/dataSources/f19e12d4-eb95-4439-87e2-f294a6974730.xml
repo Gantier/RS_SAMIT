@@ -1842,7 +1842,7 @@ dependentCourseName</ColNames>
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>5</DefaultExpression>
+      <DefaultExpression>25</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="422" parent="299" name="room_building_buildingName_fk">

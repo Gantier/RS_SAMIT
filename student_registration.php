@@ -23,13 +23,13 @@
                                      registration_system.course c,
                                      registration_system.department d,
                                      registration_system.room r
-                                WHERE s.sectionCourse LIKE cg.course" . $_SESSION['studentLevel'] . "Name
-                                  AND s.sectionCourse LIKE c.courseName
-                                  AND f.facultyAccount LIKE s.sectionInstructor
-                                  AND b.buildingName LIKE r.roomBuilding
-                                  AND s.sectionRoom LIKE r.roomNumber
-                                  AND d.departmentName LIKE c.courseSubject
-                                  AND s.sectionSemester LIKE '" . $_SESSION['nextSemester'] . "'
+                                WHERE s.sectionCourse = cg.course" . $_SESSION['studentLevel'] . "Name
+                                  AND s.sectionCourse = c.courseName
+                                  AND f.facultyAccount = s.sectionInstructor
+                                  AND b.buildingName = r.roomBuilding
+                                  AND s.sectionRoom = r.roomNumber
+                                  AND d.departmentName = c.courseSubject
+                                  AND s.sectionSemester = '" . $_SESSION['nextSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
 
     viewTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",

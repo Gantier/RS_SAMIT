@@ -1,7 +1,16 @@
-div.card.home-view {
-    min-width     : 200px;
-    max-width     : 400px;
-    margin-bottom : var(--standard-margin);
+/* unvisited link */
+a:link {
+    color : var(--primary);
+}
+
+/* visited link */
+a:visited {
+    color : var(--secondary-text-dark);
+}
+
+/* mouse over link */
+a:hover {
+    color : var(--primary-light);
 }
 
 /*SPECIAL TABLES*/
@@ -107,6 +116,16 @@ input.sr-entry-text {
 
 .sr-entry-clear-button, .sr-entry-text, .sr-entry-icon {
     transform : translateY(2px);
+}
+
+.card.home-view {
+    width         : 400px;
+    margin-bottom : var(--standard-margin);
+}
+
+#ss-table-container {
+    margin-bottom : var(--standard-margin);
+    width         : 900px;
 }
 
 /*SPECIAL BUTTONS*/

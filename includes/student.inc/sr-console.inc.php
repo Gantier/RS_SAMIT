@@ -56,8 +56,9 @@
                         <label for="sr-entry0"></label><input readonly class="sr-entry-text" id="sr-entry0"
                                                               name="sr-entry0" onclick="entryOnClickHelper()">
                         <div class="sr-entry-clear-button">
-                            <button class="tiny-button outlined secondary" type="button"><i
-                                        class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry0')">clear</i>
+                            <button class="tiny-button outlined secondary" type="button">
+                                <i class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry0')">
+                                    clear</i>
                             </button>
                         </div>
                     </div>
@@ -65,8 +66,9 @@
                         <label for="sr-entry1"></label><input readonly class="sr-entry-text" id="sr-entry1"
                                                               name="sr-entry1" onclick="entryOnClickHelper()">
                         <div class="sr-entry-clear-button">
-                            <button class="tiny-button outlined secondary" type="button"><i
-                                        class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry1')">clear</i>
+                            <button class="tiny-button outlined secondary" type="button">
+                                <i class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry1')">
+                                    clear</i>
                             </button>
                         </div>
                     </div>
@@ -74,8 +76,9 @@
                         <label for="sr-entry2"></label><input readonly class="sr-entry-text" id="sr-entry2"
                                                               name="sr-entry2" onclick="entryOnClickHelper()">
                         <div class="sr-entry-clear-button">
-                            <button class="tiny-button outlined secondary" type="button"><i
-                                        class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry2')">clear</i>
+                            <button class="tiny-button outlined secondary" type="button">
+                                <i class="material-icons sr-entry-icon" onclick="clearWorksheetEntry('sr-entry2')">
+                                    clear</i>
                             </button>
                         </div>
                     </div>

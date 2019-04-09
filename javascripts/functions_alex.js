@@ -149,6 +149,11 @@ function addSectionToWorksheet()
 function clearWorksheetEntry(entryToClear)
 {
     var entry = document.getElementById(entryToClear);
+    var pastEntry = entry.value;
+
+    var helperText = document.getElementById("sr-helper-text");
+    helperText.innerText = "Cleared section " + pastEntry + " from worksheet...";
+
     entry.value = "";
 }
 
