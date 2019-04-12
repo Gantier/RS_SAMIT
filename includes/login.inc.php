@@ -44,12 +44,6 @@
                         $_SESSION['userId'] = $rowAccount['accountEmail'];
                         $_SESSION['userType'] = $rowAccount['accountType'];
 
-                        $sqlCurrentSemester = "SELECT semesterName
-                                                FROM registration_system.semester
-                                                WHERE semesterEndDate > CURRENT_DATE
-                                                  AND semesterStartDate < CURRENT_DATE;";
-                        $_SESSION['currentSemester'] = loadSqlResultFirstRow($conn, $sqlCurrentSemester, $current_page);
-
                         $sqlNextSemester = "SELECT semesterName
                                             FROM registration_system.semester
                                             WHERE semesterStartDate > CURRENT_DATE
