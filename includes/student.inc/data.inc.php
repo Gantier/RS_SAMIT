@@ -27,3 +27,18 @@
                             AND s.sectionCRN = r.sectionCRN;";
     $resultStudentCredits = $conn->query($sqlStudentCredits);
     $studentCredits = mysqli_fetch_row($resultStudentCredits);
+
+    //student semesters attended
+    $sqlStudentSemesters = "SELECT DISTINCT sec.sectionSemester AS semester
+                            FROM registration_system.registration r,
+                                 registration_system.section sec,
+                                 registration_system.semester sem
+                            WHERE r.sectionCRN = sec.sectionCRN
+                              AND sec.sectionSemester = sem.semesterName
+                              AND sem.semesterName != '" . $_SESSION['nextSemester'] . "'
+                              AND r.studentAccount = '" . $_SESSION['userId'] . "'
+                            ORDER BY sem.semesterStartDate DESC";
+    $resultStudentSemesters = mysqli_fetch_all($conn->query($sqlStudentSemesters), MYSQLI_ASSOC);
+
+    //student transcript as separate semesters (associative array)
+    $studentTranscript = array();

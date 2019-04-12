@@ -8,9 +8,9 @@
     {
         require "includes/dbh.inc.php";
         $sqlCurrentSemester = "SELECT semesterName
-                                                FROM registration_system.semester
-                                                WHERE semesterEndDate > CURRENT_DATE
-                                                  AND semesterStartDate < CURRENT_DATE;";
+                                FROM registration_system.semester
+                                WHERE semesterEndDate > CURRENT_DATE
+                                  AND semesterStartDate < CURRENT_DATE;";
         $_SESSION['currentSemester'] = loadSqlResultFirstRow($conn, $sqlCurrentSemester, $current_page);
 
         echo '<div class="card login-card"><div class="card-title login-title">SAMIT Account Login</div>

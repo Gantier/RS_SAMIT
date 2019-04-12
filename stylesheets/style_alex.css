@@ -1,173 +1,160 @@
 /* unvisited link */
-a:link
-{
+a:link {
     color : var(--primary);
 }
 
 /* visited link */
-a:visited
-{
+a:visited {
     color : var(--secondary-text-dark);
 }
 
 /* mouse over link */
-a:hover
-{
+a:hover {
     color : var(--primary-light);
+}
+
+/*SPECIAL INPUT*/
+#sag-semester-dropdown {
+    background-color : var(--secondary-dark);
+    border-color     : var(--secondary-text-dark);
+    color            : white;
+    position         : absolute;
+    transform        : translateY(-19px) translateX(210px);
 }
 
 /*SPECIAL TABLES*/
 
-table#sr-table tr.sr-table:hover
-{
+table#sr-table tr.sr-table:hover {
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
 
-table#sr-table tr td:nth-last-child(1)
-{
+table#sr-table tr td:nth-last-child(1) {
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(1)
-{
+table#sr-table thead tr th:nth-last-child(1) {
     display : none;
 }
 
-table#sr-table tr td:nth-last-child(2)
-{
+table#sr-table tr td:nth-last-child(2) {
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(2)
-{
+table#sr-table thead tr th:nth-last-child(2) {
     display : none;
 }
 
-table#sr-table tr td:nth-last-child(3)
-{
+table#sr-table tr td:nth-last-child(3) {
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(3)
-{
+table#sr-table thead tr th:nth-last-child(3) {
     display : none;
 }
 
-table#sr-table tr:last-child td:nth-last-child(4)
-{
+table#sr-table tr:last-child td:nth-last-child(4) {
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table#sr-table th:nth-last-child(4)
-{
+table#sr-table th:nth-last-child(4) {
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
-table#ms-table tr.ms-table:hover
-{
+table#ms-table tr.ms-table:hover {
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
 
-table#ms-table tr td:nth-last-child(1)
-{
+table#ms-table tr td:nth-last-child(1) {
     display : none;
 }
 
-table#ms-table thead tr th:nth-last-child(1)
-{
+table#ms-table thead tr th:nth-last-child(1) {
     display : none;
 }
 
-table#ms-table tr td:nth-last-child(2)
-{
+table#ms-table tr td:nth-last-child(2) {
     display : none;
 }
 
-table#ms-table thead tr th:nth-last-child(2)
-{
+table#ms-table thead tr th:nth-last-child(2) {
     display : none;
 }
 
-table#ms-table tr:last-child td:nth-last-child(3)
-{
+table#ms-table tr:last-child td:nth-last-child(3) {
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table#ms-table th:nth-last-child(3)
-{
+table#ms-table th:nth-last-child(3) {
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
 /*SPECIAL CARDS*/
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
-#ms-filter-card, #ms-details-card
-{
+#ms-filter-card, #ms-details-card {
     margin-bottom : var(--standard-margin);
 }
 
-#sr-details-card
-{
+#sr-details-card {
     height     : 250px;
     text-align : center;
 }
 
-#sr-details-body
-{
+#sr-details-body {
     height        : 110px;
     overflow-y    : scroll;
     margin-bottom : 10px;
 }
 
-#ms-details-card
-{
+#ms-details-card {
     height     : 300px;
     text-align : center;
 }
 
-#ms-details-body
-{
+#ms-details-body {
     height     : 210px;
     overflow-y : scroll;
 }
 
-#sr-details-text, #ms-details-text
-{
+#sr-details-text, #ms-details-text {
     text-align : justify;
+}
+
+#sag-card {
+    width : 500px;
+}
+
+#sag-card-title {
+    text-align : left;
 }
 
 /*SPECIAL CONTAINERS*/
 
-#sr-container
-{
+#sr-container {
     width  : 70%;
     margin : auto;
 }
 
-#ms-container
-{
+#ms-container {
     width  : 75%;
     margin : auto;
 }
 
-#sr-table-container, #ms-table-container
-{
+#sr-table-container, #ms-table-container {
     float         : left;
     margin-bottom : var(--margin-reaches-bottom);
     margin-left   : 366px;
     width         : 70%;
 }
 
-#sr-console-container, #ms-console-container
-{
+#sr-console-container, #ms-console-container {
     position : fixed;
     width    : 350px;
 }
 
-.sr-worksheet-entry
-{
+.sr-worksheet-entry {
     background-color : white;
     border           : solid 2px var(--secondary);
     border-radius    : var(--standard-border-radius);
@@ -177,8 +164,7 @@ table#ms-table th:nth-last-child(3)
     float            : left;
 }
 
-input.sr-entry-text
-{
+input.sr-entry-text {
     text-align   : center;
     width        : 33px;
     padding      : 8px 4px;
@@ -186,36 +172,30 @@ input.sr-entry-text
     margin-right : 4px;
 }
 
-.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text
-{
+.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text {
     float : left;
 }
 
-.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon
-{
+.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon {
     transform : translateY(2px);
 }
 
-.card.home-view
-{
+.card.home-view {
     width         : 400px;
     margin-bottom : var(--standard-margin);
 }
 
-#ss-table-container
-{
+#ss-table-container {
     margin-bottom : var(--standard-margin);
     width         : 900px;
 }
 
 /*SPECIAL BUTTONS*/
-#sr-add-to-worksheet-button
-{
+#sr-add-to-worksheet-button {
     display : none;
 }
 
-.tiny-button
-{
+.tiny-button {
     height : 35px;
 }
 
