@@ -15,10 +15,10 @@
                 <select id="sr-subject-dropdown">
                     <option value="null" selected hidden>Select subject...</option>
                     <?php
-                        for ($i = 0; $i < sizeof(Constants::SUBJECTS); $i++)
-                        {
-                            echo '<option value="' . Constants::SUBJECTS[$i] . '">' . Constants::SUBJECTS[$i] . '</option>';
-                        }
+                    for ($i = 0; $i < sizeof(Constants::SUBJECTS); $i++)
+                    {
+                        echo '<option value="' . Constants::SUBJECTS[$i] . '">' . Constants::SUBJECTS[$i] . '</option>';
+                    }
                     ?>
                 </select><br>
                 <label>Course number range:</label><br>
@@ -50,7 +50,7 @@
             Worksheet
         </div>
         <div class="card-body">
-            <form action="register.inc.php" method="post" id="sr-register">
+            <form action="includes/student.inc/register.inc.php" method="post" id="sr-register">
                 <div>
                     <div class="sr-worksheet-entry">
                         <label for="sr-entry0"></label><input readonly class="sr-entry-text" id="sr-entry0"
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="big-button outlined secondary" type="submit">Register</button>
+                <button class="big-button outlined secondary" type="submit" name="register-submit">Register</button>
             </form>
         </div>
     </div>

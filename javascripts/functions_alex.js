@@ -163,3 +163,20 @@ function entryOnClickHelper()
     helperText.innerText = "Click a row from the table in order to add its section to the worksheet..."
 }
 
+// noinspection JSUnusedGlobalSymbols
+function updateMasterScheduleDetails(
+    sectionIdSelected, detailsTextId, detailsTitleId, descriptionColumn)
+{
+    document.getElementById(detailsTextId).innerHTML =
+        "<h4>Course Title:</h4>" +
+        sectionIdSelected.cells[3].innerText + " - " +
+        sectionIdSelected.cells[1].innerText +
+        "<br><br><h4>Prerequisites:</h4>" +
+        "(under construction)" +
+        "<br><br><h4>Course Description:</h4>" +
+        sectionIdSelected.cells[descriptionColumn].innerText;
+    document.getElementById(detailsTitleId).innerHTML =
+        "Section Details - CRN: " +
+        sectionIdSelected.cells[0].innerText;
+}
+

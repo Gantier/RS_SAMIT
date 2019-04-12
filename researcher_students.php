@@ -4,7 +4,7 @@ error_reporting(0);
 
 $servername = "localhost";
 $dBUsername = "root";
-$dBPassword = "Shawaiz2018";
+$dBPassword = "root";
 $dBName = "registration_system";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);

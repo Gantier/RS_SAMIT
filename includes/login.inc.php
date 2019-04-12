@@ -73,14 +73,29 @@
                                                     AND e.studentAccount LIKE '" . $_SESSION['userId'] . "';";
                             if ($resultStudentLevel = $conn->query($sqlStudentLevel))
                             {
+                                $_SESSION['maxSemesterCredits'] = 0;
                                 $rowCountStudentLevel = $resultStudentLevel->num_rows;
                                 if ($rowCountStudentLevel > 0)
                                 {
                                     $_SESSION['studentLevel'] = "Graduate";
+                                    $_SESSION['maxSemesterCredits'] = 12;
                                 }
                                 else
                                 {
                                     $_SESSION['studentLevel'] = "Undergraduate";
+                                    $sqlStudentMajors = "SELECT COUNT(e.programName) AS majors
+                                                          FROM registration_system.enrollment e,
+                                                               registration_system.program_major ma
+                                                          WHERE e.studentAccount = '" . $_SESSION['userId'] . "'
+                                                            AND e.programName = ma.programMajorName;";
+                                    $studentMajors = loadSqlResultFirstRow($conn, $sqlStudentMajors, $current_page);
+                                    $sqlStudentMinors = "SELECT COUNT(e.programName) AS minors
+                                                          FROM registration_system.enrollment e,
+                                                               registration_system.program_minor mi
+                                                          WHERE e.studentAccount = '" . $_SESSION['userId'] . "'
+                                                            AND e.programName = mi.programMinorName;";
+                                    $studentMinors = loadSqlResultFirstRow($conn, $sqlStudentMinors, $current_page);
+                                    $_SESSION['maxSemesterCredits'] = ($studentMajors * 18) + ($studentMinors * 6);
                                 }
                             }
                         }
