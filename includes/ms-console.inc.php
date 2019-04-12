@@ -28,7 +28,7 @@
                         onclick="tableReset('ms-table', 'ms-helper-text', <?php echo Constants::DEFAULT_SECTION_HELPER; ?>)">
                     Reset
                 </button>
-                <button class="small-button outlined secondary" type="button" onclick="srFilter()">Filter</button>
+                <button class="small-button outlined secondary" type="button" onclick="msFilter()">Filter</button>
             </form>
         </div>
     </div>

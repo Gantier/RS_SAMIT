@@ -72,6 +72,80 @@ function srFilter()
     }
 }
 
+function msFilter()
+{
+    var msTable = document.getElementById("ms-table");
+    if (document.getElementById("ms-keyword") !== null)
+    {
+        var keyword = document.getElementById("ms-keyword").value;
+    }
+    var helperText = document.getElementById("ms-helper-text");
+    var min = document.getElementById("ms-range-min").value;
+    var max = document.getElementById("ms-range-max").value;
+    var subject = document.getElementById("ms-subject-dropdown").value;
+
+    var newHelperText = "Showing all sections filtered by...";
+
+    for (var i = 1; i < msTable.rows.length; i++)
+    {
+        //if min is set
+        if (min !== "")
+        {
+            //check min
+            if (parseInt(msTable.rows[i].cells[1].innerText.substring(3, 7)) < min)
+            {
+                msTable.rows[i].style.display = 'none';
+            }
+        }
+        //if max is set
+        if (max !== "")
+        {
+            //check max
+            if (parseInt(msTable.rows[i].cells[1].innerText.substring(3, 7)) > max)
+            {
+                msTable.rows[i].style.display = 'none';
+            }
+        }
+        //if subject is set
+        if (subject !== "null")
+        {
+            //check subject
+            if (subject !== msTable.rows[i].cells[7].innerText)
+            {
+                msTable.rows[i].style.display = 'none';
+            }
+        }
+    }
+
+    //if filter not blank
+    if (!(min === "" && max === "" && subject === "null"))
+    {
+        //update helper text
+        if (min !== "")
+        {
+            newHelperText += "<br>Minimum course number: " + min;
+        }
+        if (max !== "")
+        {
+            newHelperText += "<br>Maximum course number: " + max;
+        }
+        if (subject !== "null")
+        {
+            newHelperText += "<br>Section subject: '" + subject + "'";
+        }
+        if (keyword.length > 1)
+        {
+            newHelperText += "<br>Containing: '" + keyword + "'";
+        }
+        helperText.innerHTML = newHelperText;
+    }
+    else
+    {
+        //else, default helper text
+        helperText.innerHTML = "Showing all sections...";
+    }
+}
+
 // noinspection JSUnusedGlobalSymbols
 function updateStudentRegistrationDetails(
     sectionIdSelected, detailsTextId, detailsTitleId, addButton, descriptionColumn)

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab5ad6f8-a0db-49a6-9e97-4fc6dd2be6c3" name="Default Changelist" comment="" />
+    <list default="true" id="ab5ad6f8-a0db-49a6-9e97-4fc6dd2be6c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/ms-console.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ms-console.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javascripts/functions_alex.js" beforeDir="false" afterPath="$PROJECT_DIR$/javascripts/functions_alex.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +77,29 @@
     <splitter split-orientation="horizontal" split-proportion="0.5382908">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+                <state relative-caret-position="374">
+                  <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/master_schedule.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="118" selection-start-line="14" selection-start-column="118" selection-end-line="14" selection-end-column="118" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/includes/ms-console.inc.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -95,11 +117,17 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+                <state relative-caret-position="68">
+                  <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+                  <folding>
+                    <element signature="n#!!block;n#tableInstantSearch#0" />
+                    <element signature="n#!!block;n#tableReset#0" />
+                    <element signature="n#!!block;n#updateCourseDescription#0" />
+                    <element signature="n#!!block;n#ccFilter#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -107,17 +135,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/javascripts/functions_alex.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2703">
-                  <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
+                <state relative-caret-position="68">
+                  <caret line="146" column="1" lean-forward="true" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+                  <folding>
+                    <element signature="n#!!block;n#srFilter#0" />
+                    <element signature="n#!!block;n#srFilter#1" />
+                    <element signature="n#!!block;n#updateStudentRegistrationDetails#0" />
+                    <element signature="n#!!block;n#addSectionToWorksheet#0" />
+                    <element signature="n#!!block;n#clearWorksheetEntry#0" />
+                    <element signature="n#!!block;n#entryOnClickHelper#0" />
+                    <element signature="n#!!block;n#updateMasterScheduleDetails#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="587">
-                  <caret line="499" column="11" lean-forward="true" selection-start-line="499" selection-start-column="11" selection-end-line="499" selection-end-column="11" />
+                  <caret line="499" column="11" selection-start-line="499" selection-start-column="11" selection-end-line="499" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -125,7 +162,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/stylesheets/style_alex.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="916">
+                <state relative-caret-position="3417">
                   <caret line="201" column="12" selection-start-line="201" selection-start-column="12" selection-end-line="201" selection-end-column="12" />
                 </state>
               </provider>
@@ -229,13 +266,13 @@
         <option value="$PROJECT_DIR$/includes/student.inc/view_schedule.inc.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql" />
         <option value="$PROJECT_DIR$/includes/student.inc/register.inc.php" />
-        <option value="$PROJECT_DIR$/includes/ms-console.inc.php" />
         <option value="$PROJECT_DIR$/master_schedule.php" />
-        <option value="$PROJECT_DIR$/javascripts/functions_alex.js" />
         <option value="$PROJECT_DIR$/stylesheets/style_alex.css" />
         <option value="$PROJECT_DIR$/includes/login.inc.php" />
         <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/includes/ms-console.inc.php" />
+        <option value="$PROJECT_DIR$/javascripts/functions_alex.js" />
       </list>
     </option>
   </component>
@@ -265,6 +302,12 @@
               <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="RS_SAMIT" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RS_SAMIT" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="admin.inc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RS_SAMIT" type="b2602c69:ProjectViewProjectNode" />
@@ -306,16 +349,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
-      <recent name="C:\Users\alago\Documents\GitHub Desktop\WebProjects\RS_SAMIT\includes" />
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\images" />
-      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes\student.inc" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
       <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\stylesheets" />
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\javascripts" />
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT\includes" />
+      <recent name="C:\Users\alago\Documents\GitHubDesktop\WebProjects\RS_SAMIT" />
+      <recent name="C:\Users\alago\Documents\GitHub Desktop\WebProjects\RS_SAMIT\includes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -379,6 +422,7 @@
       <workItem from="1554860003978" duration="605000" />
       <workItem from="1555012801079" duration="4795000" />
       <workItem from="1555017797086" duration="11548000" />
+      <workItem from="1555090791781" duration="1162000" />
     </task>
     <task id="LOCAL-00001" summary="basic login functionality added">
       <created>1553445750999</created>
@@ -534,11 +578,25 @@
       <option name="project" value="LOCAL" />
       <updated>1554769924462</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="combined 4/11 classwork">
+      <created>1555090871416</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1555090871416</updated>
+    </task>
+    <task id="LOCAL-00024" summary="combined 4/11 classwork">
+      <created>1555091365514</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1555091365514</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248671000" />
+    <option name="totallyTimeSpent" value="249833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -551,8 +609,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988345" visible="true" weight="0.11049285" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988345" visible="true" weight="0.11128776" />
       <window_info id="Structure" order="1" sideWeight="0.5011655" side_tool="true" weight="0.10890302" />
       <window_info id="Favorites" order="2" sideWeight="0.5011655" side_tool="true" weight="0.10890302" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -563,11 +622,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960256" weight="0.32936507" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49841017" visible="true" weight="0.2031746" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49801272" visible="true" weight="0.2031746" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="10" sideWeight="0.49960256" weight="0.32857144" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49880764" weight="0.32936507" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50158983" side_tool="true" visible="true" weight="0.2031746" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5019873" side_tool="true" visible="true" weight="0.2031746" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.6641791" weight="0.17666666" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -640,31 +699,11 @@
     <MESSAGE value="Course Catalog 2.0 and other refinements" />
     <MESSAGE value="progress on login, student home, student registration, and course catalog" />
     <MESSAGE value="more progress on login, student home, student registration" />
-    <option name="LAST_COMMIT_MESSAGE" value="more progress on login, student home, student registration" />
+    <MESSAGE value="combined 4/11 classwork" />
+    <option name="LAST_COMMIT_MESSAGE" value="combined 4/11 classwork" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/logout.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/semester">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/curriculum">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/student.inc/view_advisers.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -781,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f19e12d4-eb95-4439-87e2-f294a6974730/schema/registration_system/table/requirement">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -859,38 +891,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" selection-start-line="49" selection-end-line="70" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/functions_alex.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="159" column="29" selection-start-line="159" selection-start-column="29" selection-end-line="159" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/style_alex.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="201" column="12" selection-start-line="201" selection-start-column="12" selection-end-line="201" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/student_registration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/ms-console.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -904,33 +908,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RS_SAMIT/includes/constants.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin_accounts.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RS_SAMIT/master_schedule.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RS_SAMIT/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="488" column="50" lean-forward="true" selection-start-line="488" selection-start-column="50" selection-end-line="488" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="499" column="11" lean-forward="true" selection-start-line="499" selection-start-column="11" selection-end-line="499" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RS_SAMIT/includes/constants.inc.php" />
+    <entry file="file://$PROJECT_DIR$/admin_accounts.php" />
+    <entry file="file://$PROJECT_DIR$/RS_SAMIT/master_schedule.php" />
+    <entry file="file://$PROJECT_DIR$/RS_SAMIT/stylesheets/style.css" />
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
@@ -945,13 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
           <caret line="3" column="21" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/master_schedule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="69" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -976,10 +950,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f19e12d4-eb95-4439-87e2-f294a6974730/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" selection-start-line="49" selection-end-line="70" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/style_alex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3417">
+          <caret line="201" column="12" selection-start-line="201" selection-start-column="12" selection-end-line="201" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="499" column="11" selection-start-line="499" selection-start-column="11" selection-end-line="499" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_accounts_student.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/functions_matt.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/style_matt.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+        <state relative-caret-position="374">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/master_schedule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="118" selection-start-line="14" selection-start-column="118" selection-end-line="14" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/functions_alex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="146" column="1" lean-forward="true" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#srFilter#0" />
+            <element signature="n#!!block;n#srFilter#1" />
+            <element signature="n#!!block;n#updateStudentRegistrationDetails#0" />
+            <element signature="n#!!block;n#addSectionToWorksheet#0" />
+            <element signature="n#!!block;n#clearWorksheetEntry#0" />
+            <element signature="n#!!block;n#entryOnClickHelper#0" />
+            <element signature="n#!!block;n#updateMasterScheduleDetails#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/ms-console.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#tableInstantSearch#0" />
+            <element signature="n#!!block;n#tableReset#0" />
+            <element signature="n#!!block;n#updateCourseDescription#0" />
+            <element signature="n#!!block;n#ccFilter#0" />
+          </folding>
         </state>
       </provider>
     </entry>
