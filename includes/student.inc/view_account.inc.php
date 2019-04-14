@@ -1,4 +1,4 @@
-<div class="card home-view">
+<div class="card home-view" id="sh-account-details">
     <div class="card-title">
         Account Details - <?php echo $_SESSION['userId'] ?>
     </div>

@@ -217,11 +217,11 @@ table.transcript-student-info td:nth-child(2), table.transcript-student-info th:
 }
 
 table.transcript-student-info td:nth-child(3), table.transcript-student-info th:nth-child(3) {
-    width : 45px;
+    width : 47px;
 }
 
 table.transcript-student-info td:last-child, table.transcript-student-info th:last-child {
-    width : 60px;
+    width : 58px;
 }
 
 table.transcript-totals td:nth-child(1), table.transcript-totals th:nth-child(1) {
@@ -247,6 +247,10 @@ table.transcript-totals td:last-child {
 }
 
 /*SPECIAL CARDS*/
+
+#sh-account-details {
+    margin-right : var(--standard-margin);
+}
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
 #ms-filter-card, #ms-details-card {
@@ -303,6 +307,11 @@ table.transcript-totals td:last-child {
 
 /*SPECIAL CONTAINERS*/
 
+#student-inc-home-container {
+    width  : 1000px;
+    margin : auto;
+}
+
 #student-inc-academics-container {
     width  : 901px;
     margin : auto;
@@ -357,13 +366,15 @@ input.sr-entry-text {
 }
 
 .card.home-view {
-    width         : 400px;
+    width         : 492px;
+    min-height    : 218px;
     margin-bottom : var(--standard-margin);
+    float         : left;
 }
 
 #ss-table-container {
     margin-bottom : var(--standard-margin);
-    width         : 900px;
+    width         : 1000px;
 }
 
 /*SPECIAL BUTTONS*/
