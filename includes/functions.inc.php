@@ -1,12 +1,5 @@
 <?php
 
-    /**
-     * @param $sqlResult
-     * @param $containerId
-     * @param $tableId
-     * @param $caption
-     * @param $rowClick
-     */
     function drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick)
     {
         echo '<div id="' . $containerId . '"><table  id="' . $tableId . '"><caption>' . $caption . '</caption>';
@@ -52,10 +45,50 @@
         echo '</tbody>';
     }
 
-    /**
-     * @param mysqli $conn
-     * @param $courseType
-     */
+    function drawBasicTableFromSQL($sqlResult, $tableClass)
+    {
+        echo '<table  class="basic';
+        if ($tableClass !== "")
+        {
+            echo ' ' . $tableClass;
+        }
+        echo '"';
+        tableHeadBasic($sqlResult);
+        tableBodyBasic($sqlResult);
+        echo '</table>';
+    }
+
+    function tableHeadBasic($result)
+    {
+        echo '<thead>';
+        foreach ($result as $x)
+        {
+            echo '<tr>';
+            foreach ($x as $k => $y)
+            {
+                echo '<th>' . preg_replace("[^[a-z]+]", "", $k) . '</th>';
+            }
+            echo '</tr>';
+            break;
+        }
+        echo '</thead>';
+    }
+
+    function tableBodyBasic($result)
+    {
+        echo '<tbody>';
+        foreach ($result as $x)
+        {
+            echo '<tr>';
+            foreach ($x as $y)
+            {
+                echo '<td>' . $y . '</td>';
+            }
+            echo '</tr>';
+        }
+        echo '</tbody>';
+    }
+
     function viewCourseCatalog(mysqli $conn, $courseType): void
     {
         $descriptionColumn = 4;

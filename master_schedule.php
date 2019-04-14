@@ -29,7 +29,7 @@ $sqlStudentRegistration = "SELECT s.sectionCRN,
                                   AND s.sectionSemester = '" . $_SESSION['currentSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
 
-viewTableFromSQL($conn, $sqlStudentRegistration, $current_page, "ms-table-container",
+    viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "ms-table-container",
     "ms-table", "Sections - " . $_SESSION['currentSemester'],
     "updateMasterScheduleDetails(this, 'ms-details-text', 'ms-details-title', 8)");
 

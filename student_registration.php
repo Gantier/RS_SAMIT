@@ -32,7 +32,7 @@
                                   AND s.sectionSemester = '" . $_SESSION['nextSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
 
-    viewTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
+    viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
         "sr-table", "Sections - " . $_SESSION['nextSemester'],
         "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9)");
 

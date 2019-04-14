@@ -22,7 +22,7 @@
                                 AND sec.sectionSemester = sem.semesterName
                                 AND sec.sectionSemester = '" . $_SESSION['currentSemester'] . "';";
 
-    viewTableFromSQL($conn, $sqlStudentRegistration, $current_page, "ss-table-container",
+    viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "ss-table-container",
         "ss-table", "My Schedule - " . $_SESSION['currentSemester'],
         "");
 

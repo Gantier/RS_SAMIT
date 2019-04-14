@@ -1,7 +1,7 @@
 <?php
     require "header.php";
 
-    echo "<main id='student.inc-home-container'>";
+    echo "<main id='student-inc-home-container'>";
 
     require "includes/dbh.inc.php";
     require "includes/student.inc/data.inc.php";
