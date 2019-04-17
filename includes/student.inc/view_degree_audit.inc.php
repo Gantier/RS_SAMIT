@@ -12,7 +12,7 @@
         echo '<div class="card-body" id="sada-card-body">';
 
         //student information
-        echo '<p id="transcript-caption">Student View</p>';
+        echo '<p id="transcript-caption">Student Information</p>';
         $sqlDegreeAuditStudentView = "WITH LogTotalGPA AS
                                             (
                                               SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
@@ -60,12 +60,11 @@
         //program requirements
 
         //general education requirements
-        echo '<p id="transcript-caption">General Education Requirements</p>';
+        echo '<p id="transcript-caption">General Education Requirements (complete 6/8)</p>';
         $sqlDegreeAuditGenEdReqs =
             "WITH LiberalArts AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -104,7 +103,6 @@
           NaturalSciences AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -143,7 +141,6 @@
           ComputerScience AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -182,7 +179,6 @@
           WesternTraditions AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -221,7 +217,6 @@
           MajorCultures AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -260,7 +255,6 @@
           Mathematics AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -299,7 +293,6 @@
           SocialScienceDesignation AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -338,7 +331,6 @@
           CreativityAndTheArts AS
             (
               SELECT CASE
-                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
@@ -373,71 +365,93 @@
                 AND sem.semesterName = sec.sectionSemester
               ORDER BY sem.semesterStartDate ASC
               LIMIT 1
+            ),
+          LogTaken AS
+            (
+              SELECT LiberalArts.Progress,
+                     LiberalArts.Attribute,
+                     LiberalArts.Course,
+                     LiberalArts.Title,
+                     LiberalArts.Grade,
+                     LiberalArts.Semester
+              FROM LiberalArts
+              UNION
+              SELECT NaturalSciences.Progress,
+                     NaturalSciences.Attribute,
+                     NaturalSciences.Course,
+                     NaturalSciences.Title,
+                     NaturalSciences.Grade,
+                     NaturalSciences.Semester
+              FROM NaturalSciences
+              UNION
+              SELECT ComputerScience.Progress,
+                     ComputerScience.Attribute,
+                     ComputerScience.Course,
+                     ComputerScience.Title,
+                     ComputerScience.Grade,
+                     ComputerScience.Semester
+              FROM ComputerScience
+              UNION
+              SELECT WesternTraditions.Progress,
+                     WesternTraditions.Attribute,
+                     WesternTraditions.Course,
+                     WesternTraditions.Title,
+                     WesternTraditions.Grade,
+                     WesternTraditions.Semester
+              FROM WesternTraditions
+              UNION
+              SELECT MajorCultures.Progress,
+                     MajorCultures.Attribute,
+                     MajorCultures.Course,
+                     MajorCultures.Title,
+                     MajorCultures.Grade,
+                     MajorCultures.Semester
+              FROM MajorCultures
+              UNION
+              SELECT Mathematics.Progress,
+                     Mathematics.Attribute,
+                     Mathematics.Course,
+                     Mathematics.Title,
+                     Mathematics.Grade,
+                     Mathematics.Semester
+              FROM Mathematics
+              UNION
+              SELECT SocialScienceDesignation.Progress,
+                     SocialScienceDesignation.Attribute,
+                     SocialScienceDesignation.Course,
+                     SocialScienceDesignation.Title,
+                     SocialScienceDesignation.Grade,
+                     SocialScienceDesignation.Semester
+              FROM SocialScienceDesignation
+              UNION
+              SELECT CreativityAndTheArts.Progress,
+                     CreativityAndTheArts.Attribute,
+                     CreativityAndTheArts.Course,
+                     CreativityAndTheArts.Title,
+                     CreativityAndTheArts.Grade,
+                     CreativityAndTheArts.Semester
+              FROM CreativityAndTheArts
+              ORDER BY Semester DESC
+            ),
+          LogCurriculum AS
+            (
+              SELECT DISTINCT 'notAttempted'  AS Progress,
+                              courseAttribute AS Attribute,
+                              ' '             AS Course,
+                              ' '             AS Title,
+                              ' '             AS Grade,
+                              ' '             AS Semester
+              FROM course
+              ORDER BY Attribute DESC
+              LIMIT 8
             )
-     SELECT LiberalArts.Progress,
-            LiberalArts.Attribute,
-            LiberalArts.Course,
-            LiberalArts.Title,
-            LiberalArts.Grade,
-            LiberalArts.Semester
-     FROM LiberalArts
+     SELECT LogTaken.*
+     FROM LogTaken
      UNION
-     SELECT NaturalSciences.Progress,
-            NaturalSciences.Attribute,
-            NaturalSciences.Course,
-            NaturalSciences.Title,
-            NaturalSciences.Grade,
-            NaturalSciences.Semester
-     FROM NaturalSciences
-     UNION
-     SELECT ComputerScience.Progress,
-            ComputerScience.Attribute,
-            ComputerScience.Course,
-            ComputerScience.Title,
-            ComputerScience.Grade,
-            ComputerScience.Semester
-     FROM ComputerScience
-     UNION
-     SELECT WesternTraditions.Progress,
-            WesternTraditions.Attribute,
-            WesternTraditions.Course,
-            WesternTraditions.Title,
-            WesternTraditions.Grade,
-            WesternTraditions.Semester
-     FROM WesternTraditions
-     UNION
-     SELECT MajorCultures.Progress,
-            MajorCultures.Attribute,
-            MajorCultures.Course,
-            MajorCultures.Title,
-            MajorCultures.Grade,
-            MajorCultures.Semester
-     FROM MajorCultures
-     UNION
-     SELECT Mathematics.Progress,
-            Mathematics.Attribute,
-            Mathematics.Course,
-            Mathematics.Title,
-            Mathematics.Grade,
-            Mathematics.Semester
-     FROM Mathematics
-     UNION
-     SELECT SocialScienceDesignation.Progress,
-            SocialScienceDesignation.Attribute,
-            SocialScienceDesignation.Course,
-            SocialScienceDesignation.Title,
-            SocialScienceDesignation.Grade,
-            SocialScienceDesignation.Semester
-     FROM SocialScienceDesignation
-     UNION
-     SELECT CreativityAndTheArts.Progress,
-            CreativityAndTheArts.Attribute,
-            CreativityAndTheArts.Course,
-            CreativityAndTheArts.Title,
-            CreativityAndTheArts.Grade,
-            CreativityAndTheArts.Semester
-     FROM CreativityAndTheArts
-     ORDER BY Semester DESC;";
+     SELECT LogCurriculum.*
+     FROM LogCurriculum
+            LEFT JOIN LogTaken ON (LogCurriculum.Attribute = LogTaken.Attribute)
+     WHERE LogTaken.Attribute IS NULL;";
         viewBasicTableFromSQL($conn, $sqlDegreeAuditGenEdReqs, $current_page, 'sada-gen-ed-req');
 
         echo '<p id="transcript-caption">Core Curriculum Requirements</p>';
