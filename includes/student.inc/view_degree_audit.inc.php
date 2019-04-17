@@ -431,7 +431,7 @@
                      CreativityAndTheArts.Grade,
                      CreativityAndTheArts.Semester
               FROM CreativityAndTheArts
-              ORDER BY Semester DESC
+              ORDER BY Semester ASC
             ),
           LogCurriculum AS
             (
