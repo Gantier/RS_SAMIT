@@ -68,6 +68,12 @@ if (isset($_POST['register-submit']))
                 if ($conn->query($sqlInsertRegistration0) === true)
                 {
                     $activityLog .= "INSERTED";
+                    $sqlInsertRegistrationMessage = "INSERT INTO registration_system.message (messageSubject, messageBody)
+                                      VALUES ('Registration Success', 'Student account " . $_SESSION['userId'] .
+                        " has been successfully registered for " .
+                        $section0['sectionCourse'] .
+                        " section " . $entry0 . "');";
+                    $conn->query($sqlInsertRegistrationMessage);
                 }
                 else
                 {

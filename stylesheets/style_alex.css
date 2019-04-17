@@ -1,27 +1,32 @@
 /*SPECIAL TEXT, ETC.*/
 
 /* unvisited link */
-a:link {
+a:link
+{
     color : var(--primary);
 }
 
 /* visited link */
-a:visited {
+a:visited
+{
     color : var(--secondary-text-dark);
 }
 
 /* mouse over link */
-a:hover {
+a:hover
+{
     color : var(--primary-light);
 }
 
-#sr-entry0:hover, #sr-entry1:hover, #sr-entry2:hover {
+#sr-entry0:hover, #sr-entry1:hover, #sr-entry2:hover
+{
     border-color     : var(--caution-dark);
     background-color : var(--caution-light);
     transition       : background-color 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-#transcript-semester-caption, #transcript-semester-totals-caption, #transcript-caption {
+#transcript-semester-caption, #transcript-semester-totals-caption, #transcript-caption
+{
     color            : var(--secondary-dark);
     background-color : var(--secondary-highlight);
     border-radius    : var(--standard-border-radius);
@@ -29,18 +34,21 @@ a:hover {
     padding          : 4px;
 }
 
-#transcript-caption {
+#transcript-caption
+{
     color            : var(--primary-light);
     background-color : var(--primary-highlight);
 }
 
-#transcript-semester-totals-caption {
+#transcript-semester-totals-caption
+{
     background-color : transparent;
     float            : right;
     display          : inline-block;
 }
 
-.transcript-semester-totals-bg {
+.transcript-semester-totals-bg
+{
     background-color : var(--secondary-highlight);
     border-radius    : var(--standard-border-radius);
     height           : 88px;
@@ -48,7 +56,8 @@ a:hover {
 
 /*SPECIAL INPUT*/
 
-#sag-semester-dropdown {
+#sag-semester-dropdown
+{
     background-color : var(--secondary-dark);
     border-color     : var(--secondary-text-dark);
     color            : white;
@@ -56,290 +65,352 @@ a:hover {
     transform        : translateY(-19px) translateX(210px);
 }
 
-#da-program-dropdown {
+#da-program-dropdown
+{
     width : 286px;
 }
 
 /*SPECIAL TABLES*/
 
-table#sr-table tr.sr-table:hover {
+table#sr-table tr.sr-table:hover
+{
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
 
-table#sr-table tr td:nth-last-child(1) {
+table#sr-table tr td:nth-last-child(1)
+{
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(1) {
+table#sr-table thead tr th:nth-last-child(1)
+{
     display : none;
 }
 
-table#sr-table tr td:nth-last-child(2) {
+table#sr-table tr td:nth-last-child(2)
+{
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(2) {
+table#sr-table thead tr th:nth-last-child(2)
+{
     display : none;
 }
 
-table#sr-table tr td:nth-last-child(3) {
+table#sr-table tr td:nth-last-child(3)
+{
     display : none;
 }
 
-table#sr-table thead tr th:nth-last-child(3) {
+table#sr-table thead tr th:nth-last-child(3)
+{
     display : none;
 }
 
-table#sr-table tr:last-child td:nth-last-child(4) {
+table#sr-table tr:last-child td:nth-last-child(4)
+{
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table#sr-table th:nth-last-child(4) {
+table#sr-table th:nth-last-child(4)
+{
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
-table#ms-table tr.ms-table:hover {
+table#ms-table tr.ms-table:hover
+{
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
 
-table#ms-table tr td:nth-last-child(1) {
+table#ms-table tr td:nth-last-child(1)
+{
     display : none;
 }
 
-table#ms-table thead tr th:nth-last-child(1) {
+table#ms-table thead tr th:nth-last-child(1)
+{
     display : none;
 }
 
-table#ms-table tr td:nth-last-child(2) {
+table#ms-table tr td:nth-last-child(2)
+{
     display : none;
 }
 
-table#ms-table thead tr th:nth-last-child(2) {
+table#ms-table thead tr th:nth-last-child(2)
+{
     display : none;
 }
 
-table#ms-table tr:last-child td:nth-last-child(3) {
+table#ms-table tr:last-child td:nth-last-child(3)
+{
     border-radius : 0 0 var(--standard-border-radius) 0;
 }
 
-table#ms-table th:nth-last-child(3) {
+table#ms-table th:nth-last-child(3)
+{
     border-radius : 0 var(--standard-border-radius) 0 0;
 }
 
-table.basic {
+table.basic
+{
     box-shadow    : none;
     table-layout  : fixed;
     margin-bottom : var(--standard-margin);
 }
 
-table.basic tr {
+table.basic tr
+{
     background-color : var(--secondary);
 }
 
-table.basic td {
+table.basic td
+{
     border : 1px solid var(--secondary-table-th-border);
-    color  : var(--secondary-text-dark);
+    color  : var(--secondary-text-darker);
 }
 
-table.basic td, table.basic th {
+table.basic td, table.basic th
+{
     padding : 5px;
 }
 
-table.transcript-semester td:nth-child(1), table.transcript-semester th:nth-child(1) {
+table.transcript-semester td:nth-child(1), table.transcript-semester th:nth-child(1)
+{
     width : 35px;
 }
 
-table.transcript-semester td:nth-child(2), table.transcript-semester th:nth-child(2) {
+table.transcript-semester td:nth-child(2), table.transcript-semester th:nth-child(2)
+{
     width : 198px;
 }
 
-table.transcript-semester td:nth-child(3), table.transcript-semester th:nth-child(3) {
+table.transcript-semester td:nth-child(3), table.transcript-semester th:nth-child(3)
+{
     width : 30px;
 }
 
-table.transcript-semester td:last-child, table.transcript-semester th:last-child {
+table.transcript-semester td:last-child, table.transcript-semester th:last-child
+{
     width : 27px;
 }
 
-table.transcript-semester td:last-child {
+table.transcript-semester td:last-child
+{
     padding-left     : 21px;
     background-color : #c0c9ce;
     color            : darkred;
 }
 
-table.transcript-semester-totals {
+table.transcript-semester-totals
+{
     width     : 232px;
     transform : translateX(254px) translateY(22px);
 }
 
-table.transcript-semester-totals td:nth-child(1), table.transcript-semester-totals th:nth-child(1) {
+table.transcript-semester-totals td:nth-child(1), table.transcript-semester-totals th:nth-child(1)
+{
     width : 45px;
 }
 
-table.transcript-semester-totals td:nth-child(2), table.transcript-semester-totals th:nth-child(2) {
+table.transcript-semester-totals td:nth-child(2), table.transcript-semester-totals th:nth-child(2)
+{
     width : 45px;
 }
 
-table.transcript-semester-totals td:last-child, table.transcript-semester-totals th:last-child {
+table.transcript-semester-totals td:last-child, table.transcript-semester-totals th:last-child
+{
     text-align : center;
     width      : 25px;
 }
 
-table.transcript-semester-totals td:last-child {
+table.transcript-semester-totals td:last-child
+{
     background-color : #c0c9ce;
     color            : darkred;
 }
 
-table.transcript-curriculum-info td:nth-child(1), table.transcript-curriculum-info th:nth-child(1) {
+table.transcript-curriculum-info td:nth-child(1), table.transcript-curriculum-info th:nth-child(1)
+{
     width : 114px;
 }
 
-table.transcript-curriculum-info td:nth-child(2), table.transcript-curriculum-info th:nth-child(2) {
+table.transcript-curriculum-info td:nth-child(2), table.transcript-curriculum-info th:nth-child(2)
+{
     width : 84px;
 }
 
-table.transcript-curriculum-info td:nth-child(3), table.transcript-curriculum-info th:nth-child(3) {
+table.transcript-curriculum-info td:nth-child(3), table.transcript-curriculum-info th:nth-child(3)
+{
     width : 46px;
 }
 
-table.transcript-curriculum-info td:last-child, table.transcript-curriculum-info th:last-child {
+table.transcript-curriculum-info td:last-child, table.transcript-curriculum-info th:last-child
+{
     width : 46px;
 }
 
-table.transcript-student-info td:nth-child(1), table.transcript-student-info th:nth-child(1) {
+table.transcript-student-info td:nth-child(1), table.transcript-student-info th:nth-child(1)
+{
     width : 105px;
 }
 
-table.transcript-student-info td:nth-child(2), table.transcript-student-info th:nth-child(2) {
+table.transcript-student-info td:nth-child(2), table.transcript-student-info th:nth-child(2)
+{
     width : 55px;
 }
 
-table.transcript-student-info td:nth-child(3), table.transcript-student-info th:nth-child(3) {
+table.transcript-student-info td:nth-child(3), table.transcript-student-info th:nth-child(3)
+{
     width : 47px;
 }
 
-table.transcript-student-info td:last-child, table.transcript-student-info th:last-child {
+table.transcript-student-info td:last-child, table.transcript-student-info th:last-child
+{
     width : 58px;
 }
 
-table.transcript-totals td:nth-child(1), table.transcript-totals th:nth-child(1) {
+table.transcript-totals td:nth-child(1), table.transcript-totals th:nth-child(1)
+{
     width : 55px;
 }
 
-table.transcript-totals td:nth-child(2), table.transcript-totals th:nth-child(2) {
+table.transcript-totals td:nth-child(2), table.transcript-totals th:nth-child(2)
+{
     width : 55px;
 }
 
-table.transcript-totals td:nth-child(3), table.transcript-totals th:nth-child(3) {
+table.transcript-totals td:nth-child(3), table.transcript-totals th:nth-child(3)
+{
     width : 134px;
 }
 
-table.transcript-totals td:last-child, table.transcript-totals th:last-child {
+table.transcript-totals td:last-child, table.transcript-totals th:last-child
+{
     text-align : center;
     width      : 23px;
 }
 
-table.transcript-totals td:last-child {
+table.transcript-totals td:last-child
+{
     background-color : #c0c9ce;
     color            : darkred;
 }
 
 /*SPECIAL CARDS*/
 
-#sh-account-details {
+#sh-account-details
+{
     margin-right : var(--standard-margin);
 }
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
-#ms-filter-card, #ms-details-card {
+#ms-filter-card, #ms-details-card
+{
     margin-bottom : var(--standard-margin);
 }
 
-#sr-details-card {
+#sr-details-card
+{
     height     : 250px;
     text-align : center;
 }
 
-#sr-details-body {
+#sr-details-body
+{
     height        : 110px;
     overflow-y    : scroll;
     margin-bottom : 10px;
 }
 
-#ms-details-card {
+#ms-details-card
+{
     height     : 300px;
     text-align : center;
 }
 
-#ms-details-body {
+#ms-details-body
+{
     height     : 210px;
     overflow-y : scroll;
 }
 
-#sr-details-text, #ms-details-text {
+#sr-details-text, #ms-details-text
+{
     text-align : justify;
 }
 
-#sag-card {
+#sag-card
+{
     width        : 535px;
     height       : 700px;
     float        : left;
     margin-right : var(--standard-margin);
 }
 
-#sag-card-title {
+#sag-card-title
+{
     text-align   : left;
     padding-left : var(--standard-margin);
 }
 
-#sag-card-body {
+#sag-card-body
+{
     height     : 612px;
     overflow-y : scroll;
     overflow-x : hidden;
 }
 
-#da-console-card {
+#da-console-card
+{
     width : 350px;
     float : left;
 }
 
 /*SPECIAL CONTAINERS*/
 
-#student-inc-home-container {
+#student-inc-home-container
+{
     width  : 1000px;
     margin : auto;
 }
 
-#student-inc-academics-container {
+#student-inc-academics-container
+{
     width  : 901px;
     margin : auto;
 }
 
-#sr-container {
+#sr-container
+{
     width  : 70%;
     margin : auto;
 }
 
-#ms-container {
+#ms-container
+{
     width  : 75%;
     margin : auto;
 }
 
-#sr-table-container, #ms-table-container {
+#sr-table-container, #ms-table-container
+{
     float         : left;
     margin-bottom : var(--margin-reaches-bottom);
     margin-left   : 366px;
     width         : 70%;
 }
 
-#sr-console-container, #ms-console-container {
+#sr-console-container, #ms-console-container
+{
     position : fixed;
     width    : 350px;
 }
 
-.sr-worksheet-entry {
+.sr-worksheet-entry
+{
     background-color : white;
     border           : solid 2px var(--secondary);
     border-radius    : var(--standard-border-radius);
@@ -349,7 +420,8 @@ table.transcript-totals td:last-child {
     float            : left;
 }
 
-input.sr-entry-text {
+input.sr-entry-text
+{
     text-align   : center;
     width        : 33px;
     padding      : 8px 4px;
@@ -357,32 +429,38 @@ input.sr-entry-text {
     margin-right : 4px;
 }
 
-.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text {
+.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text
+{
     float : left;
 }
 
-.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon {
+.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon
+{
     transform : translateY(2px);
 }
 
-.card.home-view {
+.card.home-view
+{
     width         : 492px;
     min-height    : 218px;
     margin-bottom : var(--standard-margin);
     float         : left;
 }
 
-#ss-table-container {
+#ss-table-container
+{
     margin-bottom : var(--standard-margin);
     width         : 1000px;
 }
 
 /*SPECIAL BUTTONS*/
-#sr-add-to-worksheet-button {
+#sr-add-to-worksheet-button
+{
     display : none;
 }
 
-.tiny-button {
+.tiny-button
+{
     height : 35px;
 }
 
