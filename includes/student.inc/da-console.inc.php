@@ -3,7 +3,7 @@
         Degree Audit
     </div>
     <div class="card-body" id="da-console-card-body">
-        <form action="student_academics_da.php" method="post" id="da-view">
+        <form action="student_degree_audit.php" method="post" id="da-view">
             <label>
                 <select id="da-program-dropdown" name="da-program">
                     <?php

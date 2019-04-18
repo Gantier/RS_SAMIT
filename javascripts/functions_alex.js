@@ -254,3 +254,80 @@ function updateMasterScheduleDetails(
         sectionIdSelected.cells[0].innerText;
 }
 
+// noinspection JSUnusedGlobalSymbols
+function daLoadIcons()
+{
+    var tableProgReq = document.getElementById('sada-program-req');
+    var tableGenEdReq = document.getElementById('sada-gen-ed-req');
+    var tableCoreReq = document.getElementById('sada-core-req');
+
+    for (var i = 0; i < tableProgReq.rows[1].cells.length; i++)
+    {
+        switch (tableProgReq.rows[1].cells[i].innerText)
+        {
+            case 'complete':
+                tableProgReq.rows[1].cells[i].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case 'incomplete':
+                tableProgReq.rows[1].cells[i].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">report</i>';
+                break;
+            case 'inProgress':
+                tableProgReq.rows[1].cells[i].innerHTML =
+                    '<i class="da-icon material-icons md-22 neutral">indeterminate_check_box</i>';
+                break;
+            case 'notAttempted':
+                tableProgReq.rows[1].cells[i].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+        }
+    }
+
+    for (var j = 1; j < tableGenEdReq.rows.length; j++)
+    {
+        switch (tableGenEdReq.rows[j].cells[0].innerText)
+        {
+            case 'complete':
+                tableGenEdReq.rows[j].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case 'incomplete':
+                tableGenEdReq.rows[j].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">report</i>';
+                break;
+            case 'inProgress':
+                tableGenEdReq.rows[j].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 neutral">indeterminate_check_box</i>';
+                break;
+            case 'notAttempted':
+                tableGenEdReq.rows[j].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+        }
+    }
+
+    for (var k = 1; k < tableCoreReq.rows.length; k++)
+    {
+        switch (tableCoreReq.rows[k].cells[0].innerText)
+        {
+            case 'complete':
+                tableCoreReq.rows[k].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case 'incomplete':
+                tableCoreReq.rows[k].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">report</i>';
+                break;
+            case 'inProgress':
+                tableCoreReq.rows[k].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 neutral">indeterminate_check_box</i>';
+                break;
+            case 'notAttempted':
+                tableCoreReq.rows[k].cells[0].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+        }
+    }
+}
+

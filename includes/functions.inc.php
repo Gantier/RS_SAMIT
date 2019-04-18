@@ -52,7 +52,7 @@
         {
             echo ' ' . $tableClass;
         }
-        echo '"';
+        echo '" id="' . $tableClass . '"';
         tableHeadBasic($sqlResult);
         tableBodyBasic($sqlResult);
         echo '</table>';

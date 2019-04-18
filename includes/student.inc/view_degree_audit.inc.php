@@ -7,13 +7,15 @@
         //get variables from posts
         $program = $_POST['da-program'];
 
+        echo '<body onload="daLoadIcons()">';
+
         echo '<div class="card" id="sada-card">';
         echo '<div class="card-title" id="sada-card-title">Degree Audit</div>';
         echo '<div class="card-body" id="sada-card-body">';
 
         //student information
         echo '<p id="transcript-caption">Student Information</p>';
-        $sqlDegreeAuditStudentView = "WITH LogTotalGPA AS
+        $sqlDegreeAuditStudentInfo = "WITH LogTotalGPA AS
                                             (
                                               SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
                                               FROM registration_system.registration r,
@@ -55,9 +57,201 @@
                                      WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
                                        AND e.studentAccount = '" . $_SESSION['userId'] . "'
                                      LIMIT 1;";
-        viewBasicTableFromSQL($conn, $sqlDegreeAuditStudentView, $current_page, 'sada-student-view');
+        viewBasicTableFromSQL($conn, $sqlDegreeAuditStudentInfo, $current_page, 'sada-student-info');
 
         //program requirements
+        echo '<p id="transcript-caption">Program Requirements</p>';
+        $sqlDegreeAuditProgramReqs = "WITH LogTotalGPA AS
+                                     (
+                                       SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
+                                       FROM registration_system.registration r,
+                                            registration_system.course c,
+                                            registration_system.section s
+                                       WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                         AND s.sectionCRN = r.sectionCRN
+                                         AND c.courseName = s.sectionCourse
+                                     ),
+                                   LiberalArtsEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Liberal Arts'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   NaturalSciencesEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Natural Sciences'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   ComputerScienceEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Computer Science'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   WesternTraditionsEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Western Traditions'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   MajorCulturesEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Major Cultures'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   MathematicsEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Mathematics'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   SocialScienceDesignationEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Social Science Designation'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   CreativityAndTheArtsEarned AS
+                                     (
+                                       SELECT crse.courseAttribute AS Attribute
+                                       FROM course crse,
+                                            department d,
+                                            registration reg,
+                                            section sec
+                                       WHERE d.departmentName = crse.courseSubject
+                                         AND crse.courseAttribute = 'Creativity and the Arts'
+                                         AND sec.sectionCRN = reg.sectionCRN
+                                         AND sec.sectionCourse = crse.courseName
+                                         AND reg.finalGrade >= 1.67
+                                         AND reg.studentAccount = '" . $_SESSION['userId'] . "'
+                                       LIMIT 1
+                                     ),
+                                   GenEdEarned AS
+                                     (
+                                       SELECT COUNT(*) AS earned
+                                       FROM (SELECT LiberalArtsEarned.Attribute
+                                             FROM LiberalArtsEarned
+                                             UNION
+                                             SELECT NaturalSciencesEarned.Attribute
+                                             FROM NaturalSciencesEarned
+                                             UNION
+                                             SELECT ComputerScienceEarned.Attribute
+                                             FROM ComputerScienceEarned
+                                             UNION
+                                             SELECT WesternTraditionsEarned.Attribute
+                                             FROM WesternTraditionsEarned
+                                             UNION
+                                             SELECT MajorCulturesEarned.Attribute
+                                             FROM MajorCulturesEarned
+                                             UNION
+                                             SELECT MathematicsEarned.Attribute
+                                             FROM MathematicsEarned
+                                             UNION
+                                             SELECT SocialScienceDesignationEarned.Attribute
+                                             FROM SocialScienceDesignationEarned
+                                             UNION
+                                             SELECT CreativityAndTheArtsEarned.Attribute
+                                             FROM CreativityAndTheArtsEarned) AS genedEarned
+                                     ),
+                                   CoreEarned AS
+                                     (
+                                       SELECT COUNT(*) AS earned
+                                       FROM (SELECT curriculumCourse
+                                             FROM curriculum,
+                                                  section,
+                                                  registration
+                                             WHERE registration.studentAccount = '" . $_SESSION['userId'] . "'
+                                               AND registration.sectionCRN = section.sectionCRN
+                                               AND section.sectionCourse = curriculum.curriculumCourse
+                                               AND curriculum.curriculumProgram = '" . $program . "'
+                                               AND registration.finalGrade > 1.67) AS coreEarned
+                                     )
+                              SELECT CASE
+                                       WHEN studentGPA > 1.67 THEN 'complete'
+                                       ELSE 'inProgress'
+                                       END AS 'Minimum GPA Requirement',
+                                     CASE
+                                       WHEN GenEdEarned.earned < 6 THEN 'inProgress'
+                                       ELSE 'complete'
+                                       END AS 'General Education Requirement',
+                                     CASE
+                                       WHEN CoreEarned.earned < 16 THEN 'inProgress'
+                                       ELSE 'complete'
+                                       END AS 'Core Curriculum Requirements'
+                              FROM registration_system.student s,
+                                   registration_system.enrollment e,
+                                   LogTotalGPA,
+                                   GenEdEarned,
+                                   CoreEarned
+                              WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
+                                AND e.studentAccount = '" . $_SESSION['userId'] . "'
+                              LIMIT 1;";
+        viewBasicTableFromSQL($conn, $sqlDegreeAuditProgramReqs, $current_page, 'sada-program-req');
 
         //general education requirements
         echo '<p id="transcript-caption">General Education Requirements (complete 6/8)</p>';
@@ -66,6 +260,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -104,6 +299,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -142,6 +338,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -180,6 +377,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -218,6 +416,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -256,6 +455,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -294,6 +494,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -332,6 +533,7 @@
             (
               SELECT CASE
                        WHEN reg.finalGrade >= 1.67 THEN 'complete'
+                       WHEN reg.finalGrade IS NULL THEN 'inProgress'
                        ELSE 'incomplete'
                        END                                                   AS Progress,
                      crse.courseAttribute                                    AS Attribute,
@@ -458,8 +660,8 @@
         $sqlDegreeAuditCoreReqs = "WITH LogCurr AS
                                   (
                                     SELECT 'notAttempted'                                          AS Progress,
-                                           crse.courseName                                         AS Title,
                                            CONCAT(CONCAT(d.departmentTag, ' '), crse.courseNumber) AS Course,
+                                           crse.courseName                                         AS Title,
                                            ' '                                                     AS Grade,
                                            ' '                                                     AS Semester
                                     FROM course crse,
@@ -476,8 +678,8 @@
                                              WHEN reg.finalGrade >= 1.67 THEN 'complete'
                                              ELSE 'incomplete'
                                              END                                                   AS Progress,
-                                           crse.courseName                                         AS Title,
                                            CONCAT(CONCAT(d.departmentTag, ' '), crse.courseNumber) AS Course,
+                                           crse.courseName                                         AS Title,
                                            CASE CONVERT(reg.finalGrade, CHAR(4))
                                              WHEN '4.00' THEN 'A'
                                              WHEN '3.67' THEN 'A-'
@@ -519,4 +721,5 @@
 
         echo '</div>';
         echo '</div>';
+        echo '</body>';
     }

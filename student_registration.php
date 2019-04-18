@@ -39,5 +39,3 @@
     require "includes/student.inc/sr-console.inc.php";
 
     echo '</main>';
-
-    require "footer.php";

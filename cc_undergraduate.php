@@ -10,5 +10,3 @@
     require "includes/cc-console.inc.php";
 
     echo '</main>';
-
-    require "footer.php";

@@ -9,7 +9,3 @@
     require "includes/student.inc/view_degree_audit.inc.php";
 
     echo "</main>";
-
-    require "footer.php";
-
-

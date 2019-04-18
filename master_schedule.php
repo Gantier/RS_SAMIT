@@ -36,5 +36,3 @@ $sqlStudentRegistration = "SELECT s.sectionCRN,
 require "includes/ms-console.inc.php";
 
 echo '</main>';
-
-require "footer.php";
