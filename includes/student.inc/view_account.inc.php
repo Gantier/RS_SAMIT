@@ -12,9 +12,18 @@
             {
                 echo "<br>Program: " . $enrollment['enrollmentProgram'];
             }
-        echo "<br><br>Total credits: " . $studentCredits[0];
+            echo "<br><br>Total credits: " . $studentCredits[0];
 
-        echo "<br><br>Account hold: " . $studentHold[0];
+            echo "<br><br>Account hold: " . $studentHold[0] . "<br>";
+
+            foreach ($preReqArray as &$preReq)
+            {
+                foreach ($preReq as $item)
+                {
+                    echo $item . "---";
+                }
+                echo '<br>';
+            }
         ?>
     </div>
 </div>

@@ -167,7 +167,7 @@ if (isset($_POST['register-submit']))
             }
 
             //check section capacity/availability
-            if ($sectionAvailability0[1] === "full")
+            if ($sectionAvailability1[0] === "full")
             {
                 $valid = false;
                 $activityLog .= "Rf";
@@ -252,7 +252,7 @@ if (isset($_POST['register-submit']))
             }
 
             //check section capacity/availability
-            if ($sectionAvailability0[2] === "full")
+            if ($sectionAvailability2[0] === "full")
             {
                 $valid = false;
                 $activityLog .= "Rf";
