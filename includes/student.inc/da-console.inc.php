@@ -3,13 +3,17 @@
         Degree Audit
     </div>
     <div class="card-body" id="da-console-card-body">
+        <!--suppress HtmlUnknownTarget -->
         <form action="student_degree_audit.php" method="post" id="da-view">
             <label>
                 <select id="da-program-dropdown" name="da-program">
                     <?php
-                        foreach ($resultStudentEnrollments as &$enrollment)
+                        if (isset($resultStudentEnrollments))
                         {
-                            echo '<option value="' . $enrollment['enrollmentProgram'] . '">' . $enrollment['enrollmentProgram'] . '</option>';
+                            foreach ($resultStudentEnrollments as &$enrollment)
+                            {
+                                echo '<option value="' . $enrollment['enrollmentProgram'] . '">' . $enrollment['enrollmentProgram'] . '</option>';
+                            }
                         }
                     ?>
                 </select>

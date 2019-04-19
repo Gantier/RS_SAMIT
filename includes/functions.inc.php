@@ -122,6 +122,7 @@
             $sqlResult = mysqli_stmt_get_result($statement);
             if ($row = mysqli_fetch_assoc($sqlResult))
             {
+                /** @noinspection JSUnusedLocalSymbols */
                 echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
                 //define table attributes
                 $containerId = "cc-table-container";

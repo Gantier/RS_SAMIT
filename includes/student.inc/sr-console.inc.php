@@ -50,6 +50,7 @@
             Worksheet
         </div>
         <div class="card-body">
+            <!--suppress HtmlUnknownTarget -->
             <form action="includes/student.inc/register.inc.php" method="post" id="sr-register">
                 <div>
                     <div class="sr-worksheet-entry">

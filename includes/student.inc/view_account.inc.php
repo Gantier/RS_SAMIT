@@ -8,13 +8,22 @@
             echo "<br>Level: " . $_SESSION['studentLevel'];
 
             echo "<br><br>Enrollments...";
-            foreach ($resultStudentEnrollments as &$enrollment)
+            if (isset($resultStudentEnrollments))
             {
-                echo "<br>Program: " . $enrollment['enrollmentProgram'];
+                foreach ($resultStudentEnrollments as &$enrollment)
+                {
+                    echo "<br>Program: " . $enrollment['enrollmentProgram'];
+                }
             }
-            echo "<br><br>Total credits: " . $studentCredits[0];
+            if (isset($studentCredits))
+            {
+                echo "<br><br>Total credits: " . $studentCredits[0];
+            }
 
-            echo "<br><br>Account hold: " . $studentHold[0];
+            if (isset($studentHold))
+            {
+                echo "<br><br>Account hold: " . $studentHold[0];
+            }
         ?>
     </div>
 </div>

@@ -4,7 +4,10 @@
     </div>
     <div class="card-body" id="sag-card-body">
         <?php
-            viewTranscript($conn, $resultStudentSemesters, $current_page);
+            if (isset($resultStudentSemesters))
+            {
+                viewTranscript($conn, $resultStudentSemesters, $current_page);
+            }
         ?>
     </div>
 </div>

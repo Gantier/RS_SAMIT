@@ -390,7 +390,7 @@ table.sada-core-req {
 
 #sag-card {
     width        : 535px;
-    height       : 700px;
+    height       : 750px;
     float        : left;
     margin-right : var(--standard-margin);
 }
@@ -401,7 +401,7 @@ table.sada-core-req {
 }
 
 #sag-card-body {
-    height     : 612px;
+    height     : 662px;
     overflow-y : scroll;
     overflow-x : hidden;
 }
@@ -473,7 +473,6 @@ input.sr-entry-text {
 
 .card.home-view {
     width         : 492px;
-    min-height    : 218px;
     margin-bottom : var(--standard-margin);
     float         : left;
 }

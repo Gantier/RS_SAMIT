@@ -15,48 +15,51 @@
 
         //student information
         echo '<p id="transcript-caption">Student Information</p>';
-        $sqlDegreeAuditStudentInfo = "WITH LogTotalGPA AS
-                                            (
-                                              SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
-                                              FROM registration_system.registration r,
-                                                   registration_system.course c,
-                                                   registration_system.section s
-                                              WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
-                                                AND s.sectionCRN = r.sectionCRN
-                                                AND c.courseName = s.sectionCourse
-                                            )
-                                     SELECT '" . $_SESSION['studentName'] . "'                                  AS Student,
-                                            '" . $_SESSION['studentLevel'] . "'                                 AS studentLevel,
-                                            RTRIM(REVERSE(SUBSTRING(REVERSE('" . $program . "'),
-                                                                    LOCATE(' ', REVERSE('" . $program . "'))))) AS studentProgram,
-                                            CASE SUBSTRING('" . $program . "', -4)
-                                              WHEN 'B.S.' THEN 'Bachelor of Science'
-                                              WHEN ' B.S' THEN 'Bachelor of Science'
-                                              WHEN 'B.A.' THEN 'Bachelor of Art'
-                                              WHEN ' B.A' THEN 'Bachelor of Art'
-                                              WHEN 'M.S.' THEN 'Master of Science'
-                                              WHEN ' M.S' THEN 'Master of Science'
-                                              ELSE 'Minor'
-                                              END                                                               AS 'Degree Sought',
-                                            CASE
-                                              WHEN " . $studentCredits[0] . " > 87 THEN 'Senior'
-                                              WHEN " . $studentCredits[0] . " > 56 THEN 'Junior'
-                                              WHEN " . $studentCredits[0] . " > 31 THEN 'Sophomore'
-                                              ELSE 'Freshman'
-                                              END                                                               AS 'Class Level',
-                                            CASE
-                                              WHEN studentGPA > 3.00 THEN 'Excellent'
-                                              WHEN studentGPA > 1.67 THEN 'Good'
-                                              WHEN studentGPA > 0.00 THEN 'Poor'
-                                              ELSE 'Pending'
-                                              END                                                               AS 'Academic Standing',
-                                            studentGPA
-                                     FROM registration_system.student s,
-                                          registration_system.enrollment e,
-                                          LogTotalGPA
-                                     WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
-                                       AND e.studentAccount = '" . $_SESSION['userId'] . "'
-                                     LIMIT 1;";
+        if (isset($studentCredits))
+        {
+            $sqlDegreeAuditStudentInfo = "WITH LogTotalGPA AS
+                                                (
+                                                  SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
+                                                  FROM registration_system.registration r,
+                                                       registration_system.course c,
+                                                       registration_system.section s
+                                                  WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                                    AND s.sectionCRN = r.sectionCRN
+                                                    AND c.courseName = s.sectionCourse
+                                                )
+                                         SELECT '" . $_SESSION['studentName'] . "'                                  AS Student,
+                                                '" . $_SESSION['studentLevel'] . "'                                 AS studentLevel,
+                                                RTRIM(REVERSE(SUBSTRING(REVERSE('" . $program . "'),
+                                                                        LOCATE(' ', REVERSE('" . $program . "'))))) AS studentProgram,
+                                                CASE SUBSTRING('" . $program . "', -4)
+                                                  WHEN 'B.S.' THEN 'Bachelor of Science'
+                                                  WHEN ' B.S' THEN 'Bachelor of Science'
+                                                  WHEN 'B.A.' THEN 'Bachelor of Art'
+                                                  WHEN ' B.A' THEN 'Bachelor of Art'
+                                                  WHEN 'M.S.' THEN 'Master of Science'
+                                                  WHEN ' M.S' THEN 'Master of Science'
+                                                  ELSE 'Minor'
+                                                  END                                                               AS 'Degree Sought',
+                                                CASE
+                                                  WHEN " . $studentCredits[0] . " > 87 THEN 'Senior'
+                                                  WHEN " . $studentCredits[0] . " > 56 THEN 'Junior'
+                                                  WHEN " . $studentCredits[0] . " > 31 THEN 'Sophomore'
+                                                  ELSE 'Freshman'
+                                                  END                                                               AS 'Class Level',
+                                                CASE
+                                                  WHEN studentGPA > 3.00 THEN 'Excellent'
+                                                  WHEN studentGPA > 1.67 THEN 'Good'
+                                                  WHEN studentGPA > 0.00 THEN 'Poor'
+                                                  ELSE 'Pending'
+                                                  END                                                               AS 'Academic Standing',
+                                                studentGPA
+                                         FROM registration_system.student s,
+                                              registration_system.enrollment e,
+                                              LogTotalGPA
+                                         WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
+                                           AND e.studentAccount = '" . $_SESSION['userId'] . "'
+                                         LIMIT 1;";
+        }
         viewBasicTableFromSQL($conn, $sqlDegreeAuditStudentInfo, $current_page, 'sada-student-info');
 
         //program requirements

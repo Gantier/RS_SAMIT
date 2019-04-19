@@ -32,6 +32,7 @@
                                   AND d.departmentName = c.courseSubject
                                   AND s.sectionSemester = '" . $_SESSION['nextSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
+    /** @noinspection JSUnusedLocalSymbols */
     echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
     viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
         "sr-table", "Sections - " . $_SESSION['nextSemester'],
