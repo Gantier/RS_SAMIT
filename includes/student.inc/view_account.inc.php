@@ -1,10 +1,13 @@
 <div class="card home-view" id="sh-account-details">
-    <div class="card-title">
-        Account Details - <?php echo $_SESSION['userId'] ?>
+    <div class="card-title align-left">
+        Account Details
+        <button id="edit-pw-button" onclick="toggleStudentEditPassword()">Edit Password
+        </button>
     </div>
     <div class="card-body align-left">
         <?php
-            echo "Name: " . $_SESSION['studentName'];
+            echo "Account: " . $_SESSION['userId'];
+            echo "<br>Name: " . $_SESSION['studentName'];
             echo "<br>Level: " . $_SESSION['studentLevel'];
 
             echo "<br><br>Enrollments...";

@@ -1,6 +1,8 @@
 <?php
     require "header.php";
 
+    require "includes/student.inc/view-edit-password.inc.php";
+
     echo "<main id='student-inc-home-container'>";
 
     require "includes/dbh.inc.php";

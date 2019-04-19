@@ -411,6 +411,11 @@ table.sada-core-req {
     float : left;
 }
 
+.card-title.align-left {
+    text-align   : left;
+    padding-left : var(--standard-margin);
+}
+
 /*SPECIAL CONTAINERS*/
 
 #student-inc-home-container {
@@ -482,6 +487,39 @@ input.sr-entry-text {
     width         : 1000px;
 }
 
+#sh-backdrop {
+    position         : fixed;
+    background-color : var(--secondary-light);
+    width            : 150%;
+    height           : 150%;
+    transform        : translateY(-200px) translateX(-200px);
+    z-index          : -1;
+    /*display          : none;*/
+}
+
+#edit-pw-backdrop {
+    position         : fixed;
+    background-color : black;
+    opacity          : 0.3;
+    width            : 150%;
+    height           : 150%;
+    transform        : translateY(-200px) translateX(-200px);
+    z-index          : -999;
+    /*display          : none;*/
+}
+
+#edit-pw-card {
+    position   : absolute;
+    text-align : center;
+    width      : 350px;
+    height     : 290px;
+    top        : 35%;
+    left       : 50%;
+    transform  : translate(-50%, -50%);
+    z-index    : -1000;
+    /*display    : none;*/
+}
+
 /*SPECIAL BUTTONS*/
 #sr-add-to-worksheet-button {
     display : none;
@@ -489,5 +527,19 @@ input.sr-entry-text {
 
 .tiny-button {
     height : 35px;
+}
+
+#edit-pw-button {
+    float            : right;
+    height           : 25px;
+    transform        : translateY(-3px);
+    border-color     : var(--secondary-text-dark);
+    background-color : var(--secondary-dark);
+    color            : var(--secondary-text-light);
+    transition       : border-color 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+#edit-pw-button:hover {
+    border-color : var(--secondary-text-darker);
 }
 

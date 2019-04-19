@@ -364,4 +364,21 @@ function getPrintablePreReqsOfCourse(dependentCourse, fromPreReq2DArray)
     }
 }
 
+function toggleStudentEditPassword()
+{
+    var backdrop = document.getElementById('edit-pw-backdrop');
+    var card = document.getElementById('edit-pw-card');
+
+    if (backdrop.style.zIndex === '999')
+    {
+        backdrop.style.zIndex = '-999';
+        card.style.zIndex = '-1000';
+    }
+    else
+    {
+        backdrop.style.zIndex = '999';
+        card.style.zIndex = '1000';
+    }
+}
+
 

@@ -1,5 +1,5 @@
 <div class="card home-view">
-    <div class="card-title">
+    <div class="card-title align-left">
         Academic Advising
     </div>
     <div class="card-body align-left">
