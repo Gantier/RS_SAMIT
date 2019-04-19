@@ -148,14 +148,15 @@ function msFilter()
 
 // noinspection JSUnusedGlobalSymbols
 function updateStudentRegistrationDetails(
-    sectionIdSelected, detailsTextId, detailsTitleId, addButton, descriptionColumn)
+    sectionIdSelected, detailsTextId, detailsTitleId, addButton, descriptionColumn, allPreReqs)
 {
+    var courseTitle = sectionIdSelected.cells[3].innerText;
     document.getElementById(detailsTextId).innerHTML =
         "<h4>Course Title:</h4>" +
-        sectionIdSelected.cells[3].innerText + " - " +
+        courseTitle + " - " +
         sectionIdSelected.cells[1].innerText +
         "<br><br><h4>Prerequisites:</h4>" +
-        "(under construction)" +
+        getPrintablePreReqsOfCourse(courseTitle, allPreReqs) +
         "<br><br><h4>Course Description:</h4>" +
         sectionIdSelected.cells[descriptionColumn].innerText;
     document.getElementById(detailsTitleId).innerHTML =
@@ -239,14 +240,15 @@ function entryOnClickHelper()
 
 // noinspection JSUnusedGlobalSymbols
 function updateMasterScheduleDetails(
-    sectionIdSelected, detailsTextId, detailsTitleId, descriptionColumn)
+    sectionIdSelected, detailsTextId, detailsTitleId, descriptionColumn, allPreReqs)
 {
+    var courseTitle = sectionIdSelected.cells[3].innerText;
     document.getElementById(detailsTextId).innerHTML =
         "<h4>Course Title:</h4>" +
-        sectionIdSelected.cells[3].innerText + " - " +
+        courseTitle + " - " +
         sectionIdSelected.cells[1].innerText +
         "<br><br><h4>Prerequisites:</h4>" +
-        "(under construction)" +
+        getPrintablePreReqsOfCourse(courseTitle, allPreReqs) +
         "<br><br><h4>Course Description:</h4>" +
         sectionIdSelected.cells[descriptionColumn].innerText;
     document.getElementById(detailsTitleId).innerHTML =
@@ -330,4 +332,36 @@ function daLoadIcons()
         }
     }
 }
+
+function getPrintablePreReqsOfCourse(dependentCourse, fromPreReq2DArray)
+{
+    var preReqs;
+    if (dependentCourse in fromPreReq2DArray)
+    {
+        //get preReqs
+        preReqs = [];
+        for (var i = 1; i < fromPreReq2DArray[dependentCourse].length; i++)
+        {
+            preReqs.push(fromPreReq2DArray[dependentCourse][i]);
+        }
+        //make printable
+        var printPreReqs = "";
+        printPreReqs += preReqs[0];
+        if (preReqs.length > 1)
+        {
+            for (var j = 1; j < preReqs.length; j++)
+            {
+                printPreReqs += ",<br>";
+                printPreReqs += preReqs[j];
+            }
+        }
+        //return printable
+        return printPreReqs;
+    }
+    else
+    {
+        return "None";
+    }
+}
+
 

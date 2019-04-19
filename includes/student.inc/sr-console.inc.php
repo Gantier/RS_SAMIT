@@ -15,10 +15,10 @@
                 <select id="sr-subject-dropdown">
                     <option value="null" selected hidden>Select subject...</option>
                     <?php
-                    for ($i = 0; $i < sizeof(Constants::SUBJECTS); $i++)
-                    {
-                        echo '<option value="' . Constants::SUBJECTS[$i] . '">' . Constants::SUBJECTS[$i] . '</option>';
-                    }
+                        for ($i = 0; $i < sizeof(Constants::SUBJECTS); $i++)
+                        {
+                            echo '<option value="' . Constants::SUBJECTS[$i] . '">' . Constants::SUBJECTS[$i] . '</option>';
+                        }
                     ?>
                 </select><br>
                 <label>Course number range:</label><br>

@@ -89,7 +89,7 @@
         echo '</tbody>';
     }
 
-    function viewCourseCatalog(mysqli $conn, $courseType): void
+    function viewCourseCatalog(mysqli $conn, $courseType, $preReqArray): void
     {
         $descriptionColumn = 4;
         $sql = "SELECT c.courseName                                     AS courseTitle,
@@ -122,11 +122,12 @@
             $sqlResult = mysqli_stmt_get_result($statement);
             if ($row = mysqli_fetch_assoc($sqlResult))
             {
+                echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
                 //define table attributes
                 $containerId = "cc-table-container";
                 $tableId = "cc-table";
                 $caption = $courseType . " Courses";
-                $rowClick = "onclick=\"updateCourseDescription(this, 'cc-description-text', " . $descriptionColumn . ")\"";
+                $rowClick = "onclick=\"updateCourseDescription(this, 'cc-description-text', " . $descriptionColumn . ", allPreReqs)\"";
                 //generate html table
                 drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick);
             }

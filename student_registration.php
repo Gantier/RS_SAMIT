@@ -4,6 +4,7 @@
     echo '<main id="sr-container">';
 
     require "includes/dbh.inc.php";
+    require "includes/student.inc/data.inc.php";
 
     $sqlStudentRegistration = "SELECT s.sectionCRN,
                                        CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber)                  AS sectionCourse,
@@ -31,10 +32,10 @@
                                   AND d.departmentName = c.courseSubject
                                   AND s.sectionSemester = '" . $_SESSION['nextSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
-
+    echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
     viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
         "sr-table", "Sections - " . $_SESSION['nextSemester'],
-        "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9)");
+        "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9, allPreReqs)");
 
     require "includes/student.inc/sr-console.inc.php";
 
