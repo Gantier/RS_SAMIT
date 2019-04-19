@@ -12,7 +12,9 @@
             {
                 echo "<br>Program: " . $enrollment['enrollmentProgram'];
             }
-            echo "<br><br>Total credits: " . $studentCredits[0]
+        echo "<br><br>Total credits: " . $studentCredits[0];
+
+        echo "<br><br>Account hold: " . $studentHold[0];
         ?>
     </div>
 </div>
