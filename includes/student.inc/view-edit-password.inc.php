@@ -1,5 +1,3 @@
-<!--fake background-->
-<div id="sh-backdrop"></div>
 <!--popup background-->
 <div id="edit-pw-backdrop"></div>
 <!--popup-->

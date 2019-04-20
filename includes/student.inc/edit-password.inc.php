@@ -13,8 +13,19 @@
         $repeat = $_POST['edit-pw-repeat'];
         $new = $_POST['edit-pw-new'];
 
+        $error = "\n\nError: ";
+
         if (empty($current) || empty($repeat) || empty($new))
         {
+            //send error message empty fields
+            $error .= "empty fields";
+            $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                    (messageReceiver, messageSubject, messageBody)
+                                                    VALUES ('" . $_SESSION['userId'] . "', '" .
+                Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
+                Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
+            $conn->query($sqlPasswordUnchangedMessage);
+
             header("Location: ../../student_home.php?error=emptyFields");
             exit();
         }
@@ -32,11 +43,13 @@
             {
                 if (preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $new) === 0)
                 {
-                    //send message password edit failure
-                    $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message (messageReceiver, messageSubject, messageBody)
-                                    VALUES ('" . $_SESSION['userId'] . "', 'Password Unchanged', " .
-                        "'New password must be at least 8 characters and must contain at least one lower case letter, " .
-                        "one upper case letter, and one digit.');";
+                    //send error message password weak
+                    $error .= "weak password";
+                    $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                    (messageReceiver, messageSubject, messageBody)
+                                                    VALUES ('" . $_SESSION['userId'] . "', '" .
+                        Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
+                        Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
                     $conn->query($sqlPasswordUnchangedMessage);
 
                     header("Location: ../../student_home.php?error=weakPassword");
@@ -50,9 +63,11 @@
                     if ($conn->query($sqlNewPassword) === true)
                     {
                         //send message password edit successful
-                        $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message (messageReceiver, messageSubject, messageBody)
-                                    VALUES ('" . $_SESSION['userId'] . "', 'Password Changed', " .
-                            "'Your account password was successfully edited.');";
+                        $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                        (messageReceiver, messageSubject, messageBody)
+                                                        VALUES ('" . $_SESSION['userId'] . "', '" .
+                            Constants::MESSAGE_SUBS['EP_SUCCESS'] . "', '" .
+                            Constants::MESSAGE_BODS['EP_SUCCESS'] . "');";
                         $conn->query($sqlPasswordUnchangedMessage);
 
                         header("Location: ../../student_home.php?success=passwordChanged");
@@ -67,6 +82,15 @@
             }
             else
             {
+                //send error message password incorrect
+                $error .= "incorrect password";
+                $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                    (messageReceiver, messageSubject, messageBody)
+                                                    VALUES ('" . $_SESSION['userId'] . "', '" .
+                    Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
+                    Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
+                $conn->query($sqlPasswordUnchangedMessage);
+
                 header("Location: ../../student_home.php?error=incorrectPassword");
                 exit();
             }

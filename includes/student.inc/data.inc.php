@@ -109,13 +109,16 @@
             $countSatisfied = 0;
             foreach ($resultStudentSatisfiedCourses as $satisfiedCourse)
             {
-                foreach ($preReqs as $preReq)
+                if (!empty($preReqs))
                 {
-                    //if satisfied
-                    if ($preReq === $satisfiedCourse['satisfiedCourse'])
+                    foreach ($preReqs as $preReq)
                     {
-                        //count it
-                        $countSatisfied++;
+                        //if satisfied
+                        if ($preReq === $satisfiedCourse['satisfiedCourse'])
+                        {
+                            //count it
+                            $countSatisfied++;
+                        }
                     }
                 }
             }
@@ -127,4 +130,11 @@
             }
             return $satisfied;
         }
+
+        //student messages
+        $sqlStudentMessages = "SELECT messageSender, messageReceiver, messageSubject, messageBody, messageTime
+                               FROM registration_system.message
+                               WHERE messageReceiver = '" . $_SESSION['userId'] . "'
+                               ORDER BY messageTime DESC;";
+        $resultStudentMessages = mysqli_fetch_all($conn->query($sqlStudentMessages), MYSQLI_ASSOC);
     }

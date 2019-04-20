@@ -30,6 +30,33 @@ a:hover {
     color : var(--primary-light);
 }
 
+#messages-caption {
+    border-radius    : var(--standard-border-radius) var(--standard-border-radius) 0 0;
+    background-color : #bcc3c6;
+    color            : var(--secondary-text-darker);
+    font-size        : var(--medium-font-size);
+    text-align       : center;
+    padding          : 6px var(--standard-margin-small);
+    margin-top       : var(--top-content-start);
+    margin-left      : var(--standard-margin-small);
+    margin-right     : var(--standard-margin-small);
+}
+
+.message-body-timestamp {
+    margin-top : var(--standard-margin-small);
+    color      : #878b91;
+    font-style : italic;
+}
+
+.message-body-from {
+    color : var(--primary);
+}
+
+.message-body-text {
+    text-indent   : var(--standard-margin);
+    margin-bottom : var(--standard-margin-small);
+}
+
 #sr-entry0:hover, #sr-entry1:hover, #sr-entry2:hover {
     border-color     : var(--caution-dark);
     background-color : var(--caution-light);
@@ -41,7 +68,7 @@ a:hover {
     background-color : var(--secondary-highlight);
     border-radius    : var(--standard-border-radius);
     text-align       : left;
-    padding          : 4px;
+    padding          : var(--standard-margin-tiny);
 }
 
 #transcript-caption {
@@ -308,7 +335,7 @@ table.sada-gen-ed-req td:nth-child(5), table.sada-gen-ed-req th:nth-child(5) {
 }
 
 table.sada-gen-ed-req td:nth-child(5) {
-    padding-left : 16px;
+    padding-left : var(--standard-margin);
 }
 
 table.sada-gen-ed-req td:nth-child(6), table.sada-gen-ed-req th:nth-child(6) {
@@ -329,7 +356,7 @@ table.sada-core-req td:nth-child(4), table.sada-core-req th:nth-child(4) {
 }
 
 table.sada-core-req td:nth-child(4) {
-    padding-left : 16px;
+    padding-left : var(--standard-margin);
 }
 
 table.sada-core-req td:nth-child(5), table.sada-core-req th:nth-child(5) {
@@ -416,7 +443,60 @@ table.sada-core-req {
     padding-left : var(--standard-margin);
 }
 
+.message-card {
+    border-radius    : var(--standard-border-radius);
+    background-color : var(--secondary-table-th-border);
+    font-weight      : lighter;
+    font-size        : var(--small-font-size);
+    margin-bottom    : var(--standard-margin-small);
+}
+
+.message-subject {
+    padding-left     : var(--standard-margin-small);
+    padding-top      : 6px;
+    padding-bottom   : 5px;
+    background-color : #b0b6ba;
+    color            : white;
+    border-radius    : var(--standard-border-radius) var(--standard-border-radius) 0 0;
+}
+
+.message-body {
+    padding          : var(--standard-margin-small);
+    background-color : #cdd4d8;
+    color            : var(--secondary-text-dark);
+    border-radius    : 0 0 var(--standard-border-radius) var(--standard-border-radius);
+}
+
 /*SPECIAL CONTAINERS*/
+
+#message-console {
+    box-shadow       : 0 5px 9px rgba(0, 0, 0, 0.06), 0 5px 9px rgba(0, 0, 0, 0.08);
+    background-color : var(--off-white);
+    position         : fixed;
+    top              : 0;
+    right            : 0;
+    width            : 250px;
+    height           : 100%;
+}
+
+#message-container {
+    border-radius    : 0 0 var(--standard-border-radius) var(--standard-border-radius);
+    background-color : var(--secondary-table-td-border);
+    margin-left      : var(--standard-margin-small);
+    margin-right     : var(--standard-margin-small);
+    padding-left     : var(--standard-margin-small);
+    padding-right    : var(--standard-margin-small);
+    padding-top      : var(--standard-margin-small);
+    height           : 100%;
+    overflow-y       : scroll;
+}
+
+#message-container:after {
+    content : "";
+    display : block;
+    height  : 148px;
+    width   : 100%;
+}
 
 #student-inc-home-container {
     width  : 1000px;
@@ -454,7 +534,7 @@ table.sada-core-req {
     background-color : white;
     border           : solid 2px var(--secondary);
     border-radius    : var(--standard-border-radius);
-    padding          : 4px;
+    padding          : var(--standard-margin-tiny);
     margin-right     : 5px;
     font-size        : 20px;
     float            : left;
@@ -463,9 +543,9 @@ table.sada-core-req {
 input.sr-entry-text {
     text-align   : center;
     width        : 33px;
-    padding      : 8px 4px;
+    padding      : var(--standard-margin-small) var(--standard-margin-tiny);
     float        : left;
-    margin-right : 4px;
+    margin-right : var(--standard-margin-tiny);
 }
 
 .sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text {
@@ -487,14 +567,13 @@ input.sr-entry-text {
     width         : 1000px;
 }
 
-#sh-backdrop {
+#home-backdrop {
     position         : fixed;
     background-color : var(--secondary-light);
     width            : 150%;
     height           : 150%;
     transform        : translateY(-200px) translateX(-200px);
     z-index          : -1;
-    /*display          : none;*/
 }
 
 #edit-pw-backdrop {
@@ -505,7 +584,6 @@ input.sr-entry-text {
     height           : 150%;
     transform        : translateY(-200px) translateX(-200px);
     z-index          : -999;
-    /*display          : none;*/
 }
 
 #edit-pw-card {
@@ -517,7 +595,6 @@ input.sr-entry-text {
     left       : 50%;
     transform  : translate(-50%, -50%);
     z-index    : -1000;
-    /*display    : none;*/
 }
 
 /*SPECIAL BUTTONS*/
@@ -536,10 +613,12 @@ input.sr-entry-text {
     border-color     : var(--secondary-text-dark);
     background-color : var(--secondary-dark);
     color            : var(--secondary-text-light);
-    transition       : border-color 0.3s cubic-bezier(.25, .8, .25, 1);
+    transition       : all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 #edit-pw-button:hover {
-    border-color : var(--secondary-text-darker);
+    background-color : var(--secondary-text-dark);
+    border-color     : var(--secondary-text-darker);
+    color            : white;
 }
 

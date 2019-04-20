@@ -25,6 +25,8 @@
     --medium-font-size          : 14px;
     --small-font-size           : 12px;
     --standard-margin           : 16px;
+    --standard-margin-small     : 8px;
+    --standard-margin-tiny      : 4px;
     --margin-reaches-bottom     : 52px;
     --standard-border-radius    : 6px;
 }
