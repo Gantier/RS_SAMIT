@@ -11,4 +11,6 @@
 
     echo "</main>";
 
+    require "includes/messages.inc.php";
+
     require "footer.php";

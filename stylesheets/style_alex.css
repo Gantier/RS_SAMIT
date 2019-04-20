@@ -622,3 +622,7 @@ input.sr-entry-text {
     color            : white;
 }
 
+#edit-pw-cancel {
+    transform : translateX(-2px);
+}
+
