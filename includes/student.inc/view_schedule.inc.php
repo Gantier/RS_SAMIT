@@ -22,8 +22,13 @@
                                 AND sec.sectionSemester = sem.semesterName
                                 AND sec.sectionSemester = '" . $_SESSION['currentSemester'] . "';";
 
-    viewFancyTableFromSQL($conn, $sqlCurrentSemester, $current_page, "ssc-table-container",
-        "ssc-table", "Schedule - Current Semester", "");
+    $resultCurrentSemester = $conn->query($sqlCurrentSemester);
+
+    if ($row0 = mysqli_fetch_row($resultCurrentSemester))
+    {
+        viewFancyTableFromSQL($conn, $sqlCurrentSemester, $current_page, "ssc-table-container",
+            "ssc-table", "Schedule - Current Semester", "");
+    }
 
     $sqlNextSemester = "SELECT CONCAT(CONCAT(reg.sectionCRN, CONCAT('-00', CONCAT(sec.sectionNumber, '-'))),
                                             CONCAT(d.departmentTag, c.courseNumber))                           AS scheduleSection,
@@ -48,6 +53,11 @@
                                 AND sec.sectionSemester = sem.semesterName
                                 AND sec.sectionSemester = '" . $_SESSION['nextSemester'] . "';";
 
-    viewFancyTableFromSQL($conn, $sqlNextSemester, $current_page, "ssn-table-container",
-        "ssn-table", "Schedule - Next Semester", "");
+    $resultNextSemester = $conn->query($sqlNextSemester);
+
+    if ($row1 = mysqli_fetch_row($resultNextSemester))
+    {
+        viewFancyTableFromSQL($conn, $sqlNextSemester, $current_page, "ssn-table-container",
+            "ssn-table", "Schedule - Next Semester", "");
+    }
 
