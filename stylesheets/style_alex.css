@@ -562,9 +562,20 @@ input.sr-entry-text {
     float         : left;
 }
 
-#ss-table-container {
+#ssc-table-container, #ssn-table-container {
     margin-bottom : var(--standard-margin);
     width         : 1000px;
+}
+
+#ssc-table tr:nth-child(even), #ssn-table tr:nth-child(even) {
+    background-color : #f4f8f9;
+}
+
+#ssc-table caption, #ssn-table caption {
+    padding-top    : var(--standard-margin-small);
+    padding-bottom : var(--standard-margin-small);
+    width          : 920px;
+    margin         : 0 0 0 32px;
 }
 
 #home-backdrop {

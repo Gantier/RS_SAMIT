@@ -84,7 +84,6 @@ html {
 
 body {
     line-height : 1.15;
-    /*padding     : var(--top-content-start) var(--standard-margin) var(--bottom-content-start);*/
     padding     : var(--top-content-start) var(--standard-margin) var(--standard-margin);
     min-height  : 88%;
 }
@@ -307,8 +306,6 @@ table td {
     color  : var(--secondary-text-dark);
 }
 
-/*tr:nth-child(even) {background-color : var(--off-white)}*/
-
 table thead:first-child th {
     border-top : 0;
 }
@@ -444,7 +441,6 @@ div.login-card {
 
 #cc-table-container {
     float         : left;
-    /*margin-bottom : var(--margin-reaches-bottom);*/
     margin-bottom : var(--standard-margin);
     margin-left   : 366px;
     width         : 70%;
