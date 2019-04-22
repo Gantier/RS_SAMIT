@@ -2,7 +2,6 @@
     require "header.php";
 ?>
 
-<body class="index">
 <?php
     if (!isset($_SESSION['userId']))
     {
@@ -25,7 +24,8 @@
         header("Location: " . $_SESSION['userType'] . "_home.php?error=loggedInRedirected");
     }
 ?>
-</body>
+
+<img class="background" src="images/college3Cropped.jpg" alt="collegeCampus">
 
 <?php
     require "footer.php";

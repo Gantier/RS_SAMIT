@@ -1,6 +1,8 @@
 <?php
     require "header.php";
 
+    echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
+
     echo '<main id="ms-container">';
 
     require "includes/dbh.inc.php";

@@ -1,6 +1,8 @@
 <?php
     require "header.php";
 
+    echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
+
     echo '<main id="sr-container">';
 
     require "includes/dbh.inc.php";
@@ -39,5 +41,4 @@
         "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9, allPreReqs)");
 
     require "includes/student.inc/sr-console.inc.php";
-
     echo '</main>';
