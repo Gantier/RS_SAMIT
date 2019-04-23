@@ -1,0 +1,184 @@
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+    text-indent: 110px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: -5px;
+    left: 110px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.radio-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.radio-container input:checked ~ .checkmark {
+    background-color: var(--primary-light);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio-container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+table#ac-table tr.ac-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
+
+/*CONTAINERS*/
+#adaccounts-table-container {
+    float         : left;
+    margin-bottom : var(--margin-reaches-bottom);
+    margin-left   : 650px;
+    width         : 50%;
+}
+
+#ac-console-container {
+    position : fixed;
+    width    : 645px;
+}
+
+#ac-subject-dropdown {
+    width: 315px;
+}
+
+#ac-details-card {
+    height     : 260px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-filter-card {
+    height: 100px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-pw-edit-card {
+    height: 190px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-faculty-edit-card {
+    height: 270px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-keyword {
+    transform: translateY(-5px);
+}
+
+#ac-admin-add-card {
+    height     : 110px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-faculty-add-card {
+    height     : 155px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-admin-delete-card {
+    height: 110px;
+    margin-bottom: var(--standard-margin);
+}
+
+.ac-name-text-box {
+    width: 125px;
+    float: left;
+    margin-right: 5px;
+}
+
+.ac-extended-name-text-box {
+    width: 179px;
+    float: left;
+    margin-right: 5px;
+}
+
+.ac-dept-dropdown-position {
+    margin-top: 12px;
+}
+
+#ac-delete-email-text-box {
+    transform: translateY(-6px);
+    height: 16px;
+    margin-right: var(--standard-margin);
+}
+
+#ac-add-button {
+    float: right;
+    transform: translateY(-6px);
+    width: 125px;
+    background-color: #bce2bf;
+}
+
+#ac-delete-button {
+    transform: translateY(-6px);
+    height: 32px;
+    width: 135px;
+    background-color: #ffb2b2;
+}
+
+#ac-password-button {
+    float: right;
+    transform: translateY(-6px);
+    width: 130px;
+}
+
+#ac-dept-dropdown {
+    float: left;
+}
+
+#ac-dept-button {
+    float: right;
+    transform: translateY(6px);
+    width: 150px;
+}
+
+.ac-time-radios {
+    float: left;
+}
+
+.ac-outer-radios {
+    width: 175px;
+    float: left;
+}

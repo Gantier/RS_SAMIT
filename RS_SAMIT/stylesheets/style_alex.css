@@ -1,0 +1,139 @@
+/* unvisited link */
+a:link {
+    color : var(--primary);
+}
+
+/* visited link */
+a:visited {
+    color : var(--secondary-text-dark);
+}
+
+/* mouse over link */
+a:hover {
+    color : var(--primary-light);
+}
+
+/*SPECIAL TABLES*/
+
+table#sr-table tr.sr-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
+
+table#sr-table tr td:nth-last-child(1) {
+    display : none;
+}
+
+table#sr-table thead tr th:nth-last-child(1) {
+    display : none;
+}
+
+table#sr-table tr td:nth-last-child(2) {
+    display : none;
+}
+
+table#sr-table thead tr th:nth-last-child(2) {
+    display : none;
+}
+
+table#sr-table tr td:nth-last-child(3) {
+    display : none;
+}
+
+table#sr-table thead tr th:nth-last-child(3) {
+    display : none;
+}
+
+table#sr-table tr:last-child td:nth-last-child(4) {
+    border-radius : 0 0 var(--standard-border-radius) 0;
+}
+
+table#sr-table th:nth-last-child(4) {
+    border-radius : 0 var(--standard-border-radius) 0 0;
+}
+
+/*SPECIAL CARDS*/
+
+#sr-filter-card, #sr-details-card, #sr-worksheet-card {
+    margin-bottom : var(--standard-margin);
+}
+
+#sr-details-card {
+    height     : 250px;
+    text-align : center;
+}
+
+#sr-details-body {
+    height        : 110px;
+    overflow-y    : scroll;
+    margin-bottom : 10px;
+}
+
+#sr-details-text {
+    text-align : justify;
+}
+
+/*SPECIAL CONTAINERS*/
+
+#sr-container {
+    width  : 70%;
+    margin : auto;
+}
+
+#sr-table-container {
+    float         : left;
+    margin-bottom : var(--margin-reaches-bottom);
+    margin-left   : 366px;
+    width         : 70%;
+}
+
+#sr-console-container {
+    position : fixed;
+    width    : 350px;
+}
+
+.sr-worksheet-entry {
+    background-color : white;
+    border           : solid 2px var(--secondary);
+    border-radius    : var(--standard-border-radius);
+    padding          : 4px;
+    margin-right     : 5px;
+    font-size        : 20px;
+    float            : left;
+}
+
+input.sr-entry-text {
+    text-align   : center;
+    width        : 33px;
+    padding      : 8px 4px;
+    float        : left;
+    margin-right : 4px;
+}
+
+.sr-worksheet-entry, .sr-entry-clear-button, .sr-entry-text {
+    float : left;
+}
+
+.sr-entry-clear-button, .sr-entry-text, .sr-entry-icon {
+    transform : translateY(2px);
+}
+
+.card.home-view {
+    width         : 400px;
+    margin-bottom : var(--standard-margin);
+}
+
+#ss-table-container {
+    margin-bottom : var(--standard-margin);
+    width         : 900px;
+}
+
+/*SPECIAL BUTTONS*/
+#sr-add-to-worksheet-button {
+    display : none;
+}
+
+.tiny-button {
+    height : 35px;
+}
+
