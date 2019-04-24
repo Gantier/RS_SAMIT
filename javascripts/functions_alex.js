@@ -364,7 +364,7 @@ function getPrintablePreReqsOfCourse(dependentCourse, fromPreReq2DArray)
     }
 }
 
-function toggleStudentEditPassword()
+function toggleEditPassword()
 {
     var backdrop = document.getElementById('edit-pw-backdrop');
     var card = document.getElementById('edit-pw-card');
