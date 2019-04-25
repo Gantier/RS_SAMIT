@@ -14,7 +14,7 @@
             <button class="big-button secondary outlined" type="submit" name="edit-pw-submit">Submit</button>
             <br>
             <button class="big-button secondary outlined" type="reset" name="edit-pw-cancel" id="edit-pw-cancel"
-                    onclick="toggleStudentEditPassword()">Cancel
+                    onclick="toggleEditPassword()">Cancel
             </button>
         </form>
     </div>

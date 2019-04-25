@@ -32,5 +32,9 @@ class ConstantsMatt
                            'Visual Arts: Electronic Media B.S.');
 
     const DEFAULT_ACCOUNT_HELPER = "'Showing all student accounts...'";
+    const FACULTY_ACCOUNT_HELPER = "'Showing all faculty accounts...'";
+    const RESEARCHER_ACCOUNT_HELPER = "'Showing all researcher accounts...'";
+    const ADMIN_ACCOUNT_HELPER = "'Showing all admin accounts...'";
+
     const ACTIVE_SEARCH_ACCOUNT_HELPER = "'Showing all student accounts containing: \''";
 }
