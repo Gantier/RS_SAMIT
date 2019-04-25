@@ -1,62 +1,61 @@
-
 .radio-container {
-    display             : block;
-    position            : relative;
-    padding-left        : 35px;
-    margin-top          : 10px;
-    margin-bottom       : 12px;
-    cursor              : pointer;
-    font-size           : 15px;
-    text-align          : left;
-    text-indent         : 110px;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: left;
+    text-indent: 110px;
 
-    -webkit-user-select : none;
-    -moz-user-select    : none;
-    -ms-user-select     : none;
-    user-select         : none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .radio-container input {
-    position : absolute;
-    opacity  : 0;
-    cursor   : pointer;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .checkmark {
-    position         : absolute;
-    top              : -5px;
-    left             : 110px;
-    height           : 25px;
-    width            : 25px;
-    background-color : #eee;
-    border-radius    : 50%;
+    position: absolute;
+    top: -5px;
+    left: 110px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .radio-container:hover input ~ .checkmark {
-    background-color : #ccc;
+    background-color: #ccc;
 }
 
 .radio-container input:checked ~ .checkmark {
-    background-color : var(--primary-light);
+    background-color: var(--primary-light);
 }
 
 .checkmark:after {
-    content  : "";
-    position : absolute;
-    display  : none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
 .radio-container input:checked ~ .checkmark:after {
-    display : block;
+    display: block;
 }
 
 .radio-container .checkmark:after {
-    top           : 9px;
-    left          : 9px;
-    width         : 8px;
-    height        : 8px;
-    border-radius : 50%;
-    background    : white;
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
 }
 
 table#ac-table tr.ac-table:hover {
@@ -68,7 +67,7 @@ table#ac-table tr.ac-table:hover {
 #adaccounts-table-container {
     float         : left;
     margin-bottom : var(--margin-reaches-bottom);
-    margin-left   : 650px;
+    margin-left   : 675px;
     width         : 50%;
 }
 
@@ -78,11 +77,222 @@ table#ac-table tr.ac-table:hover {
 }
 
 #ac-subject-dropdown {
-    width : 315px;
+    width: 315px;
 }
 
 #ac-details-card {
-    height        : 260px;
-    text-align    : center;
-    margin-bottom : 15px;
+    height     : 260px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-filter-card {
+    height: 100px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-pw-edit-card {
+    height: 190px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-faculty-edit-card {
+    height: 270px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-student-edit-card {
+    height: 190px;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-keyword {
+    transform: translateY(-5px);
+}
+
+#ac-admin-add-card {
+    height     : 110px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-faculty-add-card {
+    height     : 155px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-student-add-card {
+    height     : 210px;
+    text-align : center;
+    margin-bottom: var(--standard-margin);
+}
+
+#ac-admin-delete-card {
+    height: 110px;
+    margin-bottom: var(--standard-margin);
+}
+
+.ac-name-text-box {
+    width: 125px;
+    float: left;
+    margin-right: 5px;
+}
+
+.ac-extended-name-text-box {
+    width: 179px;
+    float: left;
+    margin-right: 5px;
+}
+
+.ac-dept-dropdown-position {
+    margin-top: 12px;
+}
+
+#ac-delete-email-text-box {
+    transform: translateY(-6px);
+    height: 16px;
+    margin-right: var(--standard-margin);
+}
+
+#ac-add-button {
+    float: right;
+    transform: translateY(-6px);
+    width: 125px;
+    background-color: #bce2bf;
+}
+
+#ac-delete-button {
+    transform: translateY(-6px);
+    height: 32px;
+    width: 135px;
+    background-color: #ffb2b2;
+}
+
+#ac-password-button {
+    float: right;
+    transform: translateY(-6px);
+    width: 130px;
+}
+
+#ac-dept-dropdown {
+    float: left;
+
+}
+
+#ac-dept-button {
+    float: right;
+    transform: translateY(6px);
+    width: 150px;
+}
+
+#ac-date-of-birth {
+    height: 12px;
+}
+
+.ac-time-radios {
+    float: left;
+}
+
+.ac-outer-radios {
+    width: 175px;
+    float: left;
+}
+
+.ac-outer-radios-student {
+    width: 175px;
+    float: left;
+    margin-top: 5px;
+}
+
+.ac-add-department-dropdown {
+    transform: translateX(28px);
+}
+
+.ac-outer-DOB {
+    float: right;
+}
+
+.ac-outer-program {
+    float: left;
+}
+
+#admin-cc-console-container {
+    position : fixed;
+    width    : 650px;
+}
+
+#admin-cc-container {
+    width: 80%;
+    margin : auto;
+}
+
+#admin-cc-filter-card {
+    float: left;
+}
+
+#admin-cc-description-card {
+
+    transform: translateX(250px);
+}
+
+
+/*table#ac-table-courses tr.cc-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
+
+table#ac-table-courses tr td:last-child {
+    display : none;
+}
+
+table#ac-table-courses thead tr th:last-child {
+    display : none;
+}
+
+table#ac-table-courses tr:last-child td:nth-last-child(2) {
+    border-radius : 0 0 var(--standard-border-radius) 0;
+}
+
+table#ac-table-courses th:nth-last-child(2) {
+    border-radius : 0 var(--standard-border-radius) 0 0;
+}*/
+
+.ac-courses-upper-console {
+    float: left;
+    width: 700px;
+}
+
+#ac-search-card {
+    width: 650px;
+    float: left;
+    margin-right: var(--standard-margin);
+}
+
+#ac-add-course-card {
+    float: left;
+    height: 310px;
+}
+
+#ac-course-description-card {
+    float: left;
+}
+
+#admin-course-filter-card {
+    height: 150px;
+    margin-bottom: var(--standard-margin);
+}
+
+#admin-cc-keyword {
+    float: left;
+}
+
+#admin-cc-subject-dropdown {
+    float: left;
+    width: 160px;
+    margin-left: 10px;
+}
+
+#ac-table-courses {
+    width: 1175px;
 }

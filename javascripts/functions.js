@@ -62,15 +62,12 @@ function tableReset($tableId, $helperTextId, $defaultHelperText)
 }
 
 // noinspection JSUnusedGlobalSymbols
-function updateCourseDescription(courseIdSelected, helperTextId, descriptionColumn, allPreReqs)
+function updateCourseDescription(courseIdSelected, helperTextId, descriptionColumn)
 {
-    var courseTitle = courseIdSelected.cells[0].innerText;
     document.getElementById(helperTextId).innerHTML =
         "<h4>Course Title:</h4>" +
-        courseTitle + " - " +
-        courseIdSelected.cells[1].innerText +
-        "<br><br><h4>Prerequisites:</h4>" +
-        getPrintablePreReqsOfCourse(courseTitle, allPreReqs) +
+        courseIdSelected.cells[1].innerText + " - " +
+        courseIdSelected.cells[0].innerText +
         "<br><br><h4>Course Description:</h4>" +
         courseIdSelected.cells[descriptionColumn].innerText;
 }

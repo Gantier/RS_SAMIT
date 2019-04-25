@@ -11,7 +11,6 @@
     --secondary-dark            : #858e93;
     --secondary-dark-shadow     : #7e888c;
     --secondary-text-dark       : #6d7177;
-    --secondary-text-darker     : #525459;
     --secondary-text-light      : #e8ebef;
     --secondary-table-td-border : #eff1f4;
     --secondary-table-th-border : #aaaeb5;
@@ -25,8 +24,6 @@
     --medium-font-size          : 14px;
     --small-font-size           : 12px;
     --standard-margin           : 16px;
-    --standard-margin-small     : 8px;
-    --standard-margin-tiny      : 4px;
     --margin-reaches-bottom     : 52px;
     --standard-border-radius    : 6px;
 }
@@ -84,7 +81,7 @@ html {
 
 body {
     line-height : 1.15;
-    padding     : var(--top-content-start) var(--standard-margin) var(--standard-margin);
+    padding     : var(--top-content-start) var(--standard-margin) var(--bottom-content-start);
     min-height  : 88%;
 }
 
@@ -306,6 +303,8 @@ table td {
     color  : var(--secondary-text-dark);
 }
 
+/*tr:nth-child(even) {background-color : var(--off-white)}*/
+
 table thead:first-child th {
     border-top : 0;
 }
@@ -441,7 +440,7 @@ div.login-card {
 
 #cc-table-container {
     float         : left;
-    margin-bottom : var(--standard-margin);
+    margin-bottom : var(--margin-reaches-bottom);
     margin-left   : 366px;
     width         : 70%;
 }

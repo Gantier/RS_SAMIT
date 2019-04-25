@@ -170,7 +170,7 @@
                         //ACCOUNTS
                         echo '<li class="dropdown';
                         if (preg_match("[admin_accounts_student]", $current_page) || preg_match("[admin_accounts_faculty]", $current_page)
-                            || preg_match("[admin_accounts_researcher]", $current_page) || preg_match("[admin_accounts_admin]", $current_page))
+                        || preg_match("[admin_accounts_researcher]", $current_page) || preg_match("[admin_accounts_admin]", $current_page))
                         {
                             echo " nav-bar-active";
                         }
@@ -187,7 +187,7 @@
                         {
                             echo ' nav-bar-active';
                         }
-                        echo '" href="admin_registration_faculty.php">Faculty</a>';
+                        echo '" href="admin_accounts_faculty.php">Faculty</a>';
                         echo '<a class="dropdown-anchor';
                         if (preg_match("[admin_accounts_researcher]", $current_page))
                         {
@@ -354,6 +354,14 @@
             }
             echo '"><a href="index.php">Home</a></li> ';
 
+            //MASTER SCHEDULE
+            echo '<li class="';
+            if (preg_match("[master_schedule]", $current_page))
+            {
+                echo "nav-bar-active";
+            }
+            echo '"><a href="master_schedule.php">Master Schedule</a></li> ';
+
             //COURSE CATALOG
             echo '<li class="dropdown';
             if (preg_match("[cc_undergraduate]", $current_page) || preg_match("[cc_graduate]", $current_page))
@@ -374,14 +382,6 @@
                 echo ' nav-bar-active';
             }
             echo '" href="cc_graduate.php">Graduate</a></div></li>';
-
-            //MASTER SCHEDULE
-            echo '<li class="';
-            if (preg_match("[master_schedule]", $current_page))
-            {
-                echo "nav-bar-active";
-            }
-            echo '"><a href="master_schedule.php">Master Schedule</a></li> ';
 
             //LOGOUT
             if (isset($_SESSION['userId']))

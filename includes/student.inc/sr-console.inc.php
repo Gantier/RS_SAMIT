@@ -50,8 +50,7 @@
             Worksheet
         </div>
         <div class="card-body">
-            <!--suppress HtmlUnknownTarget -->
-            <form action="includes/student.inc/register.inc.php" method="post" id="sr-register">
+            <form action="register.inc.php" method="post" id="sr-register">
                 <div>
                     <div class="sr-worksheet-entry">
                         <label for="sr-entry0"></label><input readonly class="sr-entry-text" id="sr-entry0"
@@ -84,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="big-button outlined secondary" type="submit" name="register-submit">Register</button>
+                <button class="big-button outlined secondary" type="submit">Register</button>
             </form>
         </div>
     </div>

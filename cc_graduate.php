@@ -4,10 +4,11 @@
     echo '<main id="cc-container">';
 
     require "includes/dbh.inc.php";
-    require "includes/student.inc/data.inc.php";
 
-    viewCourseCatalog($conn, "Graduate", $preReqArray);
+    viewCourseCatalog($conn, "Graduate");
 
     require "includes/cc-console.inc.php";
 
     echo '</main>';
+
+    require "footer.php";
