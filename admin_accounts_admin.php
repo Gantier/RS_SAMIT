@@ -10,7 +10,7 @@
                             adminAccountEmail
                             FROM registration_system.account_admin;";
 
-    viewTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Admin Accounts", "accountClick(this)");
+    viewFancyTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Admin Accounts", "accountClick(this)");
 
     require "includes/admin.inc/ac-console-admin.inc.php";
 

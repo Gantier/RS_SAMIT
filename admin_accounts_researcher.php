@@ -10,7 +10,7 @@
                             researcherAccountEmail
                             FROM registration_system.account_researcher;";
 
-    viewTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Researcher Accounts", "accountClick(this)");
+    viewFancyTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Researcher Accounts", "accountClick(this)");
 
     require "includes/admin.inc/ac-console-researcher.inc.php";
 

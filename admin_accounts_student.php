@@ -16,7 +16,7 @@
                             FROM registration_system.student;
                                                   ";
 
-    viewTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Student Accounts", "accountClick(this)");
+    viewFancyTableFromSQL($conn, $sqlAdminAccounts, $current_page, "adaccounts-table-container", "ac-table", "Student Accounts", "accountClick(this)");
 
     require "includes/admin.inc/ac-console-student.inc.php";
 
