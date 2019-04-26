@@ -2,7 +2,7 @@
     require "header.php";
 
     echo "<div id=\"home-backdrop\"></div>";
-    require "includes/student.inc/view-edit-password.inc.php";
+    require "includes/student.inc/view_edit-password.inc.php";
 
     echo "<main id='student-inc-home-container'>";
 

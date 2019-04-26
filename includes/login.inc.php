@@ -51,27 +51,51 @@
                                                   CONCAT(SUBSTR(studentMiddleName, 1, 1), '. ')),
                                                   studentLastName) AS name
                                               FROM registration_system.student
-                                              WHERE studentAccount LIKE '" . $_SESSION['userId'] . "';";
+                                              WHERE studentAccount = '" . $_SESSION['userId'] . "';";
                             $_SESSION['studentName'] = loadSqlResultFirstRow($conn, $sqlStudentName, $current_page);
 
                             $sqlStudentLevel = "SELECT programName
                                                   FROM registration_system.enrollment e, 
                                                        registration_system.program_graduate pg
-                                                  WHERE e.programName LIKE pg.programGraduateName
-                                                    AND e.studentAccount LIKE '" . $_SESSION['userId'] . "';";
+                                                  WHERE e.programName = pg.programGraduateName
+                                                    AND e.studentAccount = '" . $_SESSION['userId'] . "';";
+
+                            $_SESSION['studentLevel'] = "Undergraduate";
+                            $_SESSION['maxSemesterCredits'] = 24;
                             if ($resultStudentLevel = $conn->query($sqlStudentLevel))
                             {
-                                $_SESSION['maxSemesterCredits'] = 0;
                                 $rowCountStudentLevel = $resultStudentLevel->num_rows;
                                 if ($rowCountStudentLevel > 0)
                                 {
                                     $_SESSION['studentLevel'] = "Graduate";
                                     $_SESSION['maxSemesterCredits'] = 18;
                                 }
-                                else
+                            }
+                        }
+                        //SET FACULTY SESSION VARIABLES
+                        else if ($_SESSION['userType'] === 'faculty')
+                        {
+                            echo 'ass';
+                            $sqlFacultyName = "SELECT CONCAT(CONCAT(CONCAT(facultyFirstName, ' '),
+                                                                    CONCAT(SUBSTR(facultyMiddleName, 1, 1), '. ')),
+                                                             facultyLastName) AS name
+                                               FROM registration_system.faculty
+                                               WHERE facultyAccount = '" . $_SESSION['userId'] . "';";
+                            $_SESSION['facultyName'] = loadSqlResultFirstRow($conn, $sqlFacultyName, $current_page);
+
+                            $sqlFacultyType = "SELECT *
+                                               FROM registration_system.faculty f,
+                                                    registration_system.`faculty_full-time` `ff-t`
+                                               WHERE f.facultyAccount = '" . $_SESSION['userId'] . "'
+                                                 AND f.facultyAccount = `ff-t`.`facultyFull-timeAccount`;";
+
+                            $_SESSION['facultyType'] = "Part-time";
+                            if ($resultFacultyType = $conn->query($sqlFacultyType))
+                            {
+                                $rowCountFacultyType = $resultFacultyType->num_rows;
+                                if ($rowCountFacultyType > 0)
                                 {
-                                    $_SESSION['studentLevel'] = "Undergraduate";
-                                    $_SESSION['maxSemesterCredits'] = 24;
+                                    $_SESSION['facultyType'] = "Full-time";
                                 }
                             }
                         }
