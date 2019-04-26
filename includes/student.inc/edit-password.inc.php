@@ -10,11 +10,12 @@
     if (isset($_POST['edit-pw-submit']))
     {
         $current = $_POST['edit-pw-current'];
-        $repeat = $_POST['edit-pw-repeat'];
         $new = $_POST['edit-pw-new'];
+        $repeat = $_POST['edit-pw-repeat'];
 
         $error = "\n\nError: ";
 
+        //if a field is empty
         if (empty($current) || empty($repeat) || empty($new))
         {
             //send error message empty fields
@@ -38,60 +39,106 @@
             $resultCurrentPassword = $conn->query($sqlCurrentPassword);
             $currentPassword = mysqli_fetch_row($resultCurrentPassword);
 
-            //validate password input
-            if ($currentPassword[0] === $current && $currentPassword[0] === $repeat)
+            //get password lock status
+            $sqlPasswordLock = "SELECT COUNT(*)
+                                FROM registration_system.message
+                                WHERE messageTime >= NOW() - INTERVAL 10 MINUTE
+                                  AND messageSubject = 'Password Unchanged'
+                                  AND messageReceiver = '" . $_SESSION['userId'] . "'
+                                  AND messageBody LIKE '%incorrect password%';";
+            $resultPasswordLock = $conn->query($sqlPasswordLock);
+            $passwordLock = mysqli_fetch_row($resultPasswordLock);
+
+            //if not locked from 5 failed attempts in past 10 minutes
+            if ($passwordLock[0] < 5)
             {
-                if (preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $new) === 0)
+                //validate password input
+                if ($currentPassword[0] === $current)
                 {
-                    //send error message password weak
-                    $error .= "weak password";
+                    //validate new and repeated new are the same
+                    if ($new === $repeat)
+                    {
+                        if (preg_match("/^.*(?=.{8,})(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$/", $new) === 0)
+                        {
+                            //send error message password weak
+                            $error .= "weak password";
+                            $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                            (messageReceiver, messageSubject, messageBody)
+                                                            VALUES ('" . $_SESSION['userId'] . "', '" .
+                                Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
+                                Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
+                            $conn->query($sqlPasswordUnchangedMessage);
+
+                            header("Location: ../../student_home.php?error=weakPassword");
+                            exit();
+                        }
+                        else
+                        {
+                            $sqlNewPassword = "UPDATE registration_system.account
+                                               SET accountPassword = '" . $new . "'
+                                               WHERE accountEmail = '" . $_SESSION['userId'] . "';";
+                            if ($conn->query($sqlNewPassword) === true)
+                            {
+                                //send message password edit successful
+                                $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                                (messageReceiver, messageSubject, messageBody)
+                                                                VALUES ('" . $_SESSION['userId'] . "', '" .
+                                    Constants::MESSAGE_SUBS['EP_SUCCESS'] . "', '" .
+                                    Constants::MESSAGE_BODS['EP_SUCCESS'] . "');";
+                                $conn->query($sqlPasswordUnchangedMessage);
+
+                                header("Location: ../../student_home.php?success=passwordChanged");
+                                exit();
+                            }
+                            else
+                            {
+                                header("Location: ../../student_home.php?error=sqlError");
+                                exit();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //send error message typo in repeat
+                        $error .= "typo in repeat";
+                        $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
+                                                        (messageReceiver, messageSubject, messageBody)
+                                                        VALUES ('" . $_SESSION['userId'] . "', '" .
+                            Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
+                            Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
+                        $conn->query($sqlPasswordUnchangedMessage);
+
+                        header("Location: ../../student_home.php?error=typoInRepeat");
+                        exit();
+                    }
+                }
+                else
+                {
+                    //send error message password incorrect
+                    $error .= "incorrect password";
                     $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
-                                                    (messageReceiver, messageSubject, messageBody)
-                                                    VALUES ('" . $_SESSION['userId'] . "', '" .
+                                                        (messageReceiver, messageSubject, messageBody)
+                                                        VALUES ('" . $_SESSION['userId'] . "', '" .
                         Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
                         Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
                     $conn->query($sqlPasswordUnchangedMessage);
 
-                    header("Location: ../../student_home.php?error=weakPassword");
+                    header("Location: ../../student_home.php?error=incorrectPassword");
                     exit();
-                }
-                else
-                {
-                    $sqlNewPassword = "UPDATE registration_system.account
-                                       SET accountPassword = '" . $new . "'
-                                       WHERE accountEmail = '" . $_SESSION['userId'] . "';";
-                    if ($conn->query($sqlNewPassword) === true)
-                    {
-                        //send message password edit successful
-                        $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
-                                                        (messageReceiver, messageSubject, messageBody)
-                                                        VALUES ('" . $_SESSION['userId'] . "', '" .
-                            Constants::MESSAGE_SUBS['EP_SUCCESS'] . "', '" .
-                            Constants::MESSAGE_BODS['EP_SUCCESS'] . "');";
-                        $conn->query($sqlPasswordUnchangedMessage);
-
-                        header("Location: ../../student_home.php?success=passwordChanged");
-                        exit();
-                    }
-                    else
-                    {
-                        header("Location: ../../student_home.php?error=sqlError");
-                        exit();
-                    }
                 }
             }
             else
             {
-                //send error message password incorrect
-                $error .= "incorrect password";
+                //send error message password locked
+                $error .= "too many failed attempts";
                 $sqlPasswordUnchangedMessage = "INSERT INTO registration_system.message 
-                                                    (messageReceiver, messageSubject, messageBody)
-                                                    VALUES ('" . $_SESSION['userId'] . "', '" .
-                    Constants::MESSAGE_SUBS['EP_FAIL'] . "', '" .
-                    Constants::MESSAGE_BODS['EP_FAIL'] . $error . "');";
+                                                            (messageReceiver, messageSubject, messageBody)
+                                                            VALUES ('" . $_SESSION['userId'] . "', '" .
+                    Constants::MESSAGE_SUBS['EP_LOCK'] . "', '" .
+                    Constants::MESSAGE_BODS['EP_LOCK'] . $error . "');";
                 $conn->query($sqlPasswordUnchangedMessage);
 
-                header("Location: ../../student_home.php?error=incorrectPassword");
+                header("Location: ../../student_home.php?error=passwordLocked");
                 exit();
             }
         }

@@ -44,12 +44,6 @@
                         $_SESSION['userId'] = $rowAccount['accountEmail'];
                         $_SESSION['userType'] = $rowAccount['accountType'];
 
-                        $sqlNextSemester = "SELECT semesterName
-                                            FROM registration_system.semester
-                                            WHERE semesterStartDate > CURRENT_DATE
-                                            LIMIT 1;";
-                        $_SESSION['nextSemester'] = loadSqlResultFirstRow($conn, $sqlNextSemester, $current_page);
-
                         //SET STUDENT SESSION VARIABLES
                         if ($_SESSION['userType'] === 'student')
                         {
@@ -72,24 +66,12 @@
                                 if ($rowCountStudentLevel > 0)
                                 {
                                     $_SESSION['studentLevel'] = "Graduate";
-                                    $_SESSION['maxSemesterCredits'] = 12;
+                                    $_SESSION['maxSemesterCredits'] = 18;
                                 }
                                 else
                                 {
                                     $_SESSION['studentLevel'] = "Undergraduate";
-                                    $sqlStudentMajors = "SELECT COUNT(e.programName) AS majors
-                                                          FROM registration_system.enrollment e,
-                                                               registration_system.program_major ma
-                                                          WHERE e.studentAccount = '" . $_SESSION['userId'] . "'
-                                                            AND e.programName = ma.programMajorName;";
-                                    $studentMajors = loadSqlResultFirstRow($conn, $sqlStudentMajors, $current_page);
-                                    $sqlStudentMinors = "SELECT COUNT(e.programName) AS minors
-                                                          FROM registration_system.enrollment e,
-                                                               registration_system.program_minor mi
-                                                          WHERE e.studentAccount = '" . $_SESSION['userId'] . "'
-                                                            AND e.programName = mi.programMinorName;";
-                                    $studentMinors = loadSqlResultFirstRow($conn, $sqlStudentMinors, $current_page);
-                                    $_SESSION['maxSemesterCredits'] = ($studentMajors * 18) + ($studentMinors * 6);
+                                    $_SESSION['maxSemesterCredits'] = 24;
                                 }
                             }
                         }
