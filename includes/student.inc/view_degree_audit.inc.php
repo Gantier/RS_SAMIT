@@ -13,6 +13,14 @@
         echo '<div class="card-title" id="sada-card-title">Degree Audit</div>';
         echo '<div class="card-body" id="sada-card-body">';
 
+        //icon legend
+        echo '<p id="transcript-caption">Icon Legend</p>';
+        $sqlDegreeAuditLegend = "SELECT 'complete' AS Complete,
+                                        'incomplete' AS Incomplete,
+                                        'inProgress' AS 'In Progress',
+                                        'notAttempted' AS 'Not Attempted';";
+        viewBasicTableFromSQL($conn, $sqlDegreeAuditLegend, $current_page, 'sada-icon-legend');
+
         //student information
         echo '<p id="transcript-caption">Student Information</p>';
         if (isset($studentCredits))

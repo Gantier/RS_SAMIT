@@ -11,6 +11,11 @@
                                 WHERE semesterEndDate > CURRENT_DATE
                                   AND semesterStartDate < CURRENT_DATE;";
         $_SESSION['currentSemester'] = loadSqlResultFirstRow($conn, $sqlCurrentSemester, $current_page);
+        $sqlNextSemester = "SELECT semesterName
+                            FROM registration_system.semester
+                            WHERE semesterStartDate > CURRENT_DATE
+                            LIMIT 1;";
+        $_SESSION['nextSemester'] = loadSqlResultFirstRow($conn, $sqlNextSemester, $current_page);
 
         echo '<div class="card login-card"><div class="card-title login-title">SAMIT Account Login</div>
                     <form action="includes/login.inc.php" method="post">

@@ -8,10 +8,11 @@
     require "includes/dbh.inc.php";
     require "includes/student.inc/data.inc.php";
 
-    $sqlStudentRegistration = "SELECT s.sectionCRN,
+    $sqlCurrentSemesterMS = "SELECT s.sectionCRN,
                                        CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber)                  AS sectionCourse,
                                        CONCAT('00', s.sectionNumber)                                         AS sectionNumber,
                                        s.sectionCourse                                                       AS sectionTitle,
+                                       c.courseCredits                                                       AS sectionCredits,
                                        CONCAT(CONCAT(s.sectionSchedule, ', '),
                                               (CONCAT(CONCAT(s.sectionStartTime, ' - '), s.sectionEndTime))) AS sectionSchedule,
                                        CONCAT(CONCAT(f.facultyFirstName, ' '), f.facultyLastName)            AS sectionInstructor,
@@ -31,10 +32,11 @@
                                   AND d.departmentName = c.courseSubject
                                   AND s.sectionSemester = '" . $_SESSION['currentSemester'] . "'
                                 ORDER BY sectionCourse, sectionNumber;";
+    /** @noinspection JSUnusedLocalSymbols */
     echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
-    viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "ms-table-container",
+    viewFancyTableFromSQL($conn, $sqlCurrentSemesterMS, $current_page, "ms-table-container",
         "ms-table", "Sections - " . $_SESSION['currentSemester'],
-        "updateMasterScheduleDetails(this, 'ms-details-text', 'ms-details-title', 8, allPreReqs)");
+        "updateMasterScheduleDetails(this, 'ms-details-text', 'ms-details-title', 9, allPreReqs)");
 
     require "includes/ms-console.inc.php";
 

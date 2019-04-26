@@ -259,9 +259,33 @@ function updateMasterScheduleDetails(
 // noinspection JSUnusedGlobalSymbols
 function daLoadIcons()
 {
+    var tableIconLeg = document.getElementById('sada-icon-legend');
     var tableProgReq = document.getElementById('sada-program-req');
     var tableGenEdReq = document.getElementById('sada-gen-ed-req');
     var tableCoreReq = document.getElementById('sada-core-req');
+
+    for (var h = 0; h < tableIconLeg.rows[1].cells.length; h++)
+    {
+        switch (tableIconLeg.rows[1].cells[h].innerText)
+        {
+            case 'complete':
+                tableIconLeg.rows[1].cells[h].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case 'incomplete':
+                tableIconLeg.rows[1].cells[h].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">report</i>';
+                break;
+            case 'inProgress':
+                tableIconLeg.rows[1].cells[h].innerHTML =
+                    '<i class="da-icon material-icons md-22 neutral">indeterminate_check_box</i>';
+                break;
+            case 'notAttempted':
+                tableIconLeg.rows[1].cells[h].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+        }
+    }
 
     for (var i = 0; i < tableProgReq.rows[1].cells.length; i++)
     {

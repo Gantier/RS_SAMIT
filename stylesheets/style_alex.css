@@ -313,7 +313,8 @@ table.sada-student-info td:nth-child(7), table.sada-student-info th:nth-child(7)
     width      : 40px;
 }
 
-table.sada-program-req td, table.sada-program-req th {
+table.sada-program-req td, table.sada-program-req th,
+table.sada-icon-legend td, table.sada-icon-legend th {
     text-align : center;
 }
 
@@ -522,7 +523,7 @@ table.sada-core-req {
     float         : left;
     margin-bottom : var(--standard-margin);
     margin-left   : 366px;
-    width         : 70%;
+    width         : 75%;
 }
 
 #sr-console-container, #ms-console-container {

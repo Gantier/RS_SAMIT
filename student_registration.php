@@ -12,6 +12,7 @@
                                        CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber)                  AS sectionCourse,
                                        CONCAT('00', s.sectionNumber)                                         AS sectionNumber,
                                        s.sectionCourse                                                       AS sectionTitle,
+                                       c.courseCredits                                                       AS sectionCredits,
                                        CONCAT(CONCAT(s.sectionSchedule, ', '),
                                               (CONCAT(CONCAT(s.sectionStartTime, ' - '), s.sectionEndTime))) AS sectionSchedule,
                                        CONCAT(CONCAT(f.facultyFirstName, ' '), f.facultyLastName)            AS sectionInstructor,
@@ -38,7 +39,7 @@
     echo '<script>var allPreReqs = ' . json_encode($preReqArray) . '</script>';
     viewFancyTableFromSQL($conn, $sqlStudentRegistration, $current_page, "sr-table-container",
         "sr-table", "Sections - " . $_SESSION['nextSemester'],
-        "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 9, allPreReqs)");
+        "updateStudentRegistrationDetails(this, 'sr-details-text', 'sr-details-title', 'sr-add-to-worksheet-button', 10, allPreReqs)");
 
     require "includes/student.inc/sr-console.inc.php";
     echo '</main>';

@@ -67,12 +67,25 @@
                         echo '" href="cc_graduate.php">Graduate</a></div></li>';
 
                         //MASTER SCHEDULE
-                        echo '<li class="';
+                        echo '<li class="dropdown';
                         if (preg_match("[master_schedule]", $current_page))
                         {
-                            echo "nav-bar-active";
+                            echo " nav-bar-active";
                         }
-                        echo '"><a href="master_schedule.php">Master Schedule</a></li> ';
+                        echo '"><a href="javascript:void(0)" class="drop-button">Master Schedule</a>';
+                        echo '<div class="dropdown-content">';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[master_schedule_current]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="master_schedule_current.php">Current Semester</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[master_schedule_next]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="master_schedule_next.php">Next Semester</a></div></li>';
 
                         //REGISTRATION
                         echo '<li class="';
@@ -132,12 +145,25 @@
                         echo '" href="cc_graduate.php">Graduate</a></div></li>';
 
                         //MASTER SCHEDULE
-                        echo '<li class="';
+                        echo '<li class="dropdown';
                         if (preg_match("[master_schedule]", $current_page))
                         {
-                            echo "nav-bar-active";
+                            echo " nav-bar-active";
                         }
-                        echo '"><a href="master_schedule.php">Master Schedule</a></li> ';
+                        echo '"><a href="javascript:void(0)" class="drop-button">Master Schedule</a>';
+                        echo '<div class="dropdown-content">';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[master_schedule_current]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="master_schedule_current.php">Current Semester</a>';
+                        echo '<a class="dropdown-anchor';
+                        if (preg_match("[master_schedule_next]", $current_page))
+                        {
+                            echo ' nav-bar-active';
+                        }
+                        echo '" href="master_schedule_next.php">Next Semester</a></div></li>';
 
                         //ACADEMICS
                         echo '<li class="';
@@ -376,12 +402,25 @@
             echo '" href="cc_graduate.php">Graduate</a></div></li>';
 
             //MASTER SCHEDULE
-            echo '<li class="';
+            echo '<li class="dropdown';
             if (preg_match("[master_schedule]", $current_page))
             {
-                echo "nav-bar-active";
+                echo " nav-bar-active";
             }
-            echo '"><a href="master_schedule.php">Master Schedule</a></li> ';
+            echo '"><a href="javascript:void(0)" class="drop-button">Master Schedule</a>';
+            echo '<div class="dropdown-content">';
+            echo '<a class="dropdown-anchor';
+            if (preg_match("[master_schedule_current]", $current_page))
+            {
+                echo ' nav-bar-active';
+            }
+            echo '" href="master_schedule_current.php">Current Semester</a>';
+            echo '<a class="dropdown-anchor';
+            if (preg_match("[master_schedule_next]", $current_page))
+            {
+                echo ' nav-bar-active';
+            }
+            echo '" href="master_schedule_next.php">Next Semester</a></div></li>';
 
             //LOGOUT
             if (isset($_SESSION['userId']))
