@@ -382,8 +382,17 @@ table.sada-core-req {
     margin : auto;
 }
 
-#sh-account-details {
+#sh-account-details, #fh-account-details {
     margin-right : var(--standard-margin);
+}
+
+.fh-advisee-list-card {
+    height : 250px;
+}
+
+.fh-advisee-list-body {
+    height     : 165px;
+    overflow-y : scroll;
 }
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
@@ -499,7 +508,8 @@ table.sada-core-req {
     width   : 100%;
 }
 
-#student-inc-home-container {
+#student-inc-home-container,
+#faculty-inc-home-container {
     width  : 1000px;
     margin : auto;
 }
@@ -563,16 +573,19 @@ input.sr-entry-text {
     float         : left;
 }
 
-#ssc-table-container, #ssn-table-container {
+#ssc-table-container, #ssn-table-container,
+#fsc-table-container, #fsn-table-container {
     margin-bottom : var(--standard-margin);
     width         : 1000px;
 }
 
-#ssc-table tr:nth-child(even), #ssn-table tr:nth-child(even) {
+#ssc-table tr:nth-child(even), #ssn-table tr:nth-child(even),
+#fsc-table tr:nth-child(even), #fsn-table tr:nth-child(even) {
     background-color : #f4f8f9;
 }
 
-#ssc-table caption, #ssn-table caption {
+#ssc-table caption, #ssn-table caption,
+#fsc-table caption, #fsn-table caption {
     padding-top    : var(--standard-margin-small);
     padding-bottom : var(--standard-margin-small);
     width          : 920px;

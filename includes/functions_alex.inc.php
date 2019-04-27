@@ -209,3 +209,25 @@
                                  AND s.sectionCRN = r.sectionCRN;";
         viewBasicTableFromSQL($conn, $sqlTranscriptTotals, $current_page, 'transcript-totals');
     }
+
+    /**
+     * Displays an account message from sql result
+     *
+     * @param $message
+     */
+    function displayMessage($message): void
+    {
+        echo '<div class="message-card">';
+        echo '    <div class="message-subject">';
+        echo $message['messageSubject'];
+        echo '    </div>';
+        echo '    <div class="message-body">';
+        echo '        <p class="message-body-text">' . nl2br($message['messageBody']) . '</p>';
+        if ($message['messageSender'] !== null)
+        {
+            echo '<span>- </span><a href="mailto: ' . $message['messageSender'] . '" class="message-body-from">' . $message['messageSender'] . '</a>';
+        }
+        echo '        <p class="message-body-timestamp">' . $message['messageTime'] . '</p>';
+        echo '    </div>';
+        echo '</div>';
+    }
