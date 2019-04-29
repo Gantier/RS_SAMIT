@@ -21,6 +21,7 @@
                                'Mathematics',
                                'Psychology',
                                'Visual Arts');
+
         const ATTRIBUTES = array('Liberal Arts',
                                  'Natural Sciences',
                                  'Computer Science',
@@ -29,6 +30,24 @@
                                  'Mathematics',
                                  'Social Science Designation',
                                  'Creativity and the Arts');
+
+        const MIDTERM = array('Satisfactory',
+                              'Unsatisfactory',
+                              'Failed');
+
+        const FINAL = array('A',
+                            'A-',
+                            'B+',
+                            'B',
+                            'B-',
+                            'C+',
+                            'C',
+                            'C-',
+                            'D+',
+                            'D',
+                            'D-',
+                            'F',
+                            'W');
 
         const MESSAGE_SUBS = array('SR_SUCCESS' => 'Registration Successful',
                                    'SR_FAIL' => 'Registration Failure',

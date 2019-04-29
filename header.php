@@ -165,14 +165,6 @@
                         }
                         echo '" href="master_schedule_next.php">Next Semester</a></div></li>';
 
-                        //SECTIONS
-                        echo '<li class="';
-                        if (preg_match("[faculty_sections]", $current_page))
-                        {
-                            echo "nav-bar-active";
-                        }
-                        echo '"><a href="faculty_sections.php">Sections</a></li> ';
-
                         //ACADEMICS
                         echo '<li class="';
                         if (preg_match("[faculty_academics]", $current_page))

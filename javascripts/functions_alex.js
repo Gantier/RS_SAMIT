@@ -146,6 +146,49 @@ function msFilter()
     }
 }
 
+function faFilter()
+{
+    var faTable = document.getElementById("fa-table");
+    if (document.getElementById("fa-keyword") !== null)
+    {
+        var keyword = document.getElementById("fa-keyword").value;
+    }
+    var helperText = document.getElementById("fa-helper-text");
+    var section = document.getElementById("fa-section-dropdown").value;
+
+    var newHelperText = "Showing all students filtered by...";
+
+    for (var i = 1; i < faTable.rows.length; i++)
+    {
+        //if section is set
+        if (section !== "null")
+        {
+            //check section
+            if (section !== faTable.rows[i].cells[0].innerText)
+            {
+                faTable.rows[i].style.display = 'none';
+            }
+        }
+    }
+
+    //if filter not blank
+    if (section !== "null")
+    {
+        //update helper text
+        newHelperText += "<br>Section CRN: '" + section + "'";
+        if (keyword.length > 1)
+        {
+            newHelperText += "<br>Containing: '" + keyword + "'";
+        }
+        helperText.innerHTML = newHelperText;
+    }
+    else
+    {
+        //else, default helper text
+        helperText.innerHTML = "Showing all students...";
+    }
+}
+
 // noinspection JSUnusedGlobalSymbols
 function updateStudentRegistrationDetails(
     sectionIdSelected, detailsTextId, detailsTitleId, addButton, descriptionColumn, allPreReqs)
@@ -254,6 +297,19 @@ function updateMasterScheduleDetails(
     document.getElementById(detailsTitleId).innerHTML =
         "Section Details - CRN: " +
         sectionIdSelected.cells[0].innerText;
+}
+
+// noinspection JSUnusedGlobalSymbols
+function updateFacultyAcademics(sectionIdSelected, detailsTextId, accountId)
+{
+    var studentName = sectionIdSelected.cells[2].innerText;
+    var studentAccount = sectionIdSelected.cells[3].innerText;
+
+    document.getElementById(detailsTextId).innerHTML =
+        studentName + "<br>" +
+        studentAccount;
+
+    document.getElementById(accountId).value = studentAccount;
 }
 
 // noinspection JSUnusedGlobalSymbols

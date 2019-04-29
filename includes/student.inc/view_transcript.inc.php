@@ -6,7 +6,8 @@
         <?php
             if (isset($resultStudentSemesters))
             {
-                viewTranscript($conn, $resultStudentSemesters, $current_page);
+                viewTranscript($conn, $current_page, $resultStudentSemesters,
+                    $_SESSION['userId'], $_SESSION['studentName'], $_SESSION['studentLevel']);
             }
         ?>
     </div>

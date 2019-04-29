@@ -5,14 +5,14 @@
         if ($_SESSION['facultyType'] === 'Full-time')//full-time
         {
             //faculty advisees
-            $sqlFacultyAdvisees = "SELECT CONCAT(CONCAT(CONCAT(s.studentFirstName, ' '),
-                                                        CONCAT(SUBSTR(s.studentMiddleName, 1, 1), '. ')),
-                                                 s.studentLastName) AS adviseeName,
+            $sqlFacultyAdvisees = "SELECT CONCAT(CONCAT(CONCAT(s.studentLastName, ', '), 
+                                          s.studentFirstName))      AS adviseeName,
                                           s.studentAccount          AS adviseeContact
                                    FROM registration_system.student s,
                                         registration_system.adviser a
                                    WHERE s.studentAccount = a.studentAccount
-                                     AND a.facultyAccount = '" . $_SESSION['userId'] . "';";
+                                     AND a.facultyAccount = '" . $_SESSION['userId'] . "'
+                                     ORDER BY s.studentAccount;";
             $resultFacultyAdvisees = mysqli_fetch_all($conn->query($sqlFacultyAdvisees), MYSQLI_ASSOC);
 
             //faculty rank
@@ -48,6 +48,30 @@
             $resultFacultyRank = $conn->query($sqlFacultyRank);
             $facultyRank = mysqli_fetch_row($resultFacultyRank);
         }
+        //faculty sections current semester
+        $sqlFacultySectionsC = "SELECT CONCAT(CONCAT(sec.sectionCRN, CONCAT('-00', CONCAT(sec.sectionNumber, '-'))),
+                                              CONCAT(d.departmentTag, c.courseNumber)) AS facultySection
+                                FROM registration_system.section sec,
+                                     registration_system.department d,
+                                     registration_system.course c
+                                WHERE sec.sectionInstructor = '" . $_SESSION['userId'] . "'
+                                  AND sec.sectionCourse = c.courseName
+                                  AND d.departmentName = c.courseSubject
+                                  AND sec.sectionSemester = '" . $_SESSION['currentSemester'] . "';";
+        $resultFacultySectionsC = mysqli_fetch_all($conn->query($sqlFacultySectionsC), MYSQLI_ASSOC);
+
+        //faculty sections next semester
+        $sqlFacultySectionsN = "SELECT CONCAT(CONCAT(sec.sectionCRN, CONCAT('-00', CONCAT(sec.sectionNumber, '-'))),
+                                              CONCAT(d.departmentTag, c.courseNumber)) AS facultySection
+                                FROM registration_system.section sec,
+                                     registration_system.department d,
+                                     registration_system.course c
+                                WHERE sec.sectionInstructor = '" . $_SESSION['userId'] . "'
+                                  AND sec.sectionCourse = c.courseName
+                                  AND d.departmentName = c.courseSubject
+                                  AND sec.sectionSemester = '" . $_SESSION['nextSemester'] . "';";
+        $resultFacultySectionsN = mysqli_fetch_all($conn->query($sqlFacultySectionsN), MYSQLI_ASSOC);
+
         //faculty status
         $sqlFacultyStatus = "SELECT facultyStatus
                            FROM registration_system.faculty
@@ -61,6 +85,49 @@
                            WHERE facultyAccount = '" . $_SESSION['userId'] . "';";
         $resultFacultyDept = $conn->query($sqlFacultyDept);
         $facultyDept = mysqli_fetch_row($resultFacultyDept);
+
+        //faculty grades enabled
+        $sqlGradesEnabled = "WITH LogMidterm AS
+                                    (
+                                      SELECT CASE
+                                               WHEN semesterStartDate >= NOW() - INTERVAL 58 DAY
+                                                 OR semesterStartDate >= NOW() - INTERVAL 72 DAY
+                                                 THEN 'enabled'
+                                               ELSE 'disabled' END AS midterm
+                                      FROM registration_system.semester
+                                      WHERE semester.semesterName = '" . $_SESSION['currentSemester'] . "'
+                                    ),
+                                  LogFinal AS
+                                    (
+                                      SELECT CASE
+                                               WHEN semesterEndDate <= NOW() + INTERVAL 7 DAY
+                                                 OR semesterEndDate <= NOW() - INTERVAL 7 DAY
+                                                 THEN 'enabled'
+                                               ELSE 'disabled' END AS final
+                                      FROM registration_system.semester
+                                      WHERE semester.semesterName = '" . $_SESSION['currentSemester'] . "'
+                                    )
+                             SELECT midterm,
+                                    final
+                             FROM LogMidterm,
+                                  LogFinal;";
+        $resultGradesEnabled = $conn->query($sqlGradesEnabled);
+        $gradesEnabled = mysqli_fetch_assoc($resultGradesEnabled);
+
+        //faculty grade windows
+        $sqlGradeWindows = "SELECT semesterStartDate + INTERVAL 44 DAY AS midtermStart,
+                                   semesterStartDate + INTERVAL 58 DAY AS midtermEnd,
+                                   semesterEndDate - INTERVAL 7 DAY    AS finalStart,
+                                   semesterEndDate + INTERVAL 7 DAY    AS finalEnd
+                            FROM registration_system.semester
+                            WHERE semester.semesterName = '" . $_SESSION['currentSemester'] . "';";
+        $resultGradeWindows = $conn->query($sqlGradeWindows);
+        $gradeWindows = mysqli_fetch_assoc($resultGradeWindows);
+
+        //current date
+        $sqlToday = "SELECT CURRENT_DATE AS today;";
+        $resultToday = $conn->query($sqlToday);
+        $today = mysqli_fetch_row($resultToday);
 
         //faculty messages
         $sqlFacultyMessages = "SELECT messageSender, messageReceiver, messageSubject, messageBody, messageTime

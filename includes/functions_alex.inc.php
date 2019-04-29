@@ -29,7 +29,7 @@
         }
     }
 
-    function viewFancyTableFromSQL(mysqli $conn, $sql, $current_page, $containerId, $tableId, $caption, $rowClick): void
+    function viewFancyTableFromSQL(mysqli $conn, $sql, $current_page, $containerId, $tableId, $caption, $rowClick)
     {
         $statement = mysqli_stmt_init($conn);
 
@@ -48,6 +48,7 @@
                 $rowClick = "onclick=\"" . $rowClick . "\"";
                 //generate html table
                 drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick);
+                return $sqlResult;
             }
             else
             {
@@ -83,15 +84,15 @@
         }
     }
 
-    function viewTranscript(mysqli $conn, $resultStudentSemesters, $current_page)
+    function viewTranscript(mysqli $conn, $current_page, $studentSemesters, $studentAccount, $studentName, $studentLevel)
     {
         echo '<p id="transcript-caption">Student Information</p>';
-        $sqlTranscriptStudentInfo = "SELECT '" . $_SESSION['studentName'] . "'                                               AS studentName,
-                                           '" . $_SESSION['studentLevel'] . "'                                               AS studentLevel,
+        $sqlTranscriptStudentInfo = "SELECT '" . $studentName . "'                                               AS studentName,
+                                           '" . $studentLevel . "'                                               AS studentLevel,
                                            studentDOB                                                                        AS 'Date of Birth',
                                            CONCAT(UCASE(SUBSTRING(studentStatus, 1, 1)), LOWER(SUBSTRING(studentStatus, 2))) AS Status
                                      FROM registration_system.student
-                                     WHERE studentAccount = '" . $_SESSION['userId'] . "';";
+                                     WHERE studentAccount = '" . $studentAccount . "';";
         viewBasicTableFromSQL($conn, $sqlTranscriptStudentInfo, $current_page, 'transcript-student-info');
 
         echo '<p id="transcript-caption">Curriculum Information</p>';
@@ -107,11 +108,11 @@
                                                e.dateEnrolled                                                                       AS 'Enrollment',
                                                e.dateGraduate                                                                       AS 'Graduation'
                                         FROM registration_system.enrollment e
-                                        WHERE e.studentAccount = '" . $_SESSION['userId'] . "'
+                                        WHERE e.studentAccount = '" . $studentAccount . "'
                                         ORDER BY `Degree Sought`;";
         viewBasicTableFromSQL($conn, $sqlTranscriptCurriculumInfo, $current_page, 'transcript-curriculum-info');
 
-        foreach ($resultStudentSemesters as $semester)
+        foreach ($studentSemesters as $semester)
         {
             $sqlTranscriptSemester = "SELECT CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber) AS transcriptCourse,
                                          c.courseName                                             AS transcriptTitle,
@@ -137,7 +138,7 @@
                                   WHERE d.departmentName = c.courseSubject
                                     AND s.sectionCRN = r.sectionCRN
                                     AND s.sectionCourse = c.courseName
-                                    AND r.studentAccount = '" . $_SESSION['userId'] . "'
+                                    AND r.studentAccount = '" . $studentAccount . "'
                                     AND s.sectionSemester = '" . $semester['semester'] . "';";
             echo '<br><p id="transcript-semester-caption">' . $semester['semester'] . ' Grades</p>';
             viewBasicTableFromSQL($conn, $sqlTranscriptSemester, $current_page, 'transcript-semester');
@@ -147,7 +148,7 @@
                                                    FROM registration_system.registration r,
                                                         registration_system.course c,
                                                         registration_system.section s
-                                                   WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                                   WHERE r.studentAccount = '" . $studentAccount . "'
                                                      AND s.sectionCRN = r.sectionCRN
                                                      AND c.courseName = s.sectionCourse
                                                      AND r.finalGrade > 1.33
@@ -156,14 +157,14 @@
                                                    FROM registration_system.registration r,
                                                         registration_system.course c,
                                                         registration_system.section s
-                                                   WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                                   WHERE r.studentAccount = '" . $studentAccount . "'
                                                      AND s.sectionCRN = r.sectionCRN
                                                      AND c.courseName = s.sectionCourse
                                                      AND s.sectionSemester = '" . $semester['semester'] . "') AS semesterGPA
                                            FROM registration_system.registration r,
                                                 registration_system.course c,
                                                 registration_system.section s
-                                           WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                           WHERE r.studentAccount = '" . $studentAccount . "'
                                              AND c.courseName = s.sectionCourse
                                              AND s.sectionCRN = r.sectionCRN
                                              AND s.sectionSemester = '" . $semester['semester'] . "';";
@@ -180,7 +181,7 @@
                                         FROM registration_system.registration r,
                                              registration_system.course c,
                                              registration_system.section s
-                                        WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                        WHERE r.studentAccount = '" . $studentAccount . "'
                                           AND s.sectionCRN = r.sectionCRN
                                           AND c.courseName = s.sectionCourse
                                       )
@@ -189,7 +190,7 @@
                                        FROM registration_system.registration r,
                                             registration_system.course c,
                                             registration_system.section s
-                                       WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                                       WHERE r.studentAccount = '" . $studentAccount . "'
                                          AND s.sectionCRN = r.sectionCRN
                                          AND c.courseName = s.sectionCourse
                                          AND r.finalGrade > 1.33) AS totalEarned,
@@ -204,7 +205,7 @@
                                     registration_system.course c,
                                     registration_system.section s,
                                     LogTotalGPA
-                               WHERE r.studentAccount = '" . $_SESSION['userId'] . "'
+                               WHERE r.studentAccount = '" . $studentAccount . "'
                                  AND c.courseName = s.sectionCourse
                                  AND s.sectionCRN = r.sectionCRN;";
         viewBasicTableFromSQL($conn, $sqlTranscriptTotals, $current_page, 'transcript-totals');

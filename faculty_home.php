@@ -1,13 +1,12 @@
 <?php
     require "header.php";
+    require "includes/dbh.inc.php";
+    require "includes/faculty.inc/data.inc.php";
 
     echo "<div id=\"home-backdrop\"></div>";
     require "includes/faculty.inc/view_edit-password.inc.php";
 
     echo "<main id='faculty-inc-home-container'>";
-
-    require "includes/dbh.inc.php";
-    require "includes/faculty.inc/data.inc.php";
 
     echo '<div id="fh-schedule-container">';
     require "includes/faculty.inc/view_schedule.inc.php";

@@ -15,6 +15,11 @@
     margin    : -10px;
 }
 
+.helper-label {
+    font-style : italic;
+    color      : var(--caution-dark);
+}
+
 /* unvisited link */
 a:link {
     color : var(--primary);
@@ -28,6 +33,16 @@ a:visited {
 /* mouse over link */
 a:hover {
     color : var(--primary-light);
+}
+
+select:disabled {
+    background-color : var(--secondary-table-td-border);
+}
+
+select:disabled:hover {
+    color            : var(--caution-dark);
+    border-color     : var(--caution-dark);
+    background-color : var(--caution-light);
 }
 
 #messages-caption {
@@ -103,6 +118,11 @@ a:hover {
 }
 
 /*SPECIAL TABLES*/
+
+table#fa-table tr.fa-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
 
 table#sr-table tr.sr-table:hover {
     background-color : var(--secondary-table-td-border);
@@ -386,13 +406,18 @@ table.sada-core-req {
     margin-right : var(--standard-margin);
 }
 
+#fa-search-card, #fa-grades-card {
+    margin-bottom : var(--standard-margin);
+}
+
 .fh-advisee-list-card {
     height : 250px;
 }
 
 .fh-advisee-list-body {
-    height     : 165px;
-    overflow-y : scroll;
+    line-height : 1.5;
+    height      : 165px;
+    overflow-y  : scroll;
 }
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
@@ -430,6 +455,12 @@ table.sada-core-req {
     height       : 750px;
     float        : left;
     margin-right : var(--standard-margin);
+}
+
+#fat-card {
+    width  : 535px;
+    height : 750px;
+    margin : auto;
 }
 
 #sag-card-title {
@@ -529,14 +560,19 @@ table.sada-core-req {
     margin : auto;
 }
 
-#sr-table-container, #ms-table-container {
+#fa-container {
+    width  : 75%;
+    margin : auto;
+}
+
+#sr-table-container, #ms-table-container, #fa-table-container {
     float         : left;
     margin-bottom : var(--standard-margin);
     margin-left   : 366px;
     width         : 75%;
 }
 
-#sr-console-container, #ms-console-container {
+#sr-console-container, #ms-console-container, #fa-console-container {
     position : fixed;
     width    : 350px;
 }
