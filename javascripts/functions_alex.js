@@ -164,7 +164,7 @@ function faFilter()
         if (section !== "null")
         {
             //check section
-            if (section !== faTable.rows[i].cells[0].innerText)
+            if (section !== faTable.rows[i].cells[2].innerText)
             {
                 faTable.rows[i].style.display = 'none';
             }
@@ -300,16 +300,73 @@ function updateMasterScheduleDetails(
 }
 
 // noinspection JSUnusedGlobalSymbols
-function updateFacultyAcademics(sectionIdSelected, detailsTextId, accountId)
+function updateFacultyAcademics(sectionIdSelected, detailsTextId0, detailsTextId1, accountId, sectionId)
 {
-    var studentName = sectionIdSelected.cells[2].innerText;
-    var studentAccount = sectionIdSelected.cells[3].innerText;
+    var studentName = sectionIdSelected.cells[0].innerText;
+    var studentAccount = sectionIdSelected.cells[1].innerText;
+    var studentSection = sectionIdSelected.cells[2].innerText.substr(0, 4);
 
-    document.getElementById(detailsTextId).innerHTML =
-        studentName + "<br>" +
+    document.getElementById(detailsTextId0).innerHTML =
+        "Section " + studentSection + " - " +
+        studentName + "<br>";
+    document.getElementById(detailsTextId1).innerHTML =
         studentAccount;
-
     document.getElementById(accountId).value = studentAccount;
+    document.getElementById(sectionId).value = studentSection;
+}
+
+function fAAddToBatchOnClick()
+{
+    //check if a student is selected
+    var key = document.getElementById('fa-details-text1').innerText;
+    if (key !== "")
+    {
+        var midterm = document.getElementById('fa-midterm-dropdown');
+        var final = document.getElementById('fa-final-dropdown');
+        var absent = document.getElementById('fa-radio-absent');
+
+        var sectionText = document.getElementById('fa-student-section').value;
+        var midtermText = (midterm.disabled === true) ?
+            "null" : midterm.options[midterm.selectedIndex].value;
+        var finalText = (final.disabled === true) ?
+            "null" : final.options[final.selectedIndex].value;
+        var attendanceText = (absent.checked === true) ? "absent" : "present";
+
+        var addTextToBatch = key + ";" + sectionText + ";" + midtermText + ";" +
+            finalText + ";" + attendanceText + ",";
+
+        var batch = document.getElementById('fa-batch');
+        batch.value += addTextToBatch;
+
+        var table = document.getElementById('fa-table');
+        var numRows = table.rows.length - 1;
+        var progressBar = document.getElementById('fa-hr-progress-bar');
+        var maxWidth = 316;
+        var width = parseInt(progressBar.style.width);
+        alert(progressBar.style.width);
+        var increment = maxWidth / numRows;
+        var newWidth = width + increment;
+        progressBar.style.width = newWidth + "px";
+
+        var helper = document.getElementById('fa-helper-text');
+        if (midtermText === "null" && finalText === "null")
+        {
+            helper.innerText = "Added attendance for " + key + " to the batch..."
+        }
+        else
+        {
+            helper.innerText = "Added grades and attendance for " + key + " to the batch..."
+        }
+    }
+}
+
+function fAClearBatchOnClick()
+{
+    var batch = document.getElementById('fa-batch');
+    batch.value = "";
+
+    var helper = document.getElementById('fa-helper-text');
+    helper.innerText = "Cleared all additions to the batch..."
 }
 
 // noinspection JSUnusedGlobalSymbols

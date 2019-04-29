@@ -38,15 +38,18 @@
             Grades & Attendance
         </div>
         <div class="card-body" id="fa-details-body">
-            <div id="fa-details-text">
+            <div id="fa-details-text0">
                 Select a student from the table on the right to edit midterm/final grades and record daily attendance...
             </div>
+            <div id="fa-details-text1"></div><!--holds the student account key-->
             <hr>
-            <br>
             <!--suppress HtmlUnknownTarget -->
-            <form method="post" action="faculty_academics.php" id="fa-form">
+            <form method="post" action="includes/faculty.inc/fa-submit.inc.php" id="fa-form">
                 <label>
                     <input type="text" name="fa-student-account" id="fa-student-account" style="display: none" readonly>
+                </label>
+                <label>
+                    <input type="text" name="fa-student-section" id="fa-student-section" style="display: none" readonly>
                 </label>
                 <label><?php echo $_SESSION['currentSemester'] ?> Grades:</label><br>
                 <label class="helper-label" for="fa-midterm-dropdown"><?php
@@ -67,13 +70,13 @@
                         }
                     ?></label>
                 <select id="fa-midterm-dropdown"<?php
-                    if (isset($gradesEnabled))
-                    {
-                        if ($gradesEnabled['midterm'] === 'disabled')
-                        {
-                            echo 'disabled';
-                        }
-                    } ?>>
+                    /*                    if (isset($gradesEnabled))
+                                        {
+                                            if ($gradesEnabled['midterm'] === 'disabled')
+                                            {
+                                                echo 'disabled';
+                                            }
+                                        } */ ?>>
                     <option value="null" selected hidden>Select midterm grade...</option>
                     <?php
                         foreach (Constants::MIDTERM as $item)
@@ -100,13 +103,13 @@
                         }
                     ?></label>
                 <select id="fa-final-dropdown"<?php
-                    if (isset($gradesEnabled))
-                    {
-                        if ($gradesEnabled['final'] === 'disabled')
-                        {
-                            echo 'disabled';
-                        }
-                    } ?>>
+                    /*                    if (isset($gradesEnabled))
+                                        {
+                                            if ($gradesEnabled['final'] === 'disabled')
+                                            {
+                                                echo 'disabled';
+                                            }
+                                        } */ ?>>
                     <option value="null" selected hidden>Select final grade...</option>
                     <?php
                         foreach (Constants::FINAL as $item)
@@ -114,9 +117,8 @@
                             echo '<option value="' . $item . '">' . $item . '</option>';
                         }
                     ?>
-                </select><br><br>
+                </select><br>
                 <hr>
-                <br>
                 <div class="fa-radios-attendance">
                     <label><?php {
                             if (isset($today))
@@ -131,15 +133,30 @@
                                 }
                             }
                         } ?> Attendance:</label><br>
-                    <label>
-                        <input type="radio" name="gender-radio" value="present" checked>
-                    </label>Present
-                    <label>
-                        <input type="radio" name="gender-radio" value="absent">
-                    </label>Absent
+                    <label class="radio-label">Present
+                        <input class="radio-attendance" type="radio" name="fa-radio-attendance" id="fa-radio-present"
+                               value="present" checked>
+                    </label>
+                    <label class="radio-label">Absent
+                        <input class="radio-attendance" type="radio" name="fa-radio-attendance" id="fa-radio-absent"
+                               value="absent">
+                    </label>
                 </div>
+                <button class="outlined primary small-button" type="button" name="fa-add-to-batch" id="fa-add-to-batch"
+                        onclick="fAAddToBatchOnClick()">Add to Batch
+                </button>
+                <button class="outlined warning small-button" type="button" name="fa-clear-batch" id="fa-clear-batch"
+                        onclick="fAClearBatchOnClick()">Clear Batch
+                </button>
                 <br>
-                <button class="outlined secondary big-button" type="submit" name="fa-submit">Submit</button>
+                <label>
+                    <input type="text" name="fa-batch" id="fa-batch" style="display: none" readonly>
+                </label>
+                <hr class="hr-full-bar">
+                <hr class="hr-progress-bar" id="fa-hr-progress-bar">
+                <button class="material secondary big-button" type="submit" name="fa-submit" id="fa-submit">Submit
+                    Batch
+                </button>
             </form>
         </div>
     </div>

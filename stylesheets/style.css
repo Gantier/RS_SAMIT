@@ -175,6 +175,8 @@ label {
 hr {
     border        : 1px solid var(--secondary);
     border-radius : var(--standard-border-radius);
+    margin-top    : 12px;
+    margin-bottom : 12px;
 }
 
 caption, .card-title {
@@ -496,12 +498,13 @@ div.login-card {
 }
 
 .outlined.primary {
-    background-color : var(--primary-light);
-    border-color     : var(--primary);
+    background-color : var(--primary-highlight-dark);
+    border-color     : var(--primary-light);
+    color            : var(--primary);
 }
 
 .outlined.primary:hover {
-    border-color : var(--primary-highlight);
+    border-color : var(--primary);
 }
 
 .outlined.secondary {
@@ -510,8 +513,18 @@ div.login-card {
     color            : var(--secondary-text-dark);
 }
 
+.outlined.warning {
+    background-color : #ffa4a2;
+    border-color     : #af4448;
+    color            : #9a0007;
+}
+
 .outlined.secondary:hover {
     border-color : var(--secondary-dark);
+}
+
+.outlined.warning:hover {
+    border-color : #9a0007;
 }
 
 .outlined:hover {
@@ -523,7 +536,15 @@ div.login-card {
     background-color : white;
     box-shadow       : 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-color     : white;
-    margin-bottom    : 12px;
+}
+
+.material:not(.secondary) {
+    margin-bottom : 12px;
+}
+
+.material.secondary {
+    margin-top    : var(--standard-margin);
+    margin-bottom : var(--standard-margin-small);
 }
 
 .material:hover {
