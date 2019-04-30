@@ -117,8 +117,7 @@
                             echo '<option value="' . $item . '">' . $item . '</option>';
                         }
                     ?>
-                </select><br>
-                <hr>
+                </select><br><br>
                 <div class="fa-radios-attendance">
                     <label><?php {
                             if (isset($today))
