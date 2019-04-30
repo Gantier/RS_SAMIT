@@ -136,17 +136,20 @@
         }
 
         //send all grades message to faculty
-        $studentsGraded = "";
-        for ($i = 0; $i < sizeof($batch); $i++)
+        if (sizeof($batch) > 1)
         {
-            $gradedAccount = $batch[$i][0];
-            $gradedSection = $batch[$i][1];
-            $studentsGraded .= $gradedSection . " - " . $gradedAccount . "\n";
+            $studentsGraded = "";
+            for ($i = 0; $i < sizeof($batch); $i++)
+            {
+                $gradedAccount = $batch[$i][0];
+                $gradedSection = $batch[$i][1];
+                $studentsGraded .= $gradedSection . " - " . $gradedAccount . "\n";
+            }
+            $sqlFacultyGradesMessage = "INSERT INTO registration_system.message (messageReceiver, messageSubject, messageBody)
+                                        VALUES ('" . $_SESSION['userId'] . "', '" . Constants::MESSAGE_SUBS['FA'] . "', '" .
+                Constants::MESSAGE_BODS['FA'] . "\n\n" . $studentsGraded . "');";
+            $conn->query($sqlFacultyGradesMessage);
         }
-        $sqlFacultyGradesMessage = "INSERT INTO registration_system.message (messageReceiver, messageSubject, messageBody)
-                                    VALUES ('" . $_SESSION['userId'] . "', '" . Constants::MESSAGE_SUBS['FA'] . "', '" .
-            Constants::MESSAGE_BODS['FA'] . "\n\n" . $studentsGraded . "');";
-        $conn->query($sqlFacultyGradesMessage);
     }
 
     header("Location: ../../faculty_academics.php");
