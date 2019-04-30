@@ -324,8 +324,13 @@ table th {
 }
 
 table td {
-    border : 1px solid var(--secondary-table-td-border);
-    color  : var(--secondary-text-dark);
+    border     : 1px solid var(--secondary-table-td-border);
+    color      : var(--secondary-text-dark);
+    transition : all 0.25s cubic-bezier(.25, .8, .25, 1);
+}
+
+table tr {
+    transition : background-color 0.25s cubic-bezier(.25, .8, .25, 1);
 }
 
 table thead:first-child th {
@@ -417,6 +422,8 @@ table#cc-table th:nth-last-child(2) {
 /*SPECIAL CARDS*/
 
 .helper, .card-body.helper {
+    border-radius    : 18px;
+    padding          : 6px;
     background-color : var(--caution-light);
     color            : var(--caution-dark);
     font-size        : var(--small-font-size);

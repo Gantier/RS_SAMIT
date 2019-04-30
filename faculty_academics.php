@@ -43,10 +43,9 @@
                               AND sec.sectionCRN = reg.sectionCRN
                               AND d.departmentName = c.courseSubject
                             ORDER BY 'Section CRN', 'Student Name';";
-
     $resultFacultyAcademics = viewFancyTableFromSQL($conn, $sqlFacultyAcademics, $current_page,
         "fa-table-container", "fa-table", "Your Students - " . $_SESSION['currentSemester'],
-        "updateFacultyAcademics(this, 'fa-details-text0', 'fa-details-text1', 'fa-student-account', 'fa-student-section')");
+        "updateFacultyAcademics(this)");
 
     require "includes/faculty.inc/fa-console.inc.php";
     echo '</main>';

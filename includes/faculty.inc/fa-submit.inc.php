@@ -139,7 +139,7 @@
         if (sizeof($batch) > 1)
         {
             $studentsGraded = "";
-            for ($i = 0; $i < sizeof($batch); $i++)
+            for ($i = 0; $i < sizeof($batch) - 1; $i++)
             {
                 $gradedAccount = $batch[$i][0];
                 $gradedSection = $batch[$i][1];
