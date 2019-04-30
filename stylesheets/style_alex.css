@@ -10,9 +10,79 @@
 
 .material-icons.md-22 { font-size : 22px; }
 
+.hr-progress-bar, .hr-full-bar {
+    margin-top    : 2px;
+    margin-bottom : 2px;
+}
+
+.hr-progress-bar {
+    position   : absolute;
+    z-index    : 100;
+    width      : 0;
+    max-width  : 316px;
+    border     : 1px solid var(--primary-light);
+    transform  : translateY(-6px);
+    transition : width 0.35s cubic-bezier(.25, .8, .25, 1);
+}
+
+.hr-full-bar {
+    border : 1px solid var(--primary-highlight-dark);
+}
+
+#fa-helper-text {
+    text-align : left;
+}
+
+#fa-details-text0 {
+    border-radius : var(--standard-border-radius) var(--standard-border-radius) 0 0;
+    padding-top   : var(--standard-margin-tiny);
+}
+
+#fa-details-text1 {
+    border-radius  : 0 0 var(--standard-border-radius) var(--standard-border-radius);
+    padding-bottom : var(--standard-margin-tiny);
+}
+
+#fa-details-text0, #fa-details-text1 {
+    background-color : var(--off-white);
+    line-height      : 1.15;
+}
+
 .da-icon {
     transform : translateY(7px);
     margin    : -10px;
+}
+
+.helper-label {
+    font-style : italic;
+    color      : var(--caution-dark);
+}
+
+#progress-label {
+    float      : left;
+    font-style : italic;
+    color      : #a9c1a8;
+    transform  : translateY(4px);
+}
+
+.radio-label {
+    background-color : var(--secondary-light);
+    width            : 77px;
+    font-size        : var(--medium-font-size);
+    margin-left      : 1px;
+    margin-top       : var(--standard-margin-tiny);
+    border-radius    : var(--standard-border-radius);
+    border           : solid 2px var(--secondary);
+    padding          : 3px 8px 6px;
+}
+
+.radio-label:hover {
+    border-color : var(--secondary-dark);
+    transition   : all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.radio-attendance {
+    transform : translateY(2px) translateX(1px);
 }
 
 /* unvisited link */
@@ -28,6 +98,16 @@ a:visited {
 /* mouse over link */
 a:hover {
     color : var(--primary-light);
+}
+
+select:disabled {
+    background-color : var(--secondary-table-td-border);
+}
+
+select:disabled:hover {
+    color            : var(--caution-dark);
+    border-color     : var(--caution-dark);
+    background-color : var(--caution-light);
 }
 
 #messages-caption {
@@ -103,6 +183,11 @@ a:hover {
 }
 
 /*SPECIAL TABLES*/
+
+table#fa-table tr.fa-table:hover {
+    background-color : var(--secondary-table-td-border);
+    cursor           : pointer;
+}
 
 table#sr-table tr.sr-table:hover {
     background-color : var(--secondary-table-td-border);
@@ -386,13 +471,18 @@ table.sada-core-req {
     margin-right : var(--standard-margin);
 }
 
+#fa-search-card, #fa-grades-card {
+    margin-bottom : var(--standard-margin);
+}
+
 .fh-advisee-list-card {
     height : 250px;
 }
 
 .fh-advisee-list-body {
-    height     : 165px;
-    overflow-y : scroll;
+    line-height : 1.5;
+    height      : 165px;
+    overflow-y  : scroll;
 }
 
 #sr-filter-card, #sr-details-card, #sr-worksheet-card,
@@ -430,6 +520,12 @@ table.sada-core-req {
     height       : 750px;
     float        : left;
     margin-right : var(--standard-margin);
+}
+
+#fat-card {
+    width  : 535px;
+    height : 750px;
+    margin : auto;
 }
 
 #sag-card-title {
@@ -529,14 +625,19 @@ table.sada-core-req {
     margin : auto;
 }
 
-#sr-table-container, #ms-table-container {
+#fa-container {
+    width  : 75%;
+    margin : auto;
+}
+
+#sr-table-container, #ms-table-container, #fa-table-container {
     float         : left;
     margin-bottom : var(--standard-margin);
     margin-left   : 366px;
     width         : 75%;
 }
 
-#sr-console-container, #ms-console-container {
+#sr-console-container, #ms-console-container, #fa-console-container {
     position : fixed;
     width    : 350px;
 }
@@ -581,7 +682,7 @@ input.sr-entry-text {
 
 #ssc-table tr:nth-child(even), #ssn-table tr:nth-child(even),
 #fsc-table tr:nth-child(even), #fsn-table tr:nth-child(even) {
-    background-color : #f4f8f9;
+    background-color : #f9fbfc;
 }
 
 #ssc-table caption, #ssn-table caption,
@@ -650,4 +751,21 @@ input.sr-entry-text {
 #edit-pw-cancel {
     transform : translateX(-2px);
 }
+
+#fa-add-to-batch, #fa-clear-batch {
+    transform : translateX(2px);
+}
+
+#fa-add-to-batch {
+    margin-right : 1px;
+}
+
+#fa-submit {
+    transform : translateX(-2px);
+}
+
+#fa-table tr:nth-child(even), #fa-table tr:nth-child(even) {
+    background-color : #f9fbfc;
+}
+
 

@@ -4,7 +4,7 @@
     </div>
     <div class="card-body" id="da-console-card-body">
         <!--suppress HtmlUnknownTarget -->
-        <form action="student_degree_audit.php" method="post" id="da-view">
+        <form action="student_degree-audit.php" method="post" id="da-view">
             <label>
                 <select id="da-program-dropdown" name="da-program">
                     <?php
