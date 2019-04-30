@@ -16,6 +16,7 @@
             $batch[$i] = explode(';', $batch[$i]);
         }
 
+        //for all the graded students
         for ($i = 0; $i < sizeof($batch); $i++)
         {
             $studentAccount = $batch[$i][0];
@@ -23,6 +24,9 @@
             $studentMidterm = $batch[$i][2];
             $studentFinal = $batch[$i][3];
             $studentAttendance = $batch[$i][4];
+
+            $studentMidtermText = $studentMidterm;
+            $studentFinalText = $studentFinal;
 
             //convert midterm value to valid
             switch ($studentMidterm)
@@ -105,8 +109,10 @@
                 $conn->query($sqlUpdateMidterm);
 
                 //send midterm grade message to student
-
-                //send midterm grade message to faculty
+                $sqlStudentMidtermMessage = "INSERT INTO registration_system.message (messageReceiver, messageSender, messageSubject, messageBody)
+                                    VALUES ('" . $studentAccount . "', '" . $_SESSION['userId'] . "', '" . Constants::MESSAGE_SUBS['SA'] . "', '" .
+                    Constants::MESSAGE_BODS['SA'] . $studentSection . "...\n\nMidterm: " . $studentMidtermText . "');";
+                $conn->query($sqlStudentMidtermMessage);
             }
 
             //final
@@ -119,11 +125,28 @@
                                       AND sectionCRN = " . $studentSection . ";";
                 $conn->query($sqlUpdateFinal);
 
-                //send final grade message
+                //send final grade message to student
+                $sqlStudentFinalMessage = "INSERT INTO registration_system.message (messageReceiver, messageSender, messageSubject, messageBody)
+                                    VALUES ('" . $studentAccount . "', '" . $_SESSION['userId'] . "', '" . Constants::MESSAGE_SUBS['SA'] . "', '" .
+                    Constants::MESSAGE_BODS['SA'] . $studentSection . "...\n\nFinal: " . $studentFinalText . "');";
+                $conn->query($sqlStudentFinalMessage);
             }
 
             //attendance
         }
+
+        //send all grades message to faculty
+        $studentsGraded = "";
+        for ($i = 0; $i < sizeof($batch); $i++)
+        {
+            $gradedAccount = $batch[$i][0];
+            $gradedSection = $batch[$i][1];
+            $studentsGraded .= $gradedSection . " - " . $gradedAccount . "\n";
+        }
+        $sqlFacultyGradesMessage = "INSERT INTO registration_system.message (messageReceiver, messageSubject, messageBody)
+                                    VALUES ('" . $_SESSION['userId'] . "', '" . Constants::MESSAGE_SUBS['FA'] . "', '" .
+            Constants::MESSAGE_BODS['FA'] . "\n\n" . $studentsGraded . "');";
+        $conn->query($sqlFacultyGradesMessage);
     }
 
     header("Location: ../../faculty_academics.php");

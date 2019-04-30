@@ -318,45 +318,79 @@ function updateFacultyAcademics(sectionIdSelected, detailsTextId0, detailsTextId
 function fAAddToBatchOnClick()
 {
     //check if a student is selected
-    var key = document.getElementById('fa-details-text1').innerText;
-    if (key !== "")
+    var helper = document.getElementById('fa-helper-text');
+    var accountText = document.getElementById('fa-details-text1').innerText;
+    if (accountText !== "")
     {
+        //get elements
         var midterm = document.getElementById('fa-midterm-dropdown');
         var final = document.getElementById('fa-final-dropdown');
         var absent = document.getElementById('fa-radio-absent');
 
+        //get text
         var sectionText = document.getElementById('fa-student-section').value;
         var midtermText = (midterm.disabled === true) ?
             "null" : midterm.options[midterm.selectedIndex].value;
         var finalText = (final.disabled === true) ?
             "null" : final.options[final.selectedIndex].value;
         var attendanceText = (absent.checked === true) ? "absent" : "present";
-
-        var addTextToBatch = key + ";" + sectionText + ";" + midtermText + ";" +
+        var key = accountText + ";" + sectionText;
+        var addTextToBatch = accountText + ";" + sectionText + ";" + midtermText + ";" +
             finalText + ";" + attendanceText + ",";
 
-        var batch = document.getElementById('fa-batch');
-        batch.value += addTextToBatch;
-
-        var table = document.getElementById('fa-table');
-        var numRows = table.rows.length - 1;
-        var progressBar = document.getElementById('fa-hr-progress-bar');
-        var maxWidth = 316;
-        var width = parseInt(progressBar.style.width);
-        alert(progressBar.style.width);
-        var increment = maxWidth / numRows;
-        var newWidth = width + increment;
-        progressBar.style.width = newWidth + "px";
-
-        var helper = document.getElementById('fa-helper-text');
-        if (midtermText === "null" && finalText === "null")
+        //add to helper text
+        var helperAfter = "";
+        if (midtermText !== "null")
         {
-            helper.innerText = "Added attendance for " + key + " to the batch..."
+            helperAfter += "\nMidterm grade: " + midtermText;
+        }
+        if (finalText !== "null")
+        {
+            helperAfter += "\nFinal grade: " + finalText;
+        }
+        helperAfter += "\nAttendance: " + attendanceText;
+
+        //check batch for duplicates
+        var batch = document.getElementById('fa-batch');
+        var textToSearch = batch.value;
+        var match = textToSearch.match(key);
+        if (match == null)//no duplicates
+        {
+            //add to batch
+            batch.value += addTextToBatch;
+
+            //adjust the bar
+            var table = document.getElementById('fa-table');
+            var numRows = table.rows.length - 1;
+            var progressBar = document.getElementById('fa-hr-progress-bar');
+            var maxWidth = 316;
+            var currentWidth = progressBar.offsetWidth - 2;
+            var increment = maxWidth / numRows;
+            var newWidth = currentWidth + increment;
+            progressBar.style.width = newWidth + "px";
+
+            //update helper
+            if (midtermText === "null" && finalText === "null")
+            {
+                helper.innerText = "Recorded attendance for the following student..." +
+                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
+            }
+            else
+            {
+                helper.innerText = "Updated grades and attendance for the following student..." +
+                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
+            }
         }
         else
         {
-            helper.innerText = "Added grades and attendance for " + key + " to the batch..."
+            helper.innerText = "Overwriting previous entry for the following student..." +
+                "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
         }
+    }
+    else
+    {
+        helper.innerText = "Click a row from the table on the right to edit the respective " +
+            "student's midterm/final grades and record daily attendance..."
     }
 }
 
@@ -365,8 +399,12 @@ function fAClearBatchOnClick()
     var batch = document.getElementById('fa-batch');
     batch.value = "";
 
+    //clear the bar
+    var progressBar = document.getElementById('fa-hr-progress-bar');
+    progressBar.style.width = "0";
+
     var helper = document.getElementById('fa-helper-text');
-    helper.innerText = "Cleared all additions to the batch..."
+    helper.innerText = "Cleared all additions to the batch...";
 }
 
 // noinspection JSUnusedGlobalSymbols

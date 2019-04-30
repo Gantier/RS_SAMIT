@@ -8,7 +8,7 @@
                 <input class="form-text-field" type="text" id="fa-keyword"
                        oninput="tableInstantSearch('fa-table', 'fa-keyword', 'fa-helper-text',
                        'Showing all students filtered by \'', 'Showing all students...', 3)"
-                       placeholder="Instant search all..."><br><br>
+                       placeholder="Instant search all..."><br>
                 <hr>
                 <label>Filter Students</label><br>
                 <label for="fa-section-dropdown"></label>
@@ -152,6 +152,7 @@
                 <label>
                     <input type="text" name="fa-batch" id="fa-batch" style="display: none" readonly>
                 </label>
+                <label id="progress-label">Batch...</label>
                 <hr class="hr-full-bar">
                 <hr class="hr-progress-bar" id="fa-hr-progress-bar">
                 <button class="material secondary big-button" type="submit" name="fa-submit" id="fa-submit">Submit

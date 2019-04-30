@@ -29,6 +29,10 @@
     border : 1px solid var(--primary-highlight-dark);
 }
 
+#fa-helper-text {
+    text-align : left;
+}
+
 .da-icon {
     transform : translateY(7px);
     margin    : -10px;
@@ -39,14 +43,22 @@
     color      : var(--caution-dark);
 }
 
+#progress-label {
+    float      : left;
+    font-style : italic;
+    color      : #a9c1a8;
+    transform  : translateY(4px);
+}
+
 .radio-label {
-    width         : 77px;
-    font-size     : var(--medium-font-size);
-    margin-left   : 1px;
-    margin-top    : var(--standard-margin-tiny);
-    border-radius : var(--standard-border-radius);
-    border        : solid 2px var(--secondary);
-    padding       : 5px 8px 8px;
+    background-color : var(--secondary-light);
+    width            : 77px;
+    font-size        : var(--medium-font-size);
+    margin-left      : 1px;
+    margin-top       : var(--standard-margin-tiny);
+    border-radius    : var(--standard-border-radius);
+    border           : solid 2px var(--secondary);
+    padding          : 5px 8px 8px;
 }
 
 .radio-label:hover {
@@ -655,7 +667,7 @@ input.sr-entry-text {
 
 #ssc-table tr:nth-child(even), #ssn-table tr:nth-child(even),
 #fsc-table tr:nth-child(even), #fsn-table tr:nth-child(even) {
-    background-color : #f4f8f9;
+    background-color : #f9fbfc;
 }
 
 #ssc-table caption, #ssn-table caption,
@@ -736,4 +748,9 @@ input.sr-entry-text {
 #fa-submit {
     transform : translateX(-2px);
 }
+
+#fa-table tr:nth-child(even), #fa-table tr:nth-child(even) {
+    background-color : #f9fbfc;
+}
+
 

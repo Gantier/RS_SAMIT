@@ -46,21 +46,26 @@
                             'D+',
                             'D',
                             'D-',
-                            'F',
-                            'W');
+                            'F');
 
         const MESSAGE_SUBS = array('SR_SUCCESS' => 'Registration Successful',
                                    'SR_FAIL' => 'Registration Failure',
                                    'EP_SUCCESS' => 'Password Changed',
                                    'EP_FAIL' => 'Password Unchanged',
-                                   'EP_LOCK' => 'Password Locked');
+                                   'EP_LOCK' => 'Password Locked',
+                                   'FA' => 'Grade(s) Submitted',
+                                   'SA' => 'Grade Received'
+        );
 
         const MESSAGE_BODS = array('SR_SUCCESS' => 'You were successfully registered for a new course: ',
                                    'SR_FAIL' => 'You were unable to register for a new course: ',
                                    'EP_SUCCESS' => 'Your account password was successfully edited.',
                                    'EP_FAIL' => 'New password must be at least 8 characters and must contain at least ' .
                                        'one lower case letter, one upper case letter, and one digit.',
-                                   'EP_LOCK' => 'Your account password has been locked from editing for 10 minutes.');
+                                   'EP_LOCK' => 'Your account password has been locked from editing for 10 minutes.',
+                                   'FA' => 'You have submitted grades for the following sections and student accounts:',
+                                   'SA' => 'You have received the following grade for section '
+        );
 
         const DEFAULT_COURSE_HELPER = "'Showing all courses...'";
         const ACTIVE_SEARCH_COURSE_HELPER = "'Showing all courses containing: \''";
