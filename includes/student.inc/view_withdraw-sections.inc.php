@@ -1,18 +1,18 @@
-<?php if (isset($resultStudentNextSections)): ?>
+<?php if (isset($resultStudentCurrentSections)): ?>
     <div class="card sws-card">
         <div class="card-title sws-title">
-            <button form="sds-form" type="submit" class="drop-sec-button" name="drop-sec-submit"
-                    id="edit-pw-button">Drop
+            <button form="sws-form" type="submit" class="wd-sec-button" name="wd-sec-submit"
+                    id="edit-pw-button">WD
             </button>
         </div>
         <div class="card-body sws-body">
             <!--suppress HtmlUnknownTarget -->
-            <form method="post" action="includes/student.inc/drop-sections.inc.php" id="sds-form">
+            <form method="post" action="includes/student.inc/withdraw-sections.inc.php" id="sws-form">
                 <?php for ($i = 0;
-                    $i < sizeof($resultStudentNextSections);
+                    $i < sizeof($resultStudentCurrentSections);
                     $i++): ?>
                 <div class="check-box-container<?php
-                    if ($i === sizeof($resultStudentNextSections) - 1)
+                    if ($i === sizeof($resultStudentCurrentSections) - 1)
                     {
                         echo ' last';
                     }
@@ -30,7 +30,7 @@
                     } ?>"
                 <label>
                     <input type="checkbox" name="section-crn<?php echo $i; ?>" class="check-box"
-                           value="<?php echo $resultStudentNextSections[$i]['sectionCRN'] ?>">
+                           value="<?php echo $resultStudentCurrentSections[$i]['sectionCRN'] ?>">
                 </label>
         </div>
         <?php endfor ?>

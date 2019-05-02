@@ -26,6 +26,7 @@
 
     if ($row0 = mysqli_fetch_row($resultCurrentSemester))
     {
+        require "view_withdraw-sections.inc.php";
         viewFancyTableFromSQL($conn, $sqlCurrentSemester, $current_page, "ssc-table-container",
             "ssc-table", "Schedule - Current Semester", "");
     }
@@ -57,6 +58,7 @@
 
     if ($row1 = mysqli_fetch_row($resultNextSemester))
     {
+        require "view_drop-sections.inc.php";
         viewFancyTableFromSQL($conn, $sqlNextSemester, $current_page, "ssn-table-container",
             "ssn-table", "Schedule - Next Semester", "");
     }

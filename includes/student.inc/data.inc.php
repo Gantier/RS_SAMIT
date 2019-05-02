@@ -48,6 +48,15 @@ if (isset($_SESSION['userId']))
                                       AND s.sectionSemester = '" . $_SESSION['currentSemester'] . "';";
     $resultStudentCurrentSections = mysqli_fetch_all($conn->query($sqlStudentCurrentSections), MYSQLI_ASSOC);
 
+    //student sections for next semester
+    $sqlStudentNextSections = "SELECT r.sectionCRN
+                                      FROM registration_system.registration r,
+                                           registration_system.section s
+                                      WHERE studentAccount = '" . $_SESSION['userId'] . "'
+                                      AND s.sectionCRN = r.sectionCRN
+                                      AND s.sectionSemester = '" . $_SESSION['nextSemester'] . "';";
+    $resultStudentNextSections = mysqli_fetch_all($conn->query($sqlStudentNextSections), MYSQLI_ASSOC);
+
     //student advisers (sql to associative array)
     $sqlStudentAdvisers = "SELECT CONCAT(CONCAT(CONCAT(f.facultyFirstName, ' '),
                                                      CONCAT(SUBSTR(f.facultyMiddleName, 1, 1), '. ')),
