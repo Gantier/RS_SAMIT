@@ -1,18 +1,53 @@
 /*SPECIAL TEXT, ETC.*/
 
-.material-icons.success { color : #60ad5e; }
+.material-icons.success {
+    color : #60ad5e;
+}
 
-.material-icons.failure { color : #c77800; }
+.material-icons.failure {
+    color : #c77800;
+}
 
-.material-icons.neutral { color : #005662; }
+.material-icons.neutral {
+    color : #005662;
+}
 
-.material-icons.blank { color : #62727b; }
+.material-icons.blank {
+    color : #62727b;
+}
 
-.material-icons.md-22 { font-size : 22px; }
+.material-icons.md-22 {
+    font-size : 22px;
+}
+
+.material-icons.md-20 {
+    font-size : 20px;
+}
 
 .hr-progress-bar, .hr-full-bar {
     margin-top    : 2px;
     margin-bottom : 2px;
+}
+
+#traverse-table-button-container {
+    position  : fixed;
+    width     : 22px;
+    height    : 40px;
+    transform : translateY(-35px) translateX(290px);
+}
+
+.traverse-table-button {
+    margin           : -5px;
+    background-color : var(--primary-highlight-dark);
+    border-radius    : var(--standard-border-radius);
+    color            : var(--primary-light);
+    user-select      : none;
+    cursor           : pointer;
+    transition       : all 0.35s cubic-bezier(.25, .8, .25, 1);
+}
+
+.traverse-table-button:hover {
+    background-color : #b6d8b9;
 }
 
 .hr-progress-bar {
@@ -581,7 +616,7 @@ table.sada-core-req {
     position         : fixed;
     top              : 0;
     right            : 0;
-    width            : 250px;
+    width            : 260px;
     height           : 100%;
 }
 
@@ -604,7 +639,15 @@ table.sada-core-req {
     width   : 100%;
 }
 
-#student-inc-home-container,
+#student-inc-home-container {
+    width  : 1066px;
+    margin : auto;
+}
+
+#sh-schedule-container {
+
+}
+
 #faculty-inc-home-container {
     width  : 1000px;
     margin : auto;
@@ -672,6 +715,11 @@ input.sr-entry-text {
     width         : 492px;
     margin-bottom : var(--standard-margin);
     float         : left;
+}
+
+#ssc-table-container, #ssn-table-container {
+    transform : translateX(-53px);
+    float     : left;
 }
 
 #ssc-table-container, #ssn-table-container,
@@ -766,6 +814,64 @@ input.sr-entry-text {
 
 #fa-table tr:nth-child(even), #fa-table tr:nth-child(even) {
     background-color : #f9fbfc;
+}
+
+.sws-card {
+    transform : translateX(-64px) translateY(34px);
+    float     : left;
+    width     : 51px;
+}
+
+.card-body.sws-body {
+    padding : 0;
+}
+
+.sws-title {
+    padding : 0;
+    height  : 32px;
+}
+
+#edit-pw-button.wd-sec-button {
+    padding-left  : 10px;
+    padding-right : 9px;
+    transform     : translateY(3px) translateX(-3px);
+}
+
+#edit-pw-button.drop-sec-button {
+    transform : translateY(3px) translateX(-3px);
+}
+
+.check-box {
+    margin    : 10px 0 0;
+    transform : translateX(1px);
+}
+
+.check-box-container {
+    height : 32px;
+    width  : 51px;
+}
+
+.check-box-container label {
+    height : 13px;
+    margin : 0;
+}
+
+.check-box-container.first {
+    padding-top : 1px;
+}
+
+.check-box-container.last {
+    border-radius : 0 0 var(--standard-border-radius) var(--standard-border-radius);
+}
+
+.check-box-container.odd {
+    border-top       : 2px solid var(--secondary-table-td-border);
+    border-bottom    : 2px solid var(--secondary-table-td-border);
+    background-color : #f9fbfc;
+}
+
+.check-box-container.even {
+    background-color : white;
 }
 
 

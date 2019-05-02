@@ -213,7 +213,7 @@
                         {
                             echo ' nav-bar-active';
                         }
-                        echo '" href="admin_registration_faculty.php">Faculty</a>';
+                        echo '" href="admin_accounts_faculty.php">Faculty</a>';
                         echo '<a class="dropdown-anchor';
                         if (preg_match("[admin_accounts_researcher]", $current_page))
                         {
