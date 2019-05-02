@@ -1,14 +1,15 @@
 <?php
-require "header.php";
+    require "header.php";
 
-echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
+    echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
 
-echo '<main id="fa-container">';
+    echo '<body onload="faLoadKeyListener()">';
+    echo '<main id="fa-container">';
 
-require "includes/dbh.inc.php";
-require "includes/faculty.inc/data.inc.php";
+    require "includes/dbh.inc.php";
+    require "includes/faculty.inc/data.inc.php";
 
-$sqlFacultyAcademics = "SELECT CONCAT(CONCAT(CONCAT(s.studentLastName, ', '),
+    $sqlFacultyAcademics = "SELECT CONCAT(CONCAT(CONCAT(s.studentLastName, ', '),
                                                  s.studentFirstName))              AS 'Student Name',
                                    s.studentAccount                                AS studentAccount,
                                    CONCAT(CONCAT(sec.sectionCRN, CONCAT('-00', 
@@ -43,16 +44,18 @@ $sqlFacultyAcademics = "SELECT CONCAT(CONCAT(CONCAT(s.studentLastName, ', '),
                               AND sec.sectionCRN = reg.sectionCRN
                               AND d.departmentName = c.courseSubject
                             ORDER BY 'Section CRN', 'Student Name';";
-if (mysqli_fetch_row($conn->query($sqlFacultyAcademics)))
-{
-    $resultFacultyAcademics = viewFancyTableFromSQL($conn, $sqlFacultyAcademics, $current_page,
-        "fa-table-container", "fa-table", "Your Students - " . $_SESSION['currentSemester'],
-        "updateFacultyAcademics(this)");
-}
-else
-{
-    header("Location: faculty_home.php?error=noStudents");
-}
+    if (mysqli_fetch_row($conn->query($sqlFacultyAcademics)))
+    {
+        $resultFacultyAcademics = viewFancyTableFromSQL($conn, $sqlFacultyAcademics, $current_page,
+            "fa-table-container", "fa-table", "Your Students - " . $_SESSION['currentSemester'],
+            "faUpdateTableRow(this)");
+    }
+    else
+    {
+        header("Location: faculty_home.php?error=noStudents");
+    }
 
-require "includes/faculty.inc/fa-console.inc.php";
-echo '</main>';
+    require "includes/faculty.inc/fa-console.inc.php";
+
+    echo '</main>';
+    echo '</body>';

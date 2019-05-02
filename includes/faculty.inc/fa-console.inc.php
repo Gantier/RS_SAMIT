@@ -42,6 +42,10 @@
                 Select a student from the table on the right to edit midterm/final grades and record daily attendance...
             </div>
             <div id="fa-details-text1"></div><!--holds the student account key-->
+            <div id="traverse-table-button-container">
+                <i class="traverse-table-button material-icons md-20" onclick="faTraverseTable('ArrowUp')">keyboard_arrow_up</i>
+                <i class="traverse-table-button material-icons md-20" onclick="faTraverseTable('ArrowDown')">keyboard_arrow_down</i>
+            </div>
             <hr>
             <!--suppress HtmlUnknownTarget -->
             <form method="post" action="includes/faculty.inc/fa-submit.inc.php" id="fa-form">
@@ -142,10 +146,10 @@
                     </label>
                 </div>
                 <button class="outlined primary small-button" type="button" name="fa-add-to-batch" id="fa-add-to-batch"
-                        onclick="fAAddToBatchOnClick()">Add to Batch
+                        onclick="faAddToBatchOnClick()">Add to Batch
                 </button>
                 <button class="outlined warning small-button" type="button" name="fa-clear-batch" id="fa-clear-batch"
-                        onclick="fAClearBatchOnClick()">Clear Batch
+                        onclick="faClearBatchOnClick()">Clear Batch
                 </button>
                 <br>
                 <label>

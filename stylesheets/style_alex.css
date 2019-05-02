@@ -20,9 +20,34 @@
     font-size : 22px;
 }
 
+.material-icons.md-20 {
+    font-size : 20px;
+}
+
 .hr-progress-bar, .hr-full-bar {
     margin-top    : 2px;
     margin-bottom : 2px;
+}
+
+#traverse-table-button-container {
+    position  : fixed;
+    width     : 22px;
+    height    : 40px;
+    transform : translateY(-35px) translateX(290px);
+}
+
+.traverse-table-button {
+    margin           : -5px;
+    background-color : var(--primary-highlight-dark);
+    border-radius    : var(--standard-border-radius);
+    color            : var(--primary-light);
+    user-select      : none;
+    cursor           : pointer;
+    transition       : all 0.35s cubic-bezier(.25, .8, .25, 1);
+}
+
+.traverse-table-button:hover {
+    background-color : #b6d8b9;
 }
 
 .hr-progress-bar {
