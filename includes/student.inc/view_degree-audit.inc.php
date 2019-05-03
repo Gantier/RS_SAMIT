@@ -1,31 +1,31 @@
 <?php
-    if (isset($_POST['da-submit']))
-    {
-        //get any necessary data
+if (isset($_POST['da-submit']))
+{
+    //get any necessary data
 
 
-        //get variables from posts
-        $program = $_POST['da-program'];
+    //get variables from posts
+    $program = $_POST['da-program'];
 
-        echo '<body onload="daLoadIcons(\'' . $_SESSION['studentLevel'] . '\')">';
+    echo '<body onload="daLoadIcons(\'' . $_SESSION['studentLevel'] . '\')">';
 
-        echo '<div class="card" id="sada-card">';
-        echo '<div class="card-title" id="sada-card-title">Degree Audit</div>';
-        echo '<div class="card-body" id="sada-card-body">';
+    echo '<div class="card" id="sada-card">';
+    echo '<div class="card-title" id="sada-card-title">Degree Audit</div>';
+    echo '<div class="card-body" id="sada-card-body">';
 
-        //icon legend
-        echo '<p id="transcript-caption">Icon Legend</p>';
-        $sqlDegreeAuditLegend = "SELECT 'complete' AS Complete,
+    //icon legend
+    echo '<p id="transcript-caption">Icon Legend</p>';
+    $sqlDegreeAuditLegend = "SELECT 'complete' AS Complete,
                                         'incomplete' AS Incomplete,
                                         'inProgress' AS 'In Progress',
                                         'notAttempted' AS 'Not Attempted';";
-        viewBasicTableFromSQL($conn, $sqlDegreeAuditLegend, $current_page, 'sada-icon-legend');
+    viewBasicTableFromSQL($conn, $sqlDegreeAuditLegend, $current_page, 'sada-icon-legend');
 
-        //student information
-        echo '<p id="transcript-caption">Student Information</p>';
-        if (isset($studentCredits))
-        {
-            $sqlDegreeAuditStudentInfo = "WITH LogTotalGPA AS
+    //student information
+    echo '<p id="transcript-caption">Student Information</p>';
+    if (isset($studentCredits))
+    {
+        $sqlDegreeAuditStudentInfo = "WITH LogTotalGPA AS
                                                 (
                                                   SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
                                                   FROM registration_system.registration r,
@@ -67,12 +67,12 @@
                                          WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
                                            AND e.studentAccount = '" . $_SESSION['userId'] . "'
                                          LIMIT 1;";
-        }
-        viewBasicTableFromSQL($conn, $sqlDegreeAuditStudentInfo, $current_page, 'sada-student-info');
+    }
+    viewBasicTableFromSQL($conn, $sqlDegreeAuditStudentInfo, $current_page, 'sada-student-info');
 
-        //program requirements
-        echo '<p id="transcript-caption">Program Requirements</p>';
-        $sqlDegreeAuditProgramReqs = "WITH LogTotalGPA AS
+    //program requirements
+    echo '<p id="transcript-caption">Program Requirements</p>';
+    $sqlDegreeAuditProgramReqs = "WITH LogTotalGPA AS
                                      (
                                        SELECT CAST(AVG(r.finalGrade) AS DECIMAL(3, 2)) AS studentGPA
                                        FROM registration_system.registration r,
@@ -246,14 +246,14 @@
                                        WHEN studentGPA > 1.67 THEN 'complete'
                                        ELSE 'inProgress'
                                        END AS 'Minimum GPA Requirement',";
-        if ($_SESSION['studentLevel'] === 'Undergraduate')
-        {
-            $sqlDegreeAuditProgramReqs .= "CASE
+    if ($_SESSION['studentLevel'] === 'Undergraduate')
+    {
+        $sqlDegreeAuditProgramReqs .= "CASE
                                            WHEN GenEdEarned.earned < 6 THEN 'inProgress'
                                            ELSE 'complete'
                                            END AS 'General Education Requirement',";
-        }
-        $sqlDegreeAuditProgramReqs .= "CASE
+    }
+    $sqlDegreeAuditProgramReqs .= "CASE
                                        WHEN CoreEarned.earned < 16 THEN 'inProgress'
                                        ELSE 'complete'
                                        END AS 'Core Curriculum Requirements'
@@ -265,14 +265,14 @@
                               WHERE s.studentAccount = '" . $_SESSION['userId'] . "'
                                 AND e.studentAccount = '" . $_SESSION['userId'] . "'
                               LIMIT 1;";
-        viewBasicTableFromSQL($conn, $sqlDegreeAuditProgramReqs, $current_page, 'sada-program-req');
+    viewBasicTableFromSQL($conn, $sqlDegreeAuditProgramReqs, $current_page, 'sada-program-req');
 
-        //general education requirements
-        if ($_SESSION['studentLevel'] === 'Undergraduate')
-        {
-            echo '<p id="transcript-caption">General Education Requirements (complete 6/8)</p>';
-            $sqlDegreeAuditGenEdReqs =
-                "WITH LiberalArts AS
+    //general education requirements
+    if ($_SESSION['studentLevel'] === 'Undergraduate')
+    {
+        echo '<p id="transcript-caption">General Education Requirements (complete 6/8)</p>';
+        $sqlDegreeAuditGenEdReqs =
+            "WITH LiberalArts AS
                 (
                   SELECT CASE
                            WHEN reg.finalGrade >= 1.67 THEN 'complete'
@@ -670,11 +670,11 @@
          FROM LogCurriculum
                 LEFT JOIN LogTaken ON (LogCurriculum.Attribute = LogTaken.Attribute)
          WHERE LogTaken.Attribute IS NULL;";
-            viewBasicTableFromSQL($conn, $sqlDegreeAuditGenEdReqs, $current_page, 'sada-gen-ed-req');
-        }
+        viewBasicTableFromSQL($conn, $sqlDegreeAuditGenEdReqs, $current_page, 'sada-gen-ed-req');
+    }
 
-        echo '<p id="transcript-caption">Core Curriculum Requirements</p>';
-        $sqlDegreeAuditCoreReqs = "WITH LogCurr AS
+    echo '<p id="transcript-caption">Core Curriculum Requirements</p>';
+    $sqlDegreeAuditCoreReqs = "WITH LogCurr AS
                                   (
                                     SELECT 'notAttempted'                                          AS Progress,
                                            CONCAT(CONCAT(d.departmentTag, ' '), crse.courseNumber) AS Course,
@@ -734,9 +734,9 @@
                            FROM LogCurr
                                   LEFT JOIN LogTaken ON (LogCurr.Title = LogTaken.Title)
                            WHERE LogTaken.Title IS NULL;";
-        viewBasicTableFromSQL($conn, $sqlDegreeAuditCoreReqs, $current_page, 'sada-core-req');
+    viewBasicTableFromSQL($conn, $sqlDegreeAuditCoreReqs, $current_page, 'sada-core-req');
 
-        echo '</div>';
-        echo '</div>';
-        echo '</body>';
-    }
+    echo '</div>';
+    echo '</div>';
+    echo '</body>';
+}

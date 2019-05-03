@@ -77,6 +77,9 @@ function updateCourseDescription(courseIdSelected, helperTextId, descriptionColu
 
 function ccFilter()
 {
+    tableReset('cc-table', 'cc-helper-text',
+        'Showing all courses...');
+
     var ccTable = document.getElementById("cc-table");
     if (document.getElementById("cc-keyword") !== null)
     {

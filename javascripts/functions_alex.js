@@ -1,5 +1,8 @@
 function srFilter()
 {
+    tableReset('sr-table', 'sr-helper-text',
+        'Showing all sections...');
+
     var srTable = document.getElementById("sr-table");
     if (document.getElementById("sr-keyword") !== null)
     {
@@ -74,6 +77,9 @@ function srFilter()
 
 function msFilter()
 {
+    tableReset('ms-table', 'ms-helper-text',
+        'Showing all sections...');
+
     var msTable = document.getElementById("ms-table");
     if (document.getElementById("ms-keyword") !== null)
     {
@@ -148,7 +154,17 @@ function msFilter()
 
 function faFilter()
 {
+    //restore all possible results
+    tableReset('fa-table', 'fa-helper-text',
+        'Showing all students...');
     var faTable = document.getElementById("fa-table");
+    //restore base and limit rows to default
+    if (!window.baseRow || !window.limitRow)
+    {
+        window.baseRow = 1;
+        window.limitRow = faTable.rows.length;
+    }
+
     if (document.getElementById("fa-keyword") !== null)
     {
         var keyword = document.getElementById("fa-keyword").value;
@@ -171,6 +187,33 @@ function faFilter()
         }
     }
 
+    //get index of first element in filter
+    for (var j = 1; j < faTable.rows.length; j++)
+    {
+        if (faTable.rows[j].style.display === '')
+        {
+            window.baseRow = j;
+            console.log(window.baseRow);
+            break;
+        }
+    }
+
+    //get number of new results from filtering
+    var countVisibleRows = 0;
+    console.log(countVisibleRows);
+    for (var k = 1; k < faTable.rows.length; k++)
+    {
+        if (faTable.rows[k].style.display === '')
+        {
+            countVisibleRows++;
+            console.log(countVisibleRows);
+        }
+    }
+    window.limitRow = window.baseRow + countVisibleRows;
+
+    //set highlighted row to base row after filtering
+    faUpdateTableRow(faTable.rows[window.baseRow]);
+
     //if filter not blank
     if (section !== "null")
     {
@@ -187,6 +230,17 @@ function faFilter()
         //else, default helper text
         helperText.innerHTML = "Showing all students...";
     }
+}
+
+function faReset()
+{
+    //restore all possible results
+    tableReset('fa-table', 'fa-helper-text',
+        'Showing all students...');
+    var faTable = document.getElementById("fa-table");
+    //restore base and limit rows to default
+    window.baseRow = 1;
+    window.limitRow = faTable.rows.length;
 }
 
 // noinspection JSUnusedGlobalSymbols
@@ -463,21 +517,27 @@ function faClearBatchOnClick()
 
 function faTraverseTable(key)
 {
+    var faTable = document.getElementById('fa-table');
+    //set globals
+    if (!window.baseRow || !window.limitRow)
+    {
+        window.baseRow = 1;
+        window.limitRow = faTable.rows.length;
+    }
     //if current row is set
-    if (window.currentRow !== null)
+    if (window.currentRow)
     {
         var nextRow = (key === "ArrowUp") ? window.currentRow - 1 : window.currentRow + 1;
-        var table = document.getElementById('fa-table');
-        var tableSize = table.rows.length;
-        if (nextRow === 0)
+        var tableSize = window.limitRow;
+        if (nextRow === window.baseRow - 1)//if at beginning
         {
-            nextRow = tableSize - 1;
+            nextRow = tableSize - 1;//go to end
         }
-        else if (nextRow === tableSize)
+        else if (nextRow === tableSize)//if at end
         {
-            nextRow = 1;
+            nextRow = window.baseRow;//go to beginning
         }
-        faUpdateTableRow(table.rows[nextRow])
+        faUpdateTableRow(faTable.rows[nextRow])
     }
 }
 

@@ -26,7 +26,7 @@
                     ?>
                 </select><br>
                 <button class="small-button outlined secondary" type="reset"
-                        onclick="tableReset('fa-table', 'fa-helper-text', 'Showing all students...')">
+                        onclick="faReset()">
                     Reset
                 </button>
                 <button class="small-button outlined secondary" type="button" onclick="faFilter()">Filter</button>
