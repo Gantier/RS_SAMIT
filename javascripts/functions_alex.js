@@ -152,97 +152,6 @@ function msFilter()
     }
 }
 
-function faFilter()
-{
-    //restore all possible results
-    tableReset('fa-table', 'fa-helper-text',
-        'Showing all students...');
-    var faTable = document.getElementById("fa-table");
-    //restore base and limit rows to default
-    if (!window.baseRow || !window.limitRow)
-    {
-        window.baseRow = 1;
-        window.limitRow = faTable.rows.length;
-    }
-
-    if (document.getElementById("fa-keyword") !== null)
-    {
-        var keyword = document.getElementById("fa-keyword").value;
-    }
-    var helperText = document.getElementById("fa-helper-text");
-    var section = document.getElementById("fa-section-dropdown").value;
-
-    var newHelperText = "Showing all students filtered by...";
-
-    for (var i = 1; i < faTable.rows.length; i++)
-    {
-        //if section is set
-        if (section !== "null")
-        {
-            //check section
-            if (section !== faTable.rows[i].cells[2].innerText)
-            {
-                faTable.rows[i].style.display = 'none';
-            }
-        }
-    }
-
-    //get index of first element in filter
-    for (var j = 1; j < faTable.rows.length; j++)
-    {
-        if (faTable.rows[j].style.display === '')
-        {
-            window.baseRow = j;
-            console.log(window.baseRow);
-            break;
-        }
-    }
-
-    //get number of new results from filtering
-    var countVisibleRows = 0;
-    console.log(countVisibleRows);
-    for (var k = 1; k < faTable.rows.length; k++)
-    {
-        if (faTable.rows[k].style.display === '')
-        {
-            countVisibleRows++;
-            console.log(countVisibleRows);
-        }
-    }
-    window.limitRow = window.baseRow + countVisibleRows;
-
-    //set highlighted row to base row after filtering
-    faUpdateTableRow(faTable.rows[window.baseRow]);
-
-    //if filter not blank
-    if (section !== "null")
-    {
-        //update helper text
-        newHelperText += "<br>Section CRN: '" + section + "'";
-        if (keyword.length > 1)
-        {
-            newHelperText += "<br>Containing: '" + keyword + "'";
-        }
-        helperText.innerHTML = newHelperText;
-    }
-    else
-    {
-        //else, default helper text
-        helperText.innerHTML = "Showing all students...";
-    }
-}
-
-function faReset()
-{
-    //restore all possible results
-    tableReset('fa-table', 'fa-helper-text',
-        'Showing all students...');
-    var faTable = document.getElementById("fa-table");
-    //restore base and limit rows to default
-    window.baseRow = 1;
-    window.limitRow = faTable.rows.length;
-}
-
 // noinspection JSUnusedGlobalSymbols
 function updateStudentRegistrationDetails(
     sectionIdSelected, detailsTextId, detailsTitleId, addButton, descriptionColumn, allPreReqs)
@@ -351,307 +260,6 @@ function updateMasterScheduleDetails(
     document.getElementById(detailsTitleId).innerHTML =
         "Section Details - CRN: " +
         sectionIdSelected.cells[0].innerText;
-}
-
-// noinspection JSUnusedGlobalSymbols
-function faUpdateTableRow(rowElement)
-{
-    //clear drop-downs
-    var midterm = document.getElementById('fa-midterm-dropdown');
-    var final = document.getElementById('fa-final-dropdown');
-    var present = document.getElementById('fa-radio-present');
-    midterm.selectedIndex = midterm.options[0];
-    final.selectedIndex = final.options[0];
-    present.checked = true;
-
-    //get relevant text from selected row
-    var studentName = rowElement.cells[0].innerText;
-    var studentAccount = rowElement.cells[1].innerText;
-    var studentSection = rowElement.cells[2].innerText;
-    var studentSectionText = rowElement.cells[2].innerText.substr(0, 4);
-
-    //********************************************************************************************BUG
-    //clear old row
-    var table = document.getElementById('fa-table');
-    if (window.currentRow > 0 && window.currentRow < table.rows.length)
-    {
-        table.rows[window.currentRow].style.backgroundColor = window.currentRowColor;
-        for (var k = 0; k < table.rows[window.currentRow].cells.length; k++)
-        {
-            table.rows[window.currentRow].cells[k].style.borderColor = window.currentCellBorderColor;
-            table.rows[window.currentRow].cells[k].style.color = window.currentCellColor;
-        }
-    }
-
-    //save new row's color before it was highlighted
-    window.currentRowColor = rowElement.style.backgroundColor;
-    window.currentCellBorderColor = rowElement.cells[0].style.borderColor;
-    window.currentCellColor = rowElement.cells[0].style.color;
-    //highlight current row and label
-    rowElement.style.backgroundColor = '#cee5d0';
-    for (var j = 0; j < rowElement.cells.length; j++)
-    {
-        rowElement.cells[j].style.borderColor = '#cee5d0';
-        rowElement.cells[j].style.color = '#1b5e20';
-    }
-    //update gui
-    document.getElementById('fa-details-text0').style.backgroundColor = '#cee5d0';
-    document.getElementById('fa-details-text0').style.color = '#1b5e20';
-    document.getElementById('fa-details-text1').style.backgroundColor = '#cee5d0';
-    document.getElementById('fa-details-text1').style.color = '#1b5e20';
-    document.getElementById('traverse-table-button-container').style.display = '';
-
-    //set new current row
-    for (var i = 1; i < table.rows.length; i++)
-    {
-        if (table.rows[i].cells[1].innerText === studentAccount &&
-            table.rows[i].cells[2].innerText === studentSection)
-        {
-            window.currentRow = i;
-        }
-    }
-
-    //update labels
-    document.getElementById('fa-details-text0').innerHTML =
-        "Section " + studentSectionText + " - " +
-        studentName + "<br>";
-    document.getElementById('fa-details-text1').innerHTML =
-        studentAccount;
-    document.getElementById('fa-student-account').value = studentAccount;
-    document.getElementById('fa-student-section').value = studentSectionText;
-}
-
-function faHighlightBatchRow()
-{
-    var table = document.getElementById('fa-table');
-    var batchRow = (window.currentRow > window.baseRow) ? window.currentRow - 1 : window.limitRow - 1;
-    if (batchRow > 0 && batchRow < table.rows.length)
-    {
-        table.rows[batchRow].style.backgroundColor = window.rowBatchBackgroundColor;
-        for (var k = 0; k < table.rows[batchRow].cells.length; k++)
-        {
-            table.rows[batchRow].cells[k].style.borderColor = window.rowBatchBackgroundColor;
-            table.rows[batchRow].cells[k].style.color = window.rowBatchColor;
-        }
-    }
-}
-
-function faAddToBatchOnClick()
-{
-    //check if a student is selected
-    var helper = document.getElementById('fa-helper-text');
-    var accountText = document.getElementById('fa-details-text1').innerText;
-    if (accountText !== "")
-    {
-        //get elements
-        var midterm = document.getElementById('fa-midterm-dropdown');
-        var final = document.getElementById('fa-final-dropdown');
-        var absent = document.getElementById('fa-radio-absent');
-
-        //get text
-        var sectionText = document.getElementById('fa-student-section').value;
-        var midtermText = (midterm.disabled === true) ?
-            "null" : midterm.options[midterm.selectedIndex].value;
-        var finalText = (final.disabled === true) ?
-            "null" : final.options[final.selectedIndex].value;
-        var attendanceText = (absent.checked === true) ? "absent" : "present";
-        var key = accountText + ";" + sectionText;
-        var addTextToBatch = accountText + ";" + sectionText + ";" + midtermText + ";" +
-            finalText + ";" + attendanceText + ",";
-
-        //add to helper text
-        var helperAfter = "";
-        if (midtermText !== "null")
-        {
-            helperAfter += "\nMidterm grade: " + midtermText;
-        }
-        if (finalText !== "null")
-        {
-            helperAfter += "\nFinal grade: " + finalText;
-        }
-        helperAfter += "\nAttendance: " + attendanceText;
-
-        //check batch for duplicates
-        var batch = document.getElementById('fa-batch');
-        var textToSearch = batch.value;
-        var match = textToSearch.match(key);
-        if (match == null)//no duplicates
-        {
-            //add to batch
-            batch.value += addTextToBatch;
-
-            //adjust the bar
-            var table = document.getElementById('fa-table');
-            var numRows = table.rows.length - 1;
-            var progressBar = document.getElementById('fa-hr-progress-bar');
-            var maxWidth = 318;
-            var currentWidth = (progressBar.offsetWidth - 2);
-            currentWidth = (currentWidth === 0) ? (currentWidth - 2) : parseFloat(progressBar.style.width);
-            var increment = maxWidth / numRows;
-            var newWidth = currentWidth + increment;
-            progressBar.style.width = newWidth + "px";
-
-            //update helper
-            if (midtermText === "null" && finalText === "null")
-            {
-                helper.innerText = "Recorded attendance for the following student..." +
-                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
-            }
-            else
-            {
-                helper.innerText = "Updated grades and attendance for the following student..." +
-                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
-            }
-        }
-        else
-        {
-            helper.innerText = "Overwriting previous entry for the following student..." +
-                "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
-        }
-    }
-    else
-    {
-        helper.innerText = "Click a row from the table on the right to edit the respective " +
-            "student's midterm/final grades and record daily attendance..."
-    }
-    //go to next student
-    faTraverseTable("ArrowDown");
-    faHighlightBatchRow();
-}
-
-function faClearBatchOnClick()
-{
-    //if batch needs clearing
-    if (document.getElementById('fa-batch').value !== '')
-    {
-        //clear batch
-        var batch = document.getElementById('fa-batch');
-        batch.value = "";
-
-        //clear the bar
-        var progressBar = document.getElementById('fa-hr-progress-bar');
-        progressBar.style.width = "0";
-
-        //update helper
-        var helper = document.getElementById('fa-helper-text');
-        helper.innerText = "Cleared all additions to the batch...";
-
-        //reset position to base row
-        var faTable = document.getElementById('fa-table');
-        //reset table colors
-        for (var i = window.baseRow; i < window.limitRow; i++)
-        {
-            faTable.rows[i].style.backgroundColor = window.rowColors[i];
-            for (var j = 0; j < faTable.rows[i].cells.length; j++)
-            {
-                faTable.rows[i].cells[j].style.borderColor = window.oGCellBorderColor;
-                faTable.rows[i].cells[j].style.color = window.oGCellColor;
-            }
-        }
-        //reset the base position
-        faUpdateTableRow(faTable.rows[window.baseRow]);
-        //one more pass
-        /*for (var k = window.baseRow; k < window.limitRow; k++)
-        {
-            faTable.rows[k].style.backgroundColor = window.rowColors[k];
-            for (var l = 0; l < faTable.rows[k].cells.length; l++)
-            {
-                faTable.rows[k].cells[l].style.borderColor = window.oGCellBorderColor;
-                faTable.rows[k].cells[l].style.color = window.oGCellColor;
-            }
-        }*/
-    }
-}
-
-function faTraverseTable(key)
-{
-    var faTable = document.getElementById('fa-table');
-    //set globals
-    if (!window.baseRow || !window.limitRow)
-    {
-        window.baseRow = 1;
-        window.limitRow = faTable.rows.length;
-    }
-    //if current row is set
-    if (window.currentRow)
-    {
-        var nextRow = (key === "ArrowUp") ? window.currentRow - 1 : window.currentRow + 1;
-        var tableSize = window.limitRow;
-        if (nextRow === window.baseRow - 1)//if at beginning
-        {
-            nextRow = tableSize - 1;//go to end
-        }
-        else if (nextRow === tableSize)//if at end
-        {
-            nextRow = window.baseRow;//go to beginning
-        }
-        faUpdateTableRow(faTable.rows[nextRow]);
-    }
-    else
-    {
-        faUpdateTableRow(faTable.rows[1]);
-    }
-}
-
-// noinspection JSUnusedGlobalSymbols
-function faOnLoad()
-{
-    //change attendance column header
-    var faTable = document.getElementById('fa-table');
-    var today = new Date();
-    faTable.rows[0].cells[7].innerText =
-        (today.getMonth() + 1) + '-' + today.getDate() + '-' +
-        (today.getFullYear()).toString().substr(2, 2);
-    //attendance icons
-    for (var i = 1; i < faTable.rows.length; i++)
-    {
-        switch (faTable.rows[i].cells[7].innerText)
-        {
-            case '2':
-                faTable.rows[i].cells[7].innerHTML =
-                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
-                break;
-            case '1':
-                faTable.rows[i].cells[7].innerHTML =
-                    '<i class="da-icon material-icons md-22 success">check_box</i>';
-                break;
-            case '0':
-                faTable.rows[i].cells[7].innerHTML =
-                    '<i class="da-icon material-icons md-22 failure">indeterminate_check_box</i>';
-                break;
-        }
-    }
-
-    //save important colors
-    window.oGCellBorderColor = '#eff1f4';
-    window.oGCellColor = '#6d7177';
-    window.rowBatchBackgroundColor = '#e8f5e9';
-    window.rowBatchColor = '#1b5e20';
-    //save original row colors
-    window.rowColors = [];
-    for (var j = 0; j < faTable.rows.length; j++)
-    {
-        window.rowColors.push(faTable.rows[j].style.backgroundColor);
-    }
-
-    //hide traverse buttons
-    document.getElementById('traverse-table-button-container').style.display = 'none';
-
-    //set key listeners
-    document.onkeydown = function (event)
-    {
-        event = event || window.event;
-        var down = "ArrowDown";
-        var up = "ArrowUp";
-        if (event.key === down)
-        {
-            faTraverseTable(down);
-        }
-        if (event.key === up)
-        {
-            faTraverseTable(up);
-        }
-    };
 }
 
 // noinspection JSUnusedGlobalSymbols
@@ -807,6 +415,395 @@ function toggleEditPassword()
         backdrop.style.zIndex = '999';
         card.style.zIndex = '1000';
     }
+}
+
+function faFilter()
+{
+    //restore all possible results
+    tableReset('fa-table', 'fa-helper-text',
+        'Showing all students...');
+    var faTable = document.getElementById("fa-table");
+    //restore base and limit rows to default
+    if (!window.baseRow || !window.limitRow)
+    {
+        window.baseRow = 1;
+        window.limitRow = faTable.rows.length;
+    }
+
+    if (document.getElementById("fa-keyword") !== null)
+    {
+        var keyword = document.getElementById("fa-keyword").value;
+    }
+    var helperText = document.getElementById("fa-helper-text");
+    var section = document.getElementById("fa-section-dropdown").value;
+
+    var newHelperText = "Showing all students filtered by...";
+
+    for (var i = 1; i < faTable.rows.length; i++)
+    {
+        //if section is set
+        if (section !== "null")
+        {
+            //check section
+            if (section !== faTable.rows[i].cells[2].innerText)
+            {
+                faTable.rows[i].style.display = 'none';
+            }
+        }
+    }
+
+    //get index of first element in filter
+    for (var j = 1; j < faTable.rows.length; j++)
+    {
+        if (faTable.rows[j].style.display === '')
+        {
+            window.baseRow = j;
+            console.log(window.baseRow);
+            break;
+        }
+    }
+
+    //get number of new results from filtering
+    var countVisibleRows = 0;
+    console.log(countVisibleRows);
+    for (var k = 1; k < faTable.rows.length; k++)
+    {
+        if (faTable.rows[k].style.display === '')
+        {
+            countVisibleRows++;
+            console.log(countVisibleRows);
+        }
+    }
+    window.limitRow = window.baseRow + countVisibleRows;
+
+    //set highlighted row to base row after filtering
+    faUpdateTableRow(faTable.rows[window.baseRow], false);
+
+    //if filter not blank
+    if (section !== "null")
+    {
+        //update helper text
+        newHelperText += "<br>Section CRN: '" + section + "'";
+        if (keyword.length > 1)
+        {
+            newHelperText += "<br>Containing: '" + keyword + "'";
+        }
+        helperText.innerHTML = newHelperText;
+    }
+    else
+    {
+        //else, default helper text
+        helperText.innerHTML = "Showing all students...";
+    }
+}
+
+function faReset()
+{
+    //restore all possible results
+    tableReset('fa-table', 'fa-helper-text',
+        'Showing all students...');
+    var faTable = document.getElementById("fa-table");
+    //restore base and limit rows to default
+    window.baseRow = 1;
+    window.limitRow = faTable.rows.length;
+}
+
+// noinspection JSUnusedGlobalSymbols
+function faUpdateTableRow(rowElement, isClearing)
+{
+    //clear drop-downs
+    var midterm = document.getElementById('fa-midterm-dropdown');
+    var final = document.getElementById('fa-final-dropdown');
+    var present = document.getElementById('fa-radio-present');
+    midterm.selectedIndex = midterm.options[0];
+    final.selectedIndex = final.options[0];
+    present.checked = true;
+
+    //get relevant text from selected row
+    var studentName = rowElement.cells[0].innerText;
+    var studentAccount = rowElement.cells[1].innerText;
+    var studentSection = rowElement.cells[2].innerText;
+    var studentSectionText = rowElement.cells[2].innerText.substr(0, 4);
+
+    //clear old row
+    var table = document.getElementById('fa-table');
+    if (window.currentRow > 0 && window.currentRow < table.rows.length)
+    {
+        //if not clearing batch, change to previous color -- else, make original color
+        if (!isClearing)
+        {
+            for (var k = 0; k < table.rows[window.currentRow].cells.length; k++)
+            {
+                table.rows[window.currentRow].cells[k].style.borderColor = window.currentCellBorderColor;
+                table.rows[window.currentRow].cells[k].style.color = window.currentCellColor;
+            }
+            table.rows[window.currentRow].style.backgroundColor = window.currentRowColor;
+        }
+    }
+
+    //save new row's color before it was highlighted
+    window.currentRowColor = rowElement.style.backgroundColor;
+    window.currentCellBorderColor = rowElement.cells[0].style.borderColor;
+    window.currentCellColor = rowElement.cells[0].style.color;
+    //highlight current row and label
+    var highlightBGColor = '#ced4e5';
+    var highlightTextColor = '#1b1f5e';
+    var highlightBorderColor = '#c0c3ce';
+    rowElement.style.backgroundColor = highlightBGColor;
+    for (var j = 0; j < rowElement.cells.length; j++)
+    {
+        rowElement.cells[j].style.borderColor = highlightBorderColor;
+        rowElement.cells[j].style.color = highlightTextColor;
+    }
+    //update gui
+    document.getElementById('fa-details-text0').style.backgroundColor = highlightBGColor;
+    document.getElementById('fa-details-text0').style.color = highlightTextColor;
+    document.getElementById('fa-details-text1').style.backgroundColor = highlightBGColor;
+    document.getElementById('fa-details-text1').style.color = highlightTextColor;
+    document.getElementById('traverse-table-button-container').style.display = '';
+
+    //set new current row
+    for (var i = 1; i < table.rows.length; i++)
+    {
+        if (table.rows[i].cells[1].innerText === studentAccount &&
+            table.rows[i].cells[2].innerText === studentSection)
+        {
+            window.currentRow = i;
+        }
+    }
+
+    //update labels
+    document.getElementById('fa-details-text0').innerHTML =
+        "Section " + studentSectionText + " - " +
+        studentName + "<br>";
+    document.getElementById('fa-details-text1').innerHTML =
+        studentAccount;
+    document.getElementById('fa-student-account').value = studentAccount;
+    document.getElementById('fa-student-section').value = studentSectionText;
+}
+
+function faHighlightBatchRow()
+{
+    var table = document.getElementById('fa-table');
+    var batchRow = (window.currentRow > window.baseRow) ? window.currentRow - 1 : window.limitRow - 1;
+    if (batchRow > 0 && batchRow < table.rows.length)
+    {
+        table.rows[batchRow].style.backgroundColor = window.rowBatchBackgroundColor;
+        for (var k = 0; k < table.rows[batchRow].cells.length; k++)
+        {
+            table.rows[batchRow].cells[k].style.borderColor = window.rowBatchBorderColor;
+            table.rows[batchRow].cells[k].style.color = window.rowBatchColor;
+        }
+    }
+}
+
+function faAddToBatchOnClick()
+{
+    //check if a student is selected
+    var helper = document.getElementById('fa-helper-text');
+    var accountText = document.getElementById('fa-details-text1').innerText;
+    if (accountText !== "")
+    {
+        //get elements
+        var midterm = document.getElementById('fa-midterm-dropdown');
+        var final = document.getElementById('fa-final-dropdown');
+        var absent = document.getElementById('fa-radio-absent');
+
+        //get text
+        var sectionText = document.getElementById('fa-student-section').value;
+        var midtermText = (midterm.disabled === true) ?
+            "null" : midterm.options[midterm.selectedIndex].value;
+        var finalText = (final.disabled === true) ?
+            "null" : final.options[final.selectedIndex].value;
+        var attendanceText = (absent.checked === true) ? "absent" : "present";
+        var key = accountText + ";" + sectionText;
+        var addTextToBatch = accountText + ";" + sectionText + ";" + midtermText + ";" +
+            finalText + ";" + attendanceText + ",";
+
+        //add to helper text
+        var helperAfter = "";
+        if (midtermText !== "null")
+        {
+            helperAfter += "\nMidterm grade: " + midtermText;
+        }
+        if (finalText !== "null")
+        {
+            helperAfter += "\nFinal grade: " + finalText;
+        }
+        helperAfter += "\nAttendance: " + attendanceText;
+
+        //check batch for duplicates
+        var batch = document.getElementById('fa-batch');
+        var textToSearch = batch.value;
+        var match = textToSearch.match(key);
+        if (match == null)//no duplicates
+        {
+            //add to batch
+            batch.value += addTextToBatch;
+
+            //adjust the bar
+            var table = document.getElementById('fa-table');
+            var numRows = table.rows.length - 1;
+            var progressBar = document.getElementById('fa-hr-progress-bar');
+            var maxWidth = 318;
+            var currentWidth = (progressBar.offsetWidth - 2);
+            currentWidth = (currentWidth === 0) ? (currentWidth - 2) : parseFloat(progressBar.style.width);
+            var increment = maxWidth / numRows;
+            var newWidth = currentWidth + increment;
+            progressBar.style.width = newWidth + "px";
+
+            //update helper
+            if (midtermText === "null" && finalText === "null")
+            {
+                helper.innerText = "Recorded attendance for the following student..." +
+                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
+            }
+            else
+            {
+                helper.innerText = "Updated grades and attendance for the following student..." +
+                    "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
+            }
+        }
+        else
+        {
+            helper.innerText = "Overwriting previous entry for the following student..." +
+                "\nAccount: " + accountText + ", section: " + sectionText + helperAfter;
+        }
+    }
+    else
+    {
+        helper.innerText = "Click a row from the table on the right to edit the respective " +
+            "student's midterm/final grades and record daily attendance..."
+    }
+    //go to next student
+    faTraverseTable("ArrowDown");
+    faHighlightBatchRow();
+}
+
+function faClearBatchOnClick()
+{
+    //if batch needs clearing
+    if (document.getElementById('fa-batch').value !== '')
+    {
+        //clear batch
+        var batch = document.getElementById('fa-batch');
+        batch.value = "";
+
+        //clear the bar
+        var progressBar = document.getElementById('fa-hr-progress-bar');
+        progressBar.style.width = "0";
+
+        //update helper
+        var helper = document.getElementById('fa-helper-text');
+        helper.innerText = "Cleared all additions to the batch...";
+
+        //reset position to base row
+        var faTable = document.getElementById('fa-table');
+        //reset table colors
+        for (var i = window.baseRow; i < window.limitRow; i++)
+        {
+            faTable.rows[i].style.backgroundColor = window.rowColors[i];
+            for (var j = 0; j < faTable.rows[i].cells.length; j++)
+            {
+                faTable.rows[i].cells[j].style.borderColor = window.oGCellBorderColor;
+                faTable.rows[i].cells[j].style.color = window.oGCellColor;
+            }
+        }
+        //reset the base position
+        faUpdateTableRow(faTable.rows[window.baseRow], true);
+    }
+}
+
+function faTraverseTable(key)
+{
+    var faTable = document.getElementById('fa-table');
+    //set globals
+    if (!window.baseRow || !window.limitRow)
+    {
+        window.baseRow = 1;
+        window.limitRow = faTable.rows.length;
+    }
+    //if current row is set
+    if (window.currentRow)
+    {
+        var nextRow = (key === "ArrowUp") ? window.currentRow - 1 : window.currentRow + 1;
+        var tableSize = window.limitRow;
+        if (nextRow === window.baseRow - 1)//if at beginning
+        {
+            nextRow = tableSize - 1;//go to end
+        }
+        else if (nextRow === tableSize)//if at end
+        {
+            nextRow = window.baseRow;//go to beginning
+        }
+        faUpdateTableRow(faTable.rows[nextRow], false);
+    }
+    else
+    {
+        faUpdateTableRow(faTable.rows[1], false);
+    }
+}
+
+// noinspection JSUnusedGlobalSymbols
+function faOnLoad()
+{
+    //change attendance column header
+    var faTable = document.getElementById('fa-table');
+    var today = new Date();
+    faTable.rows[0].cells[7].innerText =
+        (today.getMonth() + 1) + '-' + today.getDate() + '-' +
+        (today.getFullYear()).toString().substr(2, 2);
+    //attendance icons
+    for (var i = 1; i < faTable.rows.length; i++)
+    {
+        switch (faTable.rows[i].cells[7].innerText)
+        {
+            case '2':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+            case '1':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case '0':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">indeterminate_check_box</i>';
+                break;
+        }
+    }
+
+    //save important colors
+    window.oGCellBorderColor = '#eff1f4';
+    window.oGCellColor = '#6d7177';
+    window.rowBatchBackgroundColor = '#e8f5e9';
+    window.rowBatchBorderColor = '#d0edd2';
+    window.rowBatchColor = '#1b5e20';
+    //save original row colors
+    window.rowColors = [];
+    for (var j = 0; j < faTable.rows.length; j++)
+    {
+        window.rowColors.push(faTable.rows[j].style.backgroundColor);
+    }
+
+    //hide traverse buttons
+    document.getElementById('traverse-table-button-container').style.display = 'none';
+
+    //set key listeners
+    document.onkeydown = function (event)
+    {
+        event = event || window.event;
+        var down = "ArrowDown";
+        var up = "ArrowUp";
+        if (event.key === down)
+        {
+            faTraverseTable(down);
+        }
+        if (event.key === up)
+        {
+            faTraverseTable(up);
+        }
+    };
 }
 
 

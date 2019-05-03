@@ -330,7 +330,7 @@ table td {
 }
 
 table tr {
-    transition : background-color 0.05s cubic-bezier(.25, .8, .25, 1);
+    transition : background-color 0.1s cubic-bezier(.25, .8, .25, 1);
 }
 
 table thead:first-child th {
@@ -549,7 +549,7 @@ div.login-card {
     margin-bottom : 12px;
 }
 
-.material.secondary {
+.material.secondary, .material.primary {
     margin-top    : var(--standard-margin);
     margin-bottom : var(--standard-margin-small);
 }

@@ -71,6 +71,7 @@
                                   AND a.attendanceDate = '" . $today[0] . "'
                                 ORDER BY 'Section CRN', 'Student Name';";
     }
+
     if (mysqli_fetch_row($conn->query($sqlFacultyAcademics)))
     {
         $resultFacultyAcademics = viewFancyTableFromSQL($conn, $sqlFacultyAcademics, $current_page,

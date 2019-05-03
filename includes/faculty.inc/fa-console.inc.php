@@ -158,7 +158,7 @@
                 <label id="progress-label">Batch...</label>
                 <hr class="hr-full-bar">
                 <hr class="hr-progress-bar" id="fa-hr-progress-bar">
-                <button class="material secondary big-button" type="submit" name="fa-submit" id="fa-submit">Submit
+                <button class="material primary big-button" type="submit" name="fa-submit" id="fa-submit">Submit
                     Batch
                 </button>
             </form>

@@ -41,16 +41,16 @@
 
 .traverse-table-button {
     margin           : -5px;
-    background-color : var(--primary-highlight-dark);
+    background-color : #ced4e5;
     border-radius    : var(--standard-border-radius);
-    color            : var(--primary-light);
+    color            : #1b5e20;
     user-select      : none;
     cursor           : pointer;
     transition       : all 0.35s cubic-bezier(.25, .8, .25, 1);
 }
 
 .traverse-table-button:hover {
-    background-color : #b6d8b9;
+    background-color : #b1b6c6;
 }
 
 .hr-progress-bar {
