@@ -69,7 +69,7 @@
                                   AND a.attendanceStudent = reg.studentAccount
                                   AND a.attendanceSection = reg.sectionCRN
                                   AND a.attendanceDate = '" . $today[0] . "'
-                                ORDER BY 'Section CRN', 'Student Name';";
+                                ORDER BY `Section CRN`;";
     }
 
     if (mysqli_fetch_row($conn->query($sqlFacultyAcademics)))
