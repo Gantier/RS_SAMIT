@@ -1,4 +1,7 @@
 /*SPECIAL TEXT, ETC.*/
+.material-icons {
+    user-select : none;
+}
 
 .material-icons.success {
     color : #60ad5e;
