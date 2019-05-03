@@ -469,12 +469,8 @@ function faAddToBatchOnClick()
             var maxWidth = 316;
             var currentWidth = (progressBar.offsetWidth - 2);
             currentWidth = (currentWidth === 0) ? (currentWidth - 2) : parseFloat(progressBar.style.width);
-            /*alert("currentWidth: " + currentWidth);*/
             var increment = maxWidth / numRows;
-            /*alert("increment: " + increment);*/
             var newWidth = currentWidth + increment;
-            /*alert("newWidth: " + newWidth);
-            alert("newWidth: " + newWidth + "px");*/
             progressBar.style.width = newWidth + "px";
 
             //update helper
@@ -500,10 +496,13 @@ function faAddToBatchOnClick()
         helper.innerText = "Click a row from the table on the right to edit the respective " +
             "student's midterm/final grades and record daily attendance..."
     }
+    //go to next student
+    faTraverseTable("ArrowDown");
 }
 
 function faClearBatchOnClick()
 {
+    //clear batch
     var batch = document.getElementById('fa-batch');
     batch.value = "";
 
@@ -511,8 +510,13 @@ function faClearBatchOnClick()
     var progressBar = document.getElementById('fa-hr-progress-bar');
     progressBar.style.width = "0";
 
+    //update helper
     var helper = document.getElementById('fa-helper-text');
     helper.innerText = "Cleared all additions to the batch...";
+
+    //reset position to base row
+    var faTable = document.getElementById('fa-table');
+    faUpdateTableRow(faTable.rows[window.baseRow]);
 }
 
 function faTraverseTable(key)
@@ -537,15 +541,46 @@ function faTraverseTable(key)
         {
             nextRow = window.baseRow;//go to beginning
         }
-        faUpdateTableRow(faTable.rows[nextRow])
+        faUpdateTableRow(faTable.rows[nextRow]);
+    }
+    else
+    {
+        faUpdateTableRow(faTable.rows[1]);
     }
 }
 
 // noinspection JSUnusedGlobalSymbols
-function faLoadKeyListener()
+function faOnLoad()
 {
+    //change attendance column header
+    var faTable = document.getElementById('fa-table');
+    var today = new Date();
+    faTable.rows[0].cells[7].innerText =
+        (today.getMonth() + 1) + '-' + today.getDate() + '-' +
+        (today.getFullYear()).toString().substr(2, 2);
+    //attendance icons
+    for (var i = 1; i < faTable.rows.length; i++)
+    {
+        switch (faTable.rows[i].cells[7].innerText)
+        {
+            case '2':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                break;
+            case '1':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 success">check_box</i>';
+                break;
+            case '0':
+                faTable.rows[i].cells[7].innerHTML =
+                    '<i class="da-icon material-icons md-22 failure">indeterminate_check_box</i>';
+                break;
+        }
+    }
+
     //hide traverse buttons
     document.getElementById('traverse-table-button-container').style.display = 'none';
+
     //set key listeners
     document.onkeydown = function (event)
     {

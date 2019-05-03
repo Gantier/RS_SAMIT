@@ -48,6 +48,35 @@ if (isset($_SESSION['userId']))
         $resultFacultyRank = $conn->query($sqlFacultyRank);
         $facultyRank = mysqli_fetch_row($resultFacultyRank);
     }
+    //faculty students this semester
+    $sqlStudents = "SELECT s.studentAccount AS studentAccount,
+                           sec.sectionCRN   AS sectionCRN
+                    FROM registration_system.student s,
+                         registration_system.registration reg,
+                         registration_system.section sec
+                    WHERE sec.sectionInstructor = '" . $_SESSION['userId'] . "'
+                      AND sec.sectionSemester = '" . $_SESSION['currentSemester'] . "'
+                      AND s.studentAccount = reg.studentAccount
+                      AND sec.sectionCRN = reg.sectionCRN;";
+    $resultStudents = mysqli_fetch_all($conn->query($sqlStudents), MYSQLI_ASSOC);
+
+    //faculty attendance created today
+    $sqlAttendanceToday = "SELECT s.studentAccount      AS studentAccount,
+                                  sec.sectionCRN        AS sectionCRN,
+                                  a.attendanceIsPresent AS studentAttendance
+                           FROM registration_system.student s,
+                                registration_system.registration reg,
+                                registration_system.section sec,
+                                registration_system.attendance a
+                           WHERE sec.sectionInstructor = '" . $_SESSION['userId'] . "'
+                             AND sec.sectionSemester = '" . $_SESSION['currentSemester'] . "'
+                             AND s.studentAccount = reg.studentAccount
+                             AND sec.sectionCRN = reg.sectionCRN
+                             AND a.attendanceStudent = s.studentAccount
+                             AND a.attendanceSection = sec.sectionCRN
+                             AND a.attendanceDate = CURRENT_DATE;";
+    $attendanceCreatedToday = (mysqli_num_rows($conn->query($sqlAttendanceToday)) > 0);
+
     //faculty sections current semester
     $sqlFacultySectionsC = "SELECT CONCAT(CONCAT(sec.sectionCRN, CONCAT('-00', CONCAT(sec.sectionNumber, '-'))),
                                               CONCAT(d.departmentTag, c.courseNumber)) AS facultySection

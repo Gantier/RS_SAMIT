@@ -224,6 +224,11 @@ table#fa-table tr.fa-table:hover {
     cursor           : pointer;
 }
 
+table#fa-table tr td:last-child {
+    text-align : center;
+    transform  : translateX(-2px);
+}
+
 table#sr-table tr.sr-table:hover {
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
