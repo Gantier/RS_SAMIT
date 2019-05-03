@@ -1,5 +1,4 @@
-function tableInstantSearch(tableId, searchId, helperTextId, activeHelperText, defaultHelperText, lastColumnToSearch)
-{
+var tableInstantSearch = function (tableId, searchId, helperTextId, activeHelperText, defaultHelperText, lastColumnToSearch) {
     var table = document.getElementById(tableId);
     var keyword = document.getElementById(searchId).value.toLowerCase();
     var helperText = document.getElementById(helperTextId);
@@ -45,7 +44,7 @@ function tableInstantSearch(tableId, searchId, helperTextId, activeHelperText, d
         newHelperText += keyword + "'";
         helperText.innerHTML = newHelperText;
     }
-}
+};
 
 function tableReset($tableId, $helperTextId, $defaultHelperText)
 {
