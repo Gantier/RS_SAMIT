@@ -511,10 +511,12 @@ function faReset()
 // noinspection JSUnusedGlobalSymbols
 function faUpdateTableRow(rowElement, isClearing)
 {
-    //clear drop-downs
+    //get elements and clear drop-downs
     var midterm = document.getElementById('fa-midterm-dropdown');
     var final = document.getElementById('fa-final-dropdown');
     var present = document.getElementById('fa-radio-present');
+    var button0 = document.getElementsByClassName('traverse-table-button')[0];
+    var button1 = document.getElementsByClassName('traverse-table-button')[1];
     midterm.selectedIndex = midterm.options[0];
     final.selectedIndex = final.options[0];
     present.checked = true;
@@ -537,29 +539,53 @@ function faUpdateTableRow(rowElement, isClearing)
                 table.rows[window.currentRow].cells[k].style.borderColor = window.currentCellBorderColor;
                 table.rows[window.currentRow].cells[k].style.color = window.currentCellColor;
             }
-            table.rows[window.currentRow].style.backgroundColor = window.currentRowColor;
+            table.rows[window.currentRow].style.backgroundColor = window.currentRowBackgroundColor;
         }
     }
 
     //save new row's color before it was highlighted
-    window.currentRowColor = rowElement.style.backgroundColor;
+    window.currentRowBackgroundColor = rowElement.style.backgroundColor;
     window.currentCellBorderColor = rowElement.cells[0].style.borderColor;
     window.currentCellColor = rowElement.cells[0].style.color;
     //highlight current row and label
     var highlightBGColor = '#ced4e5';
     var highlightTextColor = '#1b1f5e';
     var highlightBorderColor = '#c0c3ce';
-    rowElement.style.backgroundColor = highlightBGColor;
-    for (var j = 0; j < rowElement.cells.length; j++)
+    //if not in batch or clearing, highlight blue
+    if (window.getComputedStyle(rowElement, null).getPropertyValue('background-color') !==
+        'rgb(232, 245, 233)' || isClearing)
     {
-        rowElement.cells[j].style.borderColor = highlightBorderColor;
-        rowElement.cells[j].style.color = highlightTextColor;
+        rowElement.style.backgroundColor = highlightBGColor;
+        for (var j = 0; j < rowElement.cells.length; j++)
+        {
+            rowElement.cells[j].style.borderColor = highlightBorderColor;
+            rowElement.cells[j].style.color = highlightTextColor;
+        }
+        //update gui blue
+        document.getElementById('fa-details-text0').style.backgroundColor = highlightBGColor;
+        document.getElementById('fa-details-text0').style.color = highlightTextColor;
+        document.getElementById('fa-details-text1').style.backgroundColor = highlightBGColor;
+        document.getElementById('fa-details-text1').style.color = highlightTextColor;
+        button0.style.backgroundColor = highlightBGColor;
+        button1.style.backgroundColor = highlightBGColor;
+    }
+    else//else, highlight green
+    {
+        rowElement.style.backgroundColor = window.rowBatchHLBackgroundColor;
+        for (var l = 0; l < rowElement.cells.length; l++)
+        {
+            rowElement.cells[l].style.borderColor = window.rowBatchHLBorderColor;
+            rowElement.cells[l].style.color = window.rowBatchColor;
+        }
+        //update gui green
+        document.getElementById('fa-details-text0').style.backgroundColor = window.rowBatchHLBackgroundColor;
+        document.getElementById('fa-details-text0').style.color = window.rowBatchColor;
+        document.getElementById('fa-details-text1').style.backgroundColor = window.rowBatchHLBackgroundColor;
+        document.getElementById('fa-details-text1').style.color = window.rowBatchColor;
+        button0.style.backgroundColor = window.rowBatchHLBackgroundColor;
+        button1.style.backgroundColor = window.rowBatchHLBackgroundColor;
     }
     //update gui
-    document.getElementById('fa-details-text0').style.backgroundColor = highlightBGColor;
-    document.getElementById('fa-details-text0').style.color = highlightTextColor;
-    document.getElementById('fa-details-text1').style.backgroundColor = highlightBGColor;
-    document.getElementById('fa-details-text1').style.color = highlightTextColor;
     document.getElementById('traverse-table-button-container').style.display = '';
 
     //set new current row
@@ -776,6 +802,8 @@ function faOnLoad()
     //save important colors
     window.oGCellBorderColor = '#eff1f4';
     window.oGCellColor = '#6d7177';
+    window.rowBatchHLBackgroundColor = '#c3dbc5';
+    window.rowBatchHLBorderColor = '#a5d1a8';
     window.rowBatchBackgroundColor = '#e8f5e9';
     window.rowBatchBorderColor = '#d0edd2';
     window.rowBatchColor = '#1b5e20';
