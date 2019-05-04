@@ -359,14 +359,6 @@
                         }
                         echo '" href="researcher_courses_graduate.php">Graduate</a></div></li>';
 
-
-                        //Change Password
-                        echo '<form action="researcher_change_password.php">
-                        <button class="logout-button" name="Change Password">Change Password</button>
-                        </form>';
-
-
-
                         //LOGOUT
                         echo '<form action="includes/logout.inc.php" method="post">
                         <button class="logout-button" type="submit" name="logout-submit">Logout</button>

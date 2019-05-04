@@ -2,22 +2,18 @@
 
     function viewAdminCourseCatalog(mysqli $conn, $courseType): void
     {
-        $descriptionColumn = 4;
+        $descriptionColumn = 5;
         $sql = "SELECT c.courseName                                     AS courseTitle,
                   CONCAT(CONCAT(d.departmentTag, ' '), c.courseNumber)  AS courseNumber,
                   c.courseSubject,
                   c.courseCredits, ";
-        if (strtolower($courseType) === strtolower(Constants::UNDERGRADUATE))
-        {
-            $sql .= "c.courseAttribute, ";
-            $descriptionColumn = 5;
-        }
+
+        $sql .= "c.courseAttribute, ";
+
         $sql .= "c.courseDescription
             FROM registration_system.department d,
-                registration_system.course_" . strtolower($courseType) . " g,
                 registration_system.course c
-            WHERE g.course" . $courseType . "Name LIKE c.courseName
-              AND d.departmentName LIKE c.courseSubject
+            WHERE d.departmentName LIKE c.courseSubject
             ORDER BY c.courseSubject, c.courseNumber";
 
         $statement = mysqli_stmt_init($conn);
@@ -36,7 +32,7 @@
                 //define table attributes
                 $containerId = "adaccounts-table-container";
                 $tableId = "ac-table-courses";
-                $caption = $courseType . " Courses";
+                $caption = "All Courses";
                 $rowClick = "onclick=\"updateCourseDescription(this, 'cc-description-text', " . $descriptionColumn . ")\"";
                 //generate html table
                 drawTableFromSQL($sqlResult, $containerId, $tableId, $caption, $rowClick);

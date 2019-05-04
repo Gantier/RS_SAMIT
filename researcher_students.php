@@ -5,7 +5,7 @@ echo '<main id="cc-container">';
 
 require "includes/dbh.inc.php";
 
-
+require_once "includes/functions.inc.php";
 ?>
 
     <form action="researcher_students.php" method="post">
@@ -20,7 +20,7 @@ require "includes/dbh.inc.php";
             <tr>
                 <th>Student Gender</th>
                 <th>Academic GPA</th>
-                <th>Program</th>
+                <th>Programme</th>
                 <th>Courses</th>
             </tr>
             <tr>
@@ -457,9 +457,8 @@ if (isset($_POST['Search'])) {
 
     executeQuery($conn);
 }
-?>
-    <hr>
-<?php
+
+
 require "footer.php";
 
 

@@ -76,6 +76,23 @@ table#ac-table tr.ac-table:hover {
     width    : 645px;
 }
 
+#ac-section-console-container {
+    position : fixed;
+    width    : 645px;
+}
+
+#ams-container {
+    width: 98%;
+    margin: auto;
+}
+
+#ams-table-container {
+    float: left;
+    margin-bottom: var(--standard-margin);
+    margin-left: 670px;
+    width: 60%;
+}
+
 #ac-subject-dropdown {
     width : 315px;
 }
@@ -87,22 +104,32 @@ table#ac-table tr.ac-table:hover {
 }
 
 #ac-filter-card {
-    height        : 100px;
+    height        : 110px;
     margin-bottom : var(--standard-margin);
 }
 
 #ac-pw-edit-card {
-    height        : 190px;
+    height        : 200px;
     margin-bottom : var(--standard-margin);
 }
 
 #ac-faculty-edit-card {
-    height        : 270px;
+    height        : 285px;
     margin-bottom : var(--standard-margin);
 }
 
 #ac-student-edit-card {
-    height        : 190px;
+    height        : 200px;
+    margin-bottom : var(--standard-margin);
+}
+
+#ac-course-edit-card {
+    height        : 290px;
+    margin-bottom : var(--standard-margin);
+}
+
+#ac-section-edit-card {
+    height        : 155px;
     margin-bottom : var(--standard-margin);
 }
 
@@ -123,7 +150,13 @@ table#ac-table tr.ac-table:hover {
 }
 
 #ac-student-add-card {
-    height        : 210px;
+    height        : 235px;
+    text-align    : center;
+    margin-bottom : var(--standard-margin);
+}
+
+#ac-course-add-card {
+    height        : 155px;
     text-align    : center;
     margin-bottom : var(--standard-margin);
 }
@@ -167,6 +200,7 @@ table#ac-table tr.ac-table:hover {
     height           : 32px;
     width            : 135px;
     background-color : #ffb2b2;
+    float: right;
 }
 
 #ac-password-button {
@@ -241,11 +275,13 @@ table#ac-table tr.ac-table:hover {
     background-color : var(--secondary-table-td-border);
     cursor           : pointer;
 }
+*/
 
 table#ac-table-courses tr td:last-child {
-    display : none;
+    font-size: 9pt;
 }
 
+/*
 table#ac-table-courses thead tr th:last-child {
     display : none;
 }
@@ -293,6 +329,101 @@ table#ac-table-courses th:nth-last-child(2) {
     margin-left : 10px;
 }
 
+#ac-attribute-dropdown {
+    float       : right;
+    width       : 160px;
+    margin-left : 10px;
+}
+
+#admin-edit-subject-dropdown {
+    float       : right;
+    width       : 160px;
+    margin-left : 10px;
+}
+
 #ac-table-courses {
     width : 1175px;
+}
+
+.edit-course-main {
+    width: 400px;
+    float: right;
+}
+
+.edit-course-description {
+    width: 150px;
+}
+
+#ac-course-desc-text-area {
+    max-width: 175px;
+    max-height: 100px;
+    min-width: 175px;
+    min-height: 100px;
+    float: left;
+
+    border        : solid 2px var(--secondary);
+    border-radius: var(--standard-border-radius);
+
+    font-family      : 'Roboto', sans-serif;
+}
+
+#ac-attribute-dropdown {
+    width: 140px;
+}
+
+#ac-course-mod-title-text-box {
+    width: 40%;
+}
+
+#ac-course-desc-text-area:hover, #ac-course-desc-text-area:focus {
+    border     : solid 2px var(--primary-light);
+    transition : border 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+#ac-edit-course-button {
+    float: right;
+    width: 150px;
+}
+
+#admin-section-filter-card {
+    height: 110px;
+    margin-bottom: var(--standard-margin);
+}
+
+#cc-building-dropdown {
+    width: 160px;
+    height: 35px;
+    float: left;
+}
+
+#ac-section-room-no-text-box {
+    width: 78px;
+    margin-left: 5px;
+}
+
+#cc-sections-times-dropdown {
+    float: left;
+}
+
+#cc-section-days-dropdown {
+    float: left;
+    margin-left: 5px;
+}
+
+#cc-building-dropdown {
+    float: right;
+}
+
+#ac-section-room-no-text-box {
+    float: right;
+}
+
+#ac-edit-section-button {
+    float: right;
+}
+
+#ac-course-undergrad-dropdown {
+    width: 130px;
+    height: 35px;
+    float: left;
 }

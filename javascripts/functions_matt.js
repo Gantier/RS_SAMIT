@@ -60,17 +60,31 @@ function accountClick(adminId)
     textFieldDelete.value = adminEmail;
 }
 
+function sectionClick(sectionClicked)
+{
+    var sectionCRN = sectionClicked.cells[0].innerText;
+    var sectionTitle = sectionClicked.cells[3].innerText;
+
+    var textFieldAddTitle = document.getElementById('ac-add-course-title-text-box');
+    var textFieldEditTitle = document.getElementById('ac-edit-course-title-text-box');
+    var textFieldDeleteCRN = document.getElementById('ac-delete-section-text-box');
+
+    textFieldAddTitle.value = sectionTitle;
+    textFieldEditTitle.value = sectionTitle;
+    textFieldDeleteCRN.value = sectionCRN;
+}
+
 function ccAdminFilter()
 {
     var ccTable = document.getElementById("ac-table-courses");
-    if (document.getElementById("cc-keyword") !== null)
+    if (document.getElementById("admin-cc-keyword") !== null)
     {
-        var keyword = document.getElementById("cc-keyword").value;
+        var keyword = document.getElementById("admin-cc-keyword").value;
     }
     var helperText = document.getElementById("cc-helper-text");
     var min = document.getElementById("cc-range-min").value;
     var max = document.getElementById("cc-range-max").value;
-    var subject = document.getElementById("cc-subject-dropdown").value;
+    var subject = document.getElementById("admin-cc-subject-dropdown").value;
     if (document.getElementById("cc-attribute-dropdown") !== null)
     {
         var attribute = document.getElementById("cc-attribute-dropdown").value;
@@ -148,4 +162,18 @@ function ccAdminFilter()
         //else, default helper text
         helperText.innerHTML = "Showing all courses...";
     }
+}
+
+function tableAdminReset($tableId, $helperTextId, $defaultHelperText)
+{
+    var ccTable = document.getElementById($tableId);
+    var helperText = document.getElementById($helperTextId);
+
+    //show all rows
+    for (var i = 1; i < ccTable.rows.length; i++)
+    {
+        ccTable.rows[i].style.display = '';
+    }
+
+    helperText.innerHTML = $defaultHelperText;
 }

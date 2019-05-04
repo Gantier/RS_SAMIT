@@ -300,7 +300,7 @@ function updateMasterScheduleDetails(
 }
 
 // noinspection JSUnusedGlobalSymbols
-function faUpdateTableRow(rowElement)
+function updateFacultyAcademics(sectionIdSelected)
 {
     //clear drop-downs
     var midterm = document.getElementById('fa-midterm-dropdown');
@@ -311,10 +311,10 @@ function faUpdateTableRow(rowElement)
     present.checked = true;
 
     //get relevant text from selected row
-    var studentName = rowElement.cells[0].innerText;
-    var studentAccount = rowElement.cells[1].innerText;
-    var studentSection = rowElement.cells[2].innerText;
-    var studentSectionText = rowElement.cells[2].innerText.substr(0, 4);
+    var studentName = sectionIdSelected.cells[0].innerText;
+    var studentAccount = sectionIdSelected.cells[1].innerText;
+    var studentSection = sectionIdSelected.cells[2].innerText;
+    var studentSectionText = sectionIdSelected.cells[2].innerText.substr(0, 4);
 
     //clear old row
     var table = document.getElementById('fa-table');
@@ -329,20 +329,18 @@ function faUpdateTableRow(rowElement)
     }
 
     //save new row's color before it was highlighted
-    window.currentRowColor = rowElement.style.backgroundColor;
+    window.currentRowColor = sectionIdSelected.style.backgroundColor;
     //highlight current row and label
-    rowElement.style.backgroundColor = '#cee5d0';
-    for (var j = 0; j < rowElement.cells.length; j++)
+    sectionIdSelected.style.backgroundColor = '#cee5d0';
+    for (var j = 0; j < sectionIdSelected.cells.length; j++)
     {
-        rowElement.cells[j].style.borderColor = '#cee5d0';
-        rowElement.cells[j].style.color = '#1b5e20';
+        sectionIdSelected.cells[j].style.borderColor = '#cee5d0';
+        sectionIdSelected.cells[j].style.color = '#1b5e20';
     }
-    //update gui
     document.getElementById('fa-details-text0').style.backgroundColor = '#cee5d0';
     document.getElementById('fa-details-text0').style.color = '#1b5e20';
     document.getElementById('fa-details-text1').style.backgroundColor = '#cee5d0';
     document.getElementById('fa-details-text1').style.color = '#1b5e20';
-    document.getElementById('traverse-table-button-container').style.display = '';
 
     //set new current row
     for (var i = 1; i < table.rows.length; i++)
@@ -354,7 +352,7 @@ function faUpdateTableRow(rowElement)
         }
     }
 
-    //update labels
+    //update label
     document.getElementById('fa-details-text0').innerHTML =
         "Section " + studentSectionText + " - " +
         studentName + "<br>";
@@ -364,7 +362,7 @@ function faUpdateTableRow(rowElement)
     document.getElementById('fa-student-section').value = studentSectionText;
 }
 
-function faAddToBatchOnClick()
+function fAAddToBatchOnClick()
 {
     //check if a student is selected
     var helper = document.getElementById('fa-helper-text');
@@ -448,7 +446,7 @@ function faAddToBatchOnClick()
     }
 }
 
-function faClearBatchOnClick()
+function fAClearBatchOnClick()
 {
     var batch = document.getElementById('fa-batch');
     batch.value = "";
@@ -459,48 +457,6 @@ function faClearBatchOnClick()
 
     var helper = document.getElementById('fa-helper-text');
     helper.innerText = "Cleared all additions to the batch...";
-}
-
-function faTraverseTable(key)
-{
-    //if current row is set
-    if (window.currentRow !== null)
-    {
-        var nextRow = (key === "ArrowUp") ? window.currentRow - 1 : window.currentRow + 1;
-        var table = document.getElementById('fa-table');
-        var tableSize = table.rows.length;
-        if (nextRow === 0)
-        {
-            nextRow = tableSize - 1;
-        }
-        else if (nextRow === tableSize)
-        {
-            nextRow = 1;
-        }
-        faUpdateTableRow(table.rows[nextRow])
-    }
-}
-
-// noinspection JSUnusedGlobalSymbols
-function faLoadKeyListener()
-{
-    //hide traverse buttons
-    document.getElementById('traverse-table-button-container').style.display = 'none';
-    //set key listeners
-    document.onkeydown = function (event)
-    {
-        event = event || window.event;
-        var down = "ArrowDown";
-        var up = "ArrowUp";
-        if (event.key === down)
-        {
-            faTraverseTable(down);
-        }
-        if (event.key === up)
-        {
-            faTraverseTable(up);
-        }
-    };
 }
 
 // noinspection JSUnusedGlobalSymbols
