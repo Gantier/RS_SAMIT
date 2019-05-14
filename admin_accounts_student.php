@@ -2,6 +2,7 @@
     require "header.php";
 
     echo "<main id='admin.academics-container'>";
+echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
 
     require "includes/dbh.inc.php";
     //require "add_account.inc.php";
