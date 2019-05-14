@@ -786,7 +786,7 @@ function faOnLoad()
         {
             case '2':
                 faTable.rows[i].cells[7].innerHTML =
-                    '<i class="da-icon material-icons md-22 blank">check_box_outline_blank</i>';
+                    '<i class="da-icon material-icons md-22 blank-light">check_box_outline_blank</i>';
                 break;
             case '1':
                 faTable.rows[i].cells[7].innerHTML =
