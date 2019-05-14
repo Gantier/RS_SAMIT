@@ -16,4 +16,6 @@
 
     echo "</main>";
 
+    echo '<img class="background" src="images/college3CroppedFade.jpg" alt="collegeCampus">';
+
     require "footer.php";

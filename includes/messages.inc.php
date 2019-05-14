@@ -16,6 +16,13 @@
                     displayMessage($message);
                 }
             }
+            elseif (isset($resultAdminMessages))
+            {
+                foreach ($resultAdminMessages as $message)
+                {
+                    displayMessage($message);
+                }
+            }
         ?>
     </div>
 </aside>

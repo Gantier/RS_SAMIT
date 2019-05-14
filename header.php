@@ -245,25 +245,12 @@
                         echo '"><a href="admin_sections.php">Sections</a></li> ';
 
                         //REGISTRATION
-                        echo '<li class="dropdown';
-                        if (preg_match("[admin_registration_student]", $current_page) || preg_match("[admin_registration_faculty]", $current_page))
-                        {
-                            echo " nav-bar-active";
-                        }
-                        echo '"><a href="javascript:void(0)" class="drop-button">Registration</a>';
-                        echo '<div class="dropdown-content">';
-                        echo '<a class="dropdown-anchor';
+                        echo '<li class="';
                         if (preg_match("[admin_registration_student]", $current_page))
                         {
-                            echo ' nav-bar-active';
+                            echo "nav-bar-active";
                         }
-                        echo '" href="admin_registration_student.php">Students</a>';
-                        echo '<a class="dropdown-anchor';
-                        if (preg_match("[admin_registration_faculty]", $current_page))
-                        {
-                            echo ' nav-bar-active';
-                        }
-                        echo '" href="admin_registration_faculty.php">Faculty</a></div></li>';
+                        echo '"><a href="admin_registration_student.php">Registration</a></li> ';
 
                         //ACADEMICS
                         echo '<li class="';
