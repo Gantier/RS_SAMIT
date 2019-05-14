@@ -54,10 +54,7 @@
                                    'EP_FAIL' => 'Password Unchanged',
                                    'EP_LOCK' => 'Password Locked',
                                    'FA' => 'Grade(s) Submitted',
-                                   'SA' => 'Grade Received',
-                                   'SDS' => 'Section(s) Dropped',
-                                   'SWD' => 'Requested Withdrawal',
-                                   'FWD' => 'Withdrawal Request'
+                                   'SA' => 'Grade Received'
         );
 
         const MESSAGE_BODS = array('SR_SUCCESS' => 'You were successfully registered for a new course: ',
@@ -67,10 +64,7 @@
                                        'one lower case letter, one upper case letter, and one digit.',
                                    'EP_LOCK' => 'Your account password has been locked from editing for 10 minutes.',
                                    'FA' => 'You have submitted grades for the following sections and student accounts:',
-                                   'SA' => 'You have received the following grade for section ',//section graded
-                                   'SDS' => 'You have dropped the following section(s) for ',//next semester
-                                   'SWD' => 'You have requested to withdraw from the following section(s) for ',//current semester
-                                   'FWD' => 'I am requesting to withdraw from section '//section requested
+                                   'SA' => 'You have received the following grade for section '
         );
 
         const DEFAULT_COURSE_HELPER = "'Showing all courses...'";

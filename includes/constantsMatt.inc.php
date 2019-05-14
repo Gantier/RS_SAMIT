@@ -31,6 +31,24 @@ class ConstantsMatt
                            'Visual Arts Minor',
                            'Visual Arts: Electronic Media B.S.');
 
+    const BUILDINGS = array('Campus Center',
+        'New Academic Building',
+        'Student Union');
+
+    const HOLDS = array('No Hold',
+        'Academic Hold',
+        'Financial Hold',
+        'Health Hold');
+
+    const TIME_SECTIONS = array('8:00 AM - 9:30 AM',
+        '9:40 AM - 11:10 AM',
+        '11:20 AM - 12:50 PM',
+        '1:00 PM - 2:30 PM',
+        '2:40 PM - 4:10 PM',
+        '4:20 PM - 5:50 PM',
+        '6:00 PM - 7:30 PM',
+        '7:40 PM - 9:10 PM');
+
     const DEFAULT_ACCOUNT_HELPER = "'Showing all student accounts...'";
     const FACULTY_ACCOUNT_HELPER = "'Showing all faculty accounts...'";
     const RESEARCHER_ACCOUNT_HELPER = "'Showing all researcher accounts...'";

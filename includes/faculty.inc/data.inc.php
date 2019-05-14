@@ -88,29 +88,29 @@ if (isset($_SESSION['userId']))
 
     //faculty grades enabled
     $sqlGradesEnabled = "WITH LogMidterm AS
-                                    (
-                                      SELECT CASE
-                                               WHEN NOW() >= semesterStartDate + INTERVAL 44 DAY
-                                                 AND NOW() <= semesterStartDate + INTERVAL 58 DAY
-                                                 THEN 'enabled'
-                                               ELSE 'disabled' END AS midterm
-                                      FROM registration_system.semester
-                                      WHERE semester.semesterName = '" . $_SESSION['currentSemester'] . "'
-                                    ),
-                                  LogFinal AS
-                                    (
-                                      SELECT CASE
-                                               WHEN NOW() >= semesterEndDate - INTERVAL 7 DAY
-                                                 AND NOW() <= semesterEndDate + INTERVAL 7 DAY
-                                                 THEN 'enabled'
-                                               ELSE 'disabled' END AS final
-                                      FROM registration_system.semester
-                                      WHERE semester.semesterName = '" . $_SESSION['currentSemester'] . "'
-                                    )
-                             SELECT midterm,
-                                    final
-                             FROM LogMidterm,
-                                  LogFinal;";
+       (
+         SELECT CASE
+                  WHEN NOW() >= semesterStartDate + INTERVAL 44 DAY
+                    AND NOW() <= semesterStartDate + INTERVAL 58 DAY
+                    THEN 'enabled'
+                  ELSE 'disabled' END AS midterm
+         FROM registration_system.semester
+         WHERE semester.semesterName = '2019 Spring'
+       ),
+     LogFinal AS
+       (
+         SELECT CASE
+                  WHEN NOW() >= semesterEndDate - INTERVAL 7 DAY
+                    AND NOW() <= semesterEndDate + INTERVAL 7 DAY
+                    THEN 'enabled'
+                  ELSE 'disabled' END AS final
+         FROM registration_system.semester
+         WHERE semester.semesterName = '2019 Spring'
+       )
+SELECT midterm,
+       final
+FROM LogMidterm,
+     LogFinal;";
     $resultGradesEnabled = $conn->query($sqlGradesEnabled);
     $gradesEnabled = mysqli_fetch_assoc($resultGradesEnabled);
 

@@ -42,10 +42,6 @@
                 Select a student from the table on the right to edit midterm/final grades and record daily attendance...
             </div>
             <div id="fa-details-text1"></div><!--holds the student account key-->
-            <div id="traverse-table-button-container">
-                <i class="traverse-table-button material-icons md-20" onclick="faTraverseTable('ArrowUp')">keyboard_arrow_up</i>
-                <i class="traverse-table-button material-icons md-20" onclick="faTraverseTable('ArrowDown')">keyboard_arrow_down</i>
-            </div>
             <hr>
             <!--suppress HtmlUnknownTarget -->
             <form method="post" action="includes/faculty.inc/fa-submit.inc.php" id="fa-form">
@@ -74,13 +70,13 @@
                         }
                     ?></label>
                 <select id="fa-midterm-dropdown"<?php
-                    /*                    if (isset($gradesEnabled))
+                                        if (isset($gradesEnabled))
                                         {
                                             if ($gradesEnabled['midterm'] === 'disabled')
                                             {
                                                 echo 'disabled';
                                             }
-                                        } */ ?>>
+                                        }  ?>>
                     <option value="null" selected hidden>Select midterm grade...</option>
                     <?php
                         foreach (Constants::MIDTERM as $item)
@@ -107,13 +103,13 @@
                         }
                     ?></label>
                 <select id="fa-final-dropdown"<?php
-                    /*                    if (isset($gradesEnabled))
+                                        if (isset($gradesEnabled))
                                         {
                                             if ($gradesEnabled['final'] === 'disabled')
                                             {
                                                 echo 'disabled';
                                             }
-                                        } */ ?>>
+                                        }  ?>>
                     <option value="null" selected hidden>Select final grade...</option>
                     <?php
                         foreach (Constants::FINAL as $item)
@@ -146,10 +142,10 @@
                     </label>
                 </div>
                 <button class="outlined primary small-button" type="button" name="fa-add-to-batch" id="fa-add-to-batch"
-                        onclick="faAddToBatchOnClick()">Add to Batch
+                        onclick="fAAddToBatchOnClick()">Add to Batch
                 </button>
                 <button class="outlined warning small-button" type="button" name="fa-clear-batch" id="fa-clear-batch"
-                        onclick="faClearBatchOnClick()">Clear Batch
+                        onclick="fAClearBatchOnClick()">Clear Batch
                 </button>
                 <br>
                 <label>
